@@ -1,0 +1,94 @@
+{
+  "generatedBy": "scripts/generate-skill-index.mjs",
+  "skill": "igapyon-miku-prompt-lint",
+  "files": [
+    {
+      "path": "SKILL.md",
+      "bytes": 5876
+    },
+    {
+      "path": "agents/openai.yaml",
+      "bytes": 254
+    },
+    {
+      "path": "examples/agent-skill-bloat.md",
+      "bytes": 1500
+    },
+    {
+      "path": "examples/ambiguous-output.md",
+      "bytes": 1119
+    },
+    {
+      "path": "examples/context-navigation.md",
+      "bytes": 1372
+    },
+    {
+      "path": "examples/legacy-role-cot.md",
+      "bytes": 1147
+    },
+    {
+      "path": "references/agent-skills/INDEX.md",
+      "bytes": 261
+    },
+    {
+      "path": "references/agent-skills/anti-patterns.md",
+      "bytes": 3811
+    },
+    {
+      "path": "references/agent-skills/checkpoints.md",
+      "bytes": 3228
+    },
+    {
+      "path": "references/context/INDEX.md",
+      "bytes": 289
+    },
+    {
+      "path": "references/context/anti-patterns.md",
+      "bytes": 2713
+    },
+    {
+      "path": "references/context/checkpoints.md",
+      "bytes": 2823
+    },
+    {
+      "path": "references/output-format.md",
+      "bytes": 1989
+    },
+    {
+      "path": "references/prompt/INDEX.md",
+      "bytes": 309
+    },
+    {
+      "path": "references/prompt/anti-patterns.md",
+      "bytes": 6790
+    },
+    {
+      "path": "references/prompt/checkpoints.md",
+      "bytes": 3519
+    },
+    {
+      "path": "references/prompt/rewrite-patterns.md",
+      "bytes": 1287
+    },
+    {
+      "path": "references/review-levels.md",
+      "bytes": 2389
+    },
+    {
+      "path": "templates/review-report.md",
+      "bytes": 376
+    },
+    {
+      "path": "templates/revised-agent-skill-structure.md",
+      "bytes": 754
+    },
+    {
+      "path": "templates/revised-context-structure.md",
+      "bytes": 409
+    },
+    {
+      "path": "templates/revised-prompt.md",
+      "bytes": 252
+    }
+  ]
+}

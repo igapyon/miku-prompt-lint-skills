@@ -1,0 +1,4 @@
+interface:
+  display_name: "Miku Prompt Lint"
+  short_description: "Lint prompts and context engineering quality."
+  default_prompt: "Use $igapyon-miku-prompt-lint to audit this prompt or Agent Skill context for anti-patterns and concrete improvements."
