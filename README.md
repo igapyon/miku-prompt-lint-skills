@@ -1,45 +1,70 @@
-# miku-prompt-lint
+# miku-prompt-lint-skills
 
-`miku-prompt-lint` is a content-only Agent Skill repository for reviewing prompt, context, knowledge, and Agent Skill quality.
+`miku-prompt-lint-skills` provides the `igapyon-miku-prompt-lint` Agent Skill for reviewing prompts, surrounding context, and Agent Skill packages.
 
-The name is `miku-prompt-lint`, but the project is intentionally closer to Context Engineering Review. It helps find anti-patterns and improvement opportunities in the guidance given to AI agents.
+Use it when you want an AI agent to find prompt and context quality risks before those instructions are reused by people or other agents.
 
-The canonical skill source is:
+Typical users include:
 
-- `skills/igapyon-miku-prompt-lint/`
+- people maintaining Codex, ChatGPT, Claude, Gemini, or other LLM prompts
+- people organizing references, examples, templates, or distilled knowledge for AI use
+- people creating or reviewing Agent Skills
 
-This repository does not provide a CLI runtime. The skill is centered on `SKILL.md`, `references/`, `templates/`, and `examples/`.
+This is not a prompt generator and not a correctness judge. It reviews the artifact itself and reports anti-patterns, missing structure, unclear output contracts, and practical improvement opportunities.
 
-Review checkpoints are organized by target under `references/prompt/`, `references/context/`, and `references/agent-skills/`.
-Initial anti-pattern rule candidates are stored as `anti-patterns.md` in each target directory.
+## Get The Skill
 
-## Project Philosophy
+Use the release zip when one is available. For a local build from this repository, run:
 
-This project is not a prompt-writing tool.
+```bash
+npm run build
+```
 
-It is a review tool for prompts, context, and Agent Skills.
+The build creates:
 
-It is also not a correctness judge. It identifies anti-patterns, quality risks, missing structure, and improvement opportunities. Like ESLint supports JavaScript quality, `miku-prompt-lint` supports Prompt Engineering and Context Engineering quality.
+- `bundle/miku-prompt-lint-skills/`
+- `bundle/igapyon-miku-prompt-lint-skills-<version>.zip`
 
-The review target is the artifact itself. The skill does not infer whether the author was human or generated AI.
+Copy the contents of `bundle/miku-prompt-lint-skills/` under the skills root used by your agent environment, such as your Codex skills directory.
 
-## Review Levels
+## Quick Use
 
-### Level 1: Prompt Review
+After installing the skill, ask Codex to use it explicitly:
 
-Review single prompt texts, such as ChatGPT prompts, Claude prompts, Gemini prompts, Codex instructions, and other LLM prompts.
+```text
+Use $igapyon-miku-prompt-lint to review this prompt.
+```
+
+You can also ask for a specific review target:
+
+```text
+Use $igapyon-miku-prompt-lint to audit this SKILL.md and its references.
+```
+
+```text
+Use $igapyon-miku-prompt-lint to check whether this context package has enough examples and navigation.
+```
+
+Provide the prompt text, context files, or Agent Skill files you want reviewed. If the target is missing, the skill should ask for the missing material before reviewing.
+
+## What It Reviews
+
+### Prompt Review
+
+Use this for single prompt texts, such as ChatGPT prompts, Claude prompts, Gemini prompts, Codex instructions, and other LLM prompts.
 
 Typical checks:
 
 - role-inflation
-- cot-overuse
-- prompt-bloat
-- cargo-cult-prompt
-- missing-context
+- Chain-of-Thought overuse
+- prompt bloat
+- cargo-cult prompt wording
+- missing input context
+- unclear output format or acceptance criteria
 
-### Level 2: Context Review
+### Context Review
 
-Review the context around prompts, such as references, examples, templates, and documentation.
+Use this for the surrounding materials that guide model behavior, such as references, examples, templates, documentation, distilled knowledge, and topic guides.
 
 Typical checks:
 
@@ -49,34 +74,56 @@ Typical checks:
 - misplaced knowledge
 - redundant explanation
 - weak navigation
+- unclear source of truth
 
-### Level 3: Agent Skill Review
+### Agent Skill Review
 
-Review Agent Skill packages, such as `SKILL.md`, `references/`, `templates/`, `examples/`, `index.json`, and topic guides.
+Use this for Agent Skill packages and skill-like workflow bundles.
 
 Typical checks:
 
 - bloated `SKILL.md`
-- insufficient separation into references
-- missing examples
+- insufficient separation into `references/`
+- missing `templates/` or `examples/`
 - missing topic guide
-- missing or stale index
+- missing or stale `index.json`
 - poor navigation
 - weak knowledge structure
 
-## Output Policy
+## Review Output
 
-Review output should include strengths, issues, improvement suggestions, and revised material when useful. Feedback should be actionable rather than merely critical.
+The review normally includes:
 
-## Scope
+- strengths worth preserving
+- findings ordered by importance
+- reasons each finding weakens prompt, context, or Agent Skill quality
+- concrete improvement suggestions
+- revised prompt, revised structure, or revised excerpts when useful
 
-The project targets all three levels from the start:
+When an anti-pattern rule applies, the review should include the rule ID and explain why it matters.
 
-- Prompt Review
-- Context Review
-- Agent Skill Review
+## Repository Shape
 
-Prompt Review is the easiest entry point, but it is not the only initial scope. The goal is a review system for the quality of "maps handed to AI": prompt wording, distilled data, knowledge structure, navigation, examples, templates, Agent Skill structure, and context design.
+The repository name is `miku-prompt-lint-skills`. The installed skill name is `igapyon-miku-prompt-lint`.
+
+The canonical skill source is:
+
+- `skills/igapyon-miku-prompt-lint/`
+
+This repository does not provide a CLI runtime. The skill is content-only and centered on `SKILL.md`, `references/`, `templates/`, and `examples/`.
+
+Review checkpoints are organized by target under:
+
+- `skills/igapyon-miku-prompt-lint/references/prompt/`
+- `skills/igapyon-miku-prompt-lint/references/context/`
+- `skills/igapyon-miku-prompt-lint/references/agent-skills/`
+
+Optional prompt skeleton assistance is separated from review references:
+
+- `skills/igapyon-miku-prompt-lint/references/template-selection/`
+- `skills/igapyon-miku-prompt-lint/templates/prompt-skeletons/`
+
+This assistance is lint-oriented. It helps select a single Markdown prompt skeleton only after `igapyon-miku-prompt-lint` has already been activated in a lint, audit, or review context. It is not a general prompt-writing workflow.
 
 ## Development
 
@@ -92,6 +139,8 @@ Run repository checks:
 npm test
 npm run build
 ```
+
+The build creates an installable bundle directory and release zip under `bundle/`.
 
 ## Repository Operation Rules
 

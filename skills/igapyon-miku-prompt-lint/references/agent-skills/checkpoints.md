@@ -119,6 +119,46 @@ Preferred direction:
 - link relevant files directly from `SKILL.md`
 - keep names aligned with task intent
 
+### README First-Read Usability
+
+Check whether `README.md` works for someone seeing the repository for the first time.
+
+Problems:
+
+- README starts with repository internals before explaining user value
+- no quick usage example or activation phrase
+- installed skill name, repository name, and product or workflow name are not distinguished
+- review targets are described only in maintainer terms
+- expected review output is unclear
+- development and repository operation notes appear before basic user guidance
+
+Preferred direction:
+
+- open with what the skill does, who should use it, and when to use it
+- include a minimal invocation example such as `$<skill-name>`
+- explain the supported review targets in user-facing language
+- state what the review returns
+- move repository shape, build, release, and operation notes after the user-facing sections
+
+### Verification Reproducibility
+
+Check whether tests, builds, and generated artifacts can run reliably.
+
+Problems:
+
+- tests mutate the same generated output directory in parallel
+- build, bundle, or release checks depend on execution order that is not documented
+- generated files are changed by tests without a clear regeneration command
+- local scratch, bundle, or distribution files are mixed with canonical skill source
+- CI or local scripts do not make shared-output assumptions visible
+
+Preferred direction:
+
+- run shared-output tests serially or isolate each test's output directory
+- document generated artifact ownership and regeneration commands
+- keep canonical source, generated bundles, and local scratch spaces separate
+- make build and release verification deterministic
+
 ### Knowledge Structure Risk
 
 Check whether knowledge is placed at the right abstraction level.

@@ -195,3 +195,55 @@ README.md
 ```
 
 Explain what to use and when.
+
+## maintainer-first-readme
+
+`README.md` is written mainly for maintainers, not first-time users.
+
+Signals:
+
+- starts with repository naming, file layout, or implementation details before explaining user value
+- lacks a quick invocation example
+- does not say who should use the skill or when to use it
+- does not distinguish repository/package name from installed skill name
+- does not summarize supported review targets
+- does not describe the expected review output
+- places build, release, or repository operation notes before user guidance
+
+Why this is a problem:
+
+- first-time users cannot tell whether the skill fits their task
+- agents may miss the correct activation phrase or review target
+- repository maintainers understand the project, but external users do not know how to start
+
+Recommended fix:
+
+- open with what the skill does and who it is for
+- add a minimal usage example such as `Use $<skill-name> to review this prompt`
+- describe the review targets in user-facing terms
+- state what the review returns
+- move repository shape, build, release, and operation details below the usage sections
+
+## shared-output-test-race
+
+Tests, builds, or release checks mutate the same generated output path concurrently.
+
+Signals:
+
+- multiple tests call bundle or build scripts that delete and recreate the same directory
+- generated zip or bundle paths are global to the repository
+- test success depends on test file ordering or process timing
+- intermittent `ENOENT`, missing file, stale index, or partially copied directory failures appear during test runs
+
+Why this is a problem:
+
+- verification becomes flaky
+- release artifacts may be produced from partially updated generated output
+- agents and maintainers cannot trust a failing or passing test result
+
+Recommended fix:
+
+- run shared-output tests serially
+- or give each test an isolated temporary output directory
+- document which commands mutate `bundle/`, `dist/`, indexes, release zips, or other generated artifacts
+- keep generated output out of canonical skill source unless explicitly intended

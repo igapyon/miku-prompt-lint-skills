@@ -6,7 +6,7 @@ import { execFileSync } from "node:child_process";
 import test from "node:test";
 
 const ROOT = process.cwd();
-const repoName = "miku-prompt-lint";
+const repoName = "miku-prompt-lint-skills";
 const skillName = "igapyon-miku-prompt-lint";
 
 test("generated bundle works from an isolated install shape", () => {

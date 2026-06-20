@@ -5,7 +5,7 @@ import { execFileSync } from "node:child_process";
 import test from "node:test";
 
 const ROOT = process.cwd();
-const repoName = "miku-prompt-lint";
+const repoName = "miku-prompt-lint-skills";
 const skillName = "igapyon-miku-prompt-lint";
 const packageJson = JSON.parse(
   fs.readFileSync(path.resolve(ROOT, "package.json"), "utf8")
@@ -35,9 +35,19 @@ test("release zip contains installable skill files and excludes development-only
   assertIncludes(entries, `skills/${skillName}/references/agent-skills/anti-patterns.md`);
   assertIncludes(entries, `skills/${skillName}/references/agent-skills/checkpoints.md`);
   assertIncludes(entries, `skills/${skillName}/references/output-format.md`);
+  assertIncludes(entries, `skills/${skillName}/references/template-selection/INDEX.md`);
+  assertIncludes(entries, `skills/${skillName}/references/template-selection/workflow.md`);
+  assertIncludes(entries, `skills/${skillName}/references/template-selection/skeleton-types.md`);
+  assertIncludes(entries, `skills/${skillName}/references/template-selection/handoff.md`);
   assertIncludes(entries, `skills/${skillName}/templates/review-report.md`);
   assertIncludes(entries, `skills/${skillName}/templates/revised-context-structure.md`);
   assertIncludes(entries, `skills/${skillName}/templates/revised-agent-skill-structure.md`);
+  assertIncludes(entries, `skills/${skillName}/templates/prompt-skeletons/basic.md`);
+  assertIncludes(entries, `skills/${skillName}/templates/prompt-skeletons/template-first.md`);
+  assertIncludes(entries, `skills/${skillName}/templates/prompt-skeletons/reviewer.md`);
+  assertIncludes(entries, `skills/${skillName}/templates/prompt-skeletons/few-shot.md`);
+  assertIncludes(entries, `skills/${skillName}/templates/prompt-skeletons/agent-workflow.md`);
+  assertIncludes(entries, `skills/${skillName}/templates/prompt-skeletons/ipo.md`);
   assertIncludes(entries, `skills/${skillName}/examples/legacy-role-cot.md`);
   assertIncludes(entries, `skills/${skillName}/examples/context-navigation.md`);
 

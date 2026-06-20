@@ -32,6 +32,8 @@ Omit `Revised Prompt` when the user asks only for diagnosis and a rewrite would 
 - Do not label text as AI-written, human-written, generated, or suspicious.
 - Do not moralize. Treat the prompt as an editable artifact.
 - Include strengths when they help preserve good structure during revision.
+- Distinguish diagnosis from edits: if the user asked only for review or lint, provide findings first and include revisions only as optional concrete suggestions.
+- When recommending immediate changes, state whether they are required correctness fixes, reproducibility fixes, or optional polish.
 
 ## Revision Rules
 

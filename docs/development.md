@@ -3,7 +3,7 @@
 ## Initial Creation Record
 
 - Date: 2026-06-20
-- Repository: `miku-prompt-lint`
+- Repository: `miku-prompt-lint-skills`
 - Installed skill name: `igapyon-miku-prompt-lint`
 - Main workflow: `igapyon-miku-soft-developer` Agent Skills workflow
 - Maturity pattern: content-only / handoff-only Agent Skill
@@ -22,6 +22,7 @@ Decisions adopted:
 - keep `SKILL.md` lean and move review criteria into `references/`
 - include bundle and zip scripts from the miku-soft Agent Skills starter shape
 - include a generated `index.json` and tests that fail when it is stale
+- run repository tests serially because bundle tests share generated output under `bundle/`
 - model the review surface as Prompt, Context, and Agent Skill levels
 
 Decisions rejected:

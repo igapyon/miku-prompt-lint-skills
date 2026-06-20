@@ -4,7 +4,7 @@
   "files": [
     {
       "path": "SKILL.md",
-      "bytes": 5876
+      "bytes": 7457
     },
     {
       "path": "agents/openai.yaml",
@@ -32,11 +32,11 @@
     },
     {
       "path": "references/agent-skills/anti-patterns.md",
-      "bytes": 3811
+      "bytes": 5878
     },
     {
       "path": "references/agent-skills/checkpoints.md",
-      "bytes": 3228
+      "bytes": 4872
     },
     {
       "path": "references/context/INDEX.md",
@@ -52,7 +52,7 @@
     },
     {
       "path": "references/output-format.md",
-      "bytes": 1989
+      "bytes": 2285
     },
     {
       "path": "references/prompt/INDEX.md",
@@ -73,6 +73,46 @@
     {
       "path": "references/review-levels.md",
       "bytes": 2389
+    },
+    {
+      "path": "references/template-selection/INDEX.md",
+      "bytes": 459
+    },
+    {
+      "path": "references/template-selection/handoff.md",
+      "bytes": 904
+    },
+    {
+      "path": "references/template-selection/skeleton-types.md",
+      "bytes": 1677
+    },
+    {
+      "path": "references/template-selection/workflow.md",
+      "bytes": 1437
+    },
+    {
+      "path": "templates/prompt-skeletons/agent-workflow.md",
+      "bytes": 852
+    },
+    {
+      "path": "templates/prompt-skeletons/basic.md",
+      "bytes": 637
+    },
+    {
+      "path": "templates/prompt-skeletons/few-shot.md",
+      "bytes": 676
+    },
+    {
+      "path": "templates/prompt-skeletons/ipo.md",
+      "bytes": 663
+    },
+    {
+      "path": "templates/prompt-skeletons/reviewer.md",
+      "bytes": 861
+    },
+    {
+      "path": "templates/prompt-skeletons/template-first.md",
+      "bytes": 628
     },
     {
       "path": "templates/review-report.md",

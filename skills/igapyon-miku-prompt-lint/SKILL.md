@@ -33,6 +33,28 @@ Prompt Review, Context Review, and Agent Skill Review are all first-class target
 8. Read [references/prompt/rewrite-patterns.md](references/prompt/rewrite-patterns.md) when revised prompt material is needed.
 9. If the review target is not provided, ask for the prompt, context files, or Agent Skill files before reviewing.
 
+## Optional Skeleton Assistance
+
+Use this only after the skill has already been activated for lint, audit, diagnosis, or review. Do not activate this skill for ordinary prompt creation, prompt drafting, or general prompt improvement requests.
+
+When the user asks for a single Markdown prompt skeleton as a follow-up to a lint or review workflow:
+
+1. Read [references/template-selection/INDEX.md](references/template-selection/INDEX.md).
+2. Read [references/template-selection/workflow.md](references/template-selection/workflow.md).
+3. Read [references/template-selection/skeleton-types.md](references/template-selection/skeleton-types.md).
+4. Select one skeleton type:
+   - `basic`
+   - `template-first`
+   - `reviewer`
+   - `few-shot`
+   - `agent-workflow`
+   - `ipo`
+5. Read only the matching `templates/prompt-skeletons/*.md` file.
+6. Fill only details that are known from the reviewed material or the user's explicit request. Leave unknown details as `TODO:`.
+7. Read [references/template-selection/handoff.md](references/template-selection/handoff.md) before finalizing the skeleton or when the user asks for additional refinement beyond skeleton selection.
+
+The output is a single Markdown prompt skeleton, not an Agent Skill package, not a multi-file context bundle, and not a full prompt-generation service.
+
 ## Review Scope
 
 For prompt text, check for:
@@ -93,8 +115,10 @@ Use Japanese when the user writes Japanese, English when the user writes English
 - [references/agent-skills/anti-patterns.md](references/agent-skills/anti-patterns.md) for Agent Skill Review anti-pattern rules
 - [references/output-format.md](references/output-format.md) for response structure
 - [references/prompt/rewrite-patterns.md](references/prompt/rewrite-patterns.md) for prompt modernization patterns
+- [references/template-selection/INDEX.md](references/template-selection/INDEX.md) for optional prompt skeleton assistance
 - [templates/review-report.md](templates/review-report.md) for a reusable report shape
 - [templates/revised-prompt.md](templates/revised-prompt.md) for revised prompt structure
 - [templates/revised-context-structure.md](templates/revised-context-structure.md) for revised context layout
 - [templates/revised-agent-skill-structure.md](templates/revised-agent-skill-structure.md) for revised Agent Skill layout
+- [templates/prompt-skeletons/](templates/prompt-skeletons/) for single Markdown prompt skeletons used only by optional skeleton assistance
 - [examples/](examples/) for sample reviews
