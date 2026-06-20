@@ -57,8 +57,8 @@ jobs:
         shell: bash
         run: |
           set -euo pipefail
-          source_zip="bundle/igapyon-miku-prompt-lint-${{ steps.release_version.outputs.package_version }}.zip"
-          target_zip="release-assets/igapyon-miku-prompt-lint-${{ steps.release_version.outputs.version }}.zip"
+          source_zip="bundle/igapyon-miku-prompt-lint-skills-${{ steps.release_version.outputs.package_version }}.zip"
+          target_zip="release-assets/igapyon-miku-prompt-lint-skills-${{ steps.release_version.outputs.version }}.zip"
           if [[ ! -s "${source_zip}" ]]; then
             echo "release zip not found or empty: ${source_zip}" >&2
             exit 1
