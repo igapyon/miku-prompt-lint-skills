@@ -3,39 +3,33 @@
 ## Input Summary
 
 ```text
-The package has references/api.md, references/policy.md, references/style.md, templates/report.md, and examples/sample.md. SKILL.md only says "read the relevant files" and does not explain which file to use when.
+The package has references/api.md, references/policy.md, references/style.md,
+templates/report.md, and examples/sample.md. SKILL.md only says “read the
+relevant files” and does not explain which file to use when.
 ```
 
-## Review
+## Findings
 
-**Strengths**
+- `Level`: Context
+  `Severity`: Medium
+  `Confidence`: High
+  `Applicability`: Applicable
+  `Category`: Navigation
+  `Issue`: Useful context files have no task-to-file route map.
+  `Rule`: context/context-without-navigation
+  `Evidence`: The only routing instruction is “read the relevant files.”
+  `Why it matters`: The agent must investigate blindly before choosing context.
+  `Suggestion`: Add an index that maps task conditions to references, templates, and examples.
+  `Change type`: reliability
 
-- The package already separates stable knowledge, templates, and examples into different directories.
-
-**Findings**
-
-- `Medium` Context Review: The context has useful files but no route map.
-  Rule: `context-without-navigation`
-  Why it matters: The agent must inspect files blindly before it can decide which context is relevant. This wastes context and can lead to missed or stale guidance.
-  Suggestion: Add a short topic guide that maps tasks to files.
-
-- `Low` Context Review: The example file is present, but its intended use is not described.
-  Rule: `missing-examples` partial
-  Why it matters: An example is less useful when the agent cannot tell whether it is a normal case, edge case, or preferred output.
-  Suggestion: Rename or document the example's role.
-
-**Revised Structure**
-
-```text
-references/
-├── topic-guide.md
-├── api.md
-├── policy.md
-└── style.md
-templates/
-└── report.md
-examples/
-└── normal-report.md
-```
-
-`references/topic-guide.md` should explain when to read each reference, template, and example.
+- `Level`: Context
+  `Severity`: Low
+  `Confidence`: High
+  `Applicability`: Applicable
+  `Category`: Examples
+  `Issue`: `sample.md` does not identify its scenario or expected behavior.
+  `Rule`: context/weak-examples
+  `Evidence`: Its filename and the supplied navigation provide no normal-case, edge-case, or expected-output role.
+  `Why it matters`: The example cannot reliably guide execution.
+  `Suggestion`: Label its scenario and expected result, or replace it with a focused example.
+  `Change type`: maintainability

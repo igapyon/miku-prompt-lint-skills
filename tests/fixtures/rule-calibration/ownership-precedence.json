@@ -1,0 +1,27 @@
+{
+  "schemaVersion": 1,
+  "cases": [
+    {
+      "id": "template-loaded-globally-is-routing",
+      "level": "Agent Skill",
+      "targetContext": {"model": "Unknown", "runtime": "Unknown"},
+      "artifact": "A customer-report template includes ‘use a warm, reassuring tone’. The workflow automatically loads the template as governing instruction for every task, with no task condition that routes it and no indication that it is an output template rather than operating policy.",
+      "expectedFindings": [{"rule": "agent-skill/resource-routing-missing", "evidenceContains": "automatically loads the template as governing instruction for every task"}],
+      "expectedNotApplicable": ["agent-skill/unsafe-side-effect-contract"],
+      "expectedNotAssessed": [],
+      "expectedSuppressed": ["context/template-as-instruction"],
+      "rationale": "The root cause is task-to-resource selection. Context template placement does not own a Skill workflow that loads a template globally."
+    },
+    {
+      "id": "inline-stable-knowledge-is-specific",
+      "level": "Agent Skill",
+      "targetContext": {"model": "Unknown", "runtime": "Unknown"},
+      "artifact": "SKILL.md contains 18 pages of stable domain rules, workflow variants, report shapes, and tutorials. It has no linked references, templates, or examples.",
+      "expectedFindings": [{"rule": "agent-skill/reusable-knowledge-not-separated", "evidenceContains": "18 pages of stable domain rules"}],
+      "expectedNotApplicable": [],
+      "expectedNotAssessed": [],
+      "expectedSuppressed": ["agent-skill/skill-monolith"],
+      "rationale": "Reusable stable knowledge is the specific root cause; skill-monolith remains an umbrella fallback only."
+    }
+  ]
+}

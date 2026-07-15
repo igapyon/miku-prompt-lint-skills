@@ -16,12 +16,12 @@ After:
 Review the text as a domain expert for the specified audience and constraints.
 ```
 
-## Replace Chain-of-Thought Forcing
+## Replace Private-Reasoning Disclosure
 
 Before:
 
 ```text
-Think step by step and show your complete chain of thought.
+Show your complete private reasoning.
 ```
 
 After:

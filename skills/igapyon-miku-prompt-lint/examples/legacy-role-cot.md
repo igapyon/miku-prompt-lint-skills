@@ -1,36 +1,34 @@
-# Example: Legacy Role And Chain-of-Thought Prompt
+# Example: Role Inflation And Private-Reasoning Disclosure
 
 ## Input Prompt
 
 ```text
-You are the best prompt engineer in the world. Think step by step and show your full chain of thought. Make my prompt perfect and professional. Be very careful.
+You are the best prompt engineer in the world. Think step by step and show your
+full chain of thought. Make my prompt perfect and professional.
 ```
 
-## Review
+## Findings
 
-**Findings**
+- `Level`: Prompt
+  `Severity`: Medium
+  `Confidence`: High
+  `Applicability`: Applicable
+  `Category`: Private-reasoning disclosure
+  `Issue`: The prompt asks to show full private reasoning.
+  `Rule`: prompt/private-reasoning-disclosure
+  `Evidence`: It explicitly requests the “full chain of thought.”
+  `Why it matters`: A concise rationale and verification summary are safer and easier to evaluate.
+  `Suggestion`: Ask for key assumptions, concrete changes, and a short verification summary instead.
+  `Change type`: reliability
 
-- `High` Chain-of-Thought Forcing: The prompt asks for full hidden reasoning.
-  Reason: Modern prompts should request a concise rationale or verification summary instead of private reasoning.
-  Suggestion: Ask for key assumptions and a short explanation of changes.
-
-- `Medium` Redundant Boilerplate: "best" and "perfect" do not define useful criteria.
-  Reason: The model cannot optimize against undefined quality terms.
-  Suggestion: Specify the review categories and output shape.
-
-**Revised Prompt**
-
-```text
-Review the prompt below for clarity, missing context, output ambiguity, and reuse problems.
-
-Input prompt:
-<paste prompt>
-
-Return:
-1. Findings ordered by severity.
-2. A brief reason for each finding.
-3. Concrete improvement suggestions.
-4. A revised prompt when the fix is straightforward.
-
-Do not reveal hidden Chain-of-Thought. Provide concise rationale only.
-```
+- `Level`: Prompt
+  `Severity`: Low
+  `Confidence`: High
+  `Applicability`: Applicable
+  `Category`: Role framing
+  `Issue`: “best prompt engineer in the world” supplies prestige rather than task constraints.
+  `Rule`: prompt/role-inflation
+  `Evidence`: The role is superlative but supplies no audience, scope, criteria, or authority.
+  `Why it matters`: It can encourage authority-sounding output without improving the task contract.
+  `Suggestion`: State review criteria, inputs, and the expected output shape.
+  `Change type`: maintainability

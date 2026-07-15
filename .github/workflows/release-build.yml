@@ -1,13 +1,13 @@
-name: Build And Upload Release Asset
+name: Build Draft Release Asset
 
 on:
-  release:
-    types:
-      - published
+  push:
+    tags:
+      - "v*"
   workflow_dispatch:
     inputs:
       tag_name:
-        description: "GitHub Release tag to attach the skill bundle zip to"
+        description: "Git tag to build and attach to a draft release"
         required: true
         type: string
 
@@ -17,60 +17,30 @@ permissions:
 jobs:
   build-and-upload:
     runs-on: ubuntu-latest
-    if: startsWith(github.event.release.tag_name || github.event.inputs.tag_name, 'v')
-
     steps:
-      - name: Checkout
-        uses: actions/checkout@v4
+      - uses: actions/checkout@v4
         with:
-          ref: ${{ github.event.inputs.tag_name || github.event.release.tag_name || github.ref }}
-
-      - name: Setup Node.js
-        uses: actions/setup-node@v4
+          ref: ${{ github.event.inputs.tag_name || github.ref }}
+      - uses: actions/setup-node@v4
         with:
-          node-version: 20
-
-      - name: Build release bundle
-        run: npm run build
-
-      - name: Verify release tag version
-        id: release_version
+          node-version: 24
+      - name: Verify tag version
         shell: bash
         env:
-          TAG_NAME: ${{ github.event.inputs.tag_name || github.event.release.tag_name || github.ref_name }}
+          TAG_NAME: ${{ github.event.inputs.tag_name || github.ref_name }}
         run: |
           set -euo pipefail
-          VERSION="${TAG_NAME#v}"
-          PACKAGE_VERSION="$(node -p "require('./package.json').version")"
-          case "${VERSION}" in
-            "${PACKAGE_VERSION}"|"${PACKAGE_VERSION}".*) ;;
-            *)
-              echo "Release tag version (${VERSION}) must match package.json version (${PACKAGE_VERSION}) or add a dot suffix such as ${PACKAGE_VERSION}.2." >&2
-              exit 1
-              ;;
-          esac
-          echo "version=${VERSION}" >> "$GITHUB_OUTPUT"
-          echo "package_version=${PACKAGE_VERSION}" >> "$GITHUB_OUTPUT"
-
-      - name: Prepare release zip
-        id: prepare_zip
-        shell: bash
-        run: |
-          set -euo pipefail
-          source_zip="bundle/igapyon-miku-prompt-lint-skills-${{ steps.release_version.outputs.package_version }}.zip"
-          target_zip="release-assets/igapyon-miku-prompt-lint-skills-${{ steps.release_version.outputs.version }}.zip"
-          if [[ ! -s "${source_zip}" ]]; then
-            echo "release zip not found or empty: ${source_zip}" >&2
-            exit 1
-          fi
-          mkdir -p release-assets
-          cp "${source_zip}" "${target_zip}"
-          echo "zip_path=${target_zip}" >> "$GITHUB_OUTPUT"
-
-      - name: Upload zip to GitHub Release
+          version="${TAG_NAME#v}"
+          package_version="$(node -p "require('./package.json').version")"
+          test "${version}" = "${package_version}"
+      - name: Build and verify exact release artifact
+        run: npm run build
+      - name: Upload verified draft release assets
         uses: softprops/action-gh-release@v2
         with:
-          tag_name: ${{ github.event.inputs.tag_name || github.event.release.tag_name || github.ref_name }}
-          files: ${{ steps.prepare_zip.outputs.zip_path }}
-          draft: false
+          tag_name: ${{ github.event.inputs.tag_name || github.ref_name }}
+          files: |
+            bundle/*.zip
+            bundle/*.zip.sha256
+          draft: true
           prerelease: false

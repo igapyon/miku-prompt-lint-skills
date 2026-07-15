@@ -3,7 +3,7 @@
 ```text
 skills/<skill-name>/
 ├── SKILL.md
-├── index.json
+├── index.json                 # only when this package already maintains one
 ├── references/
 │   ├── topic-guide.md or <topic>/INDEX.md
 │   └── <workflow-or-domain>.md
@@ -18,6 +18,8 @@ SKILL.md should contain:
 - required first checks
 - core workflow
 - links to relevant references
+- tool, authority, and side-effect boundaries
+- observable success criteria, evidence, and fallback behavior
 
 References should contain:
 - detailed rules
@@ -31,3 +33,4 @@ Templates should contain:
 Examples should contain:
 - representative inputs
 - expected outputs or review reports
+- normal and edge/failure cases where behavior differs

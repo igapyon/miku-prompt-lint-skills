@@ -1,0 +1,23 @@
+{
+  "schemaVersion": 1,
+  "migrations": [
+    {"legacyId":"prompt/outdated-prompt-style","disposition":"retired","canonicalIds":[],"note":"Use observable effects, not era labels."},
+    {"legacyId":"prompt/vague-role-only","disposition":"split","canonicalIds":["prompt/role-inflation","prompt/underspecified-context","prompt/missing-output-format"],"note":"Choose the actual missing contract."},
+    {"legacyId":"prompt/knowledge-in-prompt","disposition":"alias","canonicalIds":["context/knowledge-in-prompt"],"note":"Knowledge placement is Context-owned."},
+    {"legacyId":"prompt/cargo-cult-prompt","disposition":"split","canonicalIds":["prompt/ornamental-reasoning-cue","prompt/vague-quality-demand","prompt/coercive-framing"],"note":"Separate the observed wording."},
+    {"legacyId":"prompt/missing-context","disposition":"split","canonicalIds":["prompt/missing-required-input","prompt/underspecified-context"],"note":"Separate blocking input from underspecification."},
+    {"legacyId":"prompt/over-specific-persona","disposition":"alias","canonicalIds":["prompt/role-inflation"],"note":"Non-functional persona is role inflation."},
+    {"legacyId":"prompt/style-mixed-with-task","disposition":"alias","canonicalIds":["prompt/instruction-conflict"],"note":"Only incompatible requirements are defects."},
+    {"legacyId":"agent-skill/missing-references","disposition":"alias","canonicalIds":["agent-skill/reusable-knowledge-not-separated"],"note":"Capability, not folder presence."},
+    {"legacyId":"agent-skill/missing-templates","disposition":"alias","canonicalIds":["agent-skill/reusable-output-shape-missing"],"note":"Capability, not folder presence."},
+    {"legacyId":"agent-skill/examples-free-skill","disposition":"alias","canonicalIds":["agent-skill/behavior-examples-missing"],"note":"Capability, not folder presence."},
+    {"legacyId":"agent-skill/template-as-instruction","disposition":"alias","canonicalIds":["context/template-as-instruction"],"note":"Template placement is Context-owned."},
+    {"legacyId":"agent-skill/missing-topic-guide","disposition":"alias","canonicalIds":["agent-skill/resource-routing-missing"],"note":"Routing has one owner."},
+    {"legacyId":"agent-skill/context-without-navigation","disposition":"alias","canonicalIds":["agent-skill/resource-routing-missing"],"note":"Routing has one owner."},
+    {"legacyId":"agent-skill/no-review-mode","disposition":"alias","canonicalIds":["agent-skill/validation-step-missing"],"note":"Require an acceptance gate, not a named mode."},
+    {"legacyId":"agent-skill/generator-first-design","disposition":"alias","canonicalIds":["agent-skill/validation-step-missing"],"note":"Require an acceptance gate, not a named mode."},
+    {"legacyId":"agent-skill/maintainer-first-readme","disposition":"alias","canonicalIds":["repository/maintainer-first-readme"],"note":"Repository-owned."},
+    {"legacyId":"agent-skill/shared-output-test-race","disposition":"alias","canonicalIds":["repository/shared-output-test-race"],"note":"Harness-owned."},
+    {"legacyId":"agent-skill/missing-index","disposition":"split","canonicalIds":["repository/index-contract-broken","agent-skill/resource-routing-missing","agent-skill/broken-resource-route"],"note":"Inventory, routing, and runtime links differ."}
+  ]
+}

@@ -6,32 +6,28 @@
 Summarize this document nicely. Make it useful for everyone.
 ```
 
-## Review
+## Findings
 
-**Findings**
+- `Level`: Prompt
+  `Severity`: High
+  `Confidence`: High
+  `Applicability`: Applicable
+  `Category`: Required input
+  `Issue`: The source document is not supplied.
+  `Rule`: prompt/missing-required-input
+  `Evidence`: “this document” is referenced but no document accompanies the request.
+  `Why it matters`: The requested task cannot be performed without inventing source material.
+  `Suggestion`: Supply the document or a stable path to it before requesting a summary.
+  `Change type`: correctness
 
-- `High` Context Gap: The source document, audience, and purpose are not defined.
-  Reason: A summary for executives, implementers, and reviewers would emphasize different details.
-  Suggestion: Add source text, target audience, and intended use.
-
-- `Medium` Ambiguous Output Conditions: "nicely" and "useful" do not specify format or acceptance criteria.
-  Reason: The output may be too long, too short, or structured in an unusable way.
-  Suggestion: Specify sections, length, and how to handle uncertainty.
-
-**Revised Prompt**
-
-```text
-Summarize the source document for the specified audience.
-
-Input:
-- Source document: <paste document>
-- Audience: <audience>
-- Intended use: <decision, briefing, implementation, review, or other>
-
-Return:
-1. A 3-5 bullet executive summary.
-2. Key details grouped by topic.
-3. Open questions or missing information.
-
-If the source document is missing or the audience is unclear, ask for the missing input before summarizing.
-```
+- `Level`: Prompt
+  `Severity`: Medium
+  `Confidence`: High
+  `Applicability`: Applicable
+  `Category`: Output contract
+  `Issue`: “nicely” and “useful” do not define a usable output shape.
+  `Rule`: prompt/missing-output-format
+  `Evidence`: The prompt does not state sections, length, format, or how uncertainty should be reported.
+  `Why it matters`: Results can vary in length and purpose on each run.
+  `Suggestion`: Specify the audience, sections, length, and missing-information behavior.
+  `Change type`: reliability

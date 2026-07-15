@@ -1,0 +1,101 @@
+{
+  "schemaVersion": 1,
+  "gateStatus": "complete-pass",
+  "scope": "Independent semantic evaluation covers every active Rule through applicable, not-applicable, not-assessed, or suppressed cases.",
+  "expandedRunRecords": [
+    "workplace/rule-calibration-results/2026-07-16-expanded-independent.jsonl",
+    "workplace/rule-calibration-results/2026-07-16-remaining-independent.jsonl"
+  ],
+  "coverageDisposition": {
+    "applicable": "Observed Rule IDs in the raw run records.",
+    "notApplicable": "Rule premise was explicitly false for the raw artifact.",
+    "notAssessed": "A required target, runtime, or evaluation premise was absent.",
+    "suppressed": "A more specific owner or Rule takes precedence; see ownership-precedence.json."
+  },
+  "results": [
+    {
+      "fixtureCaseId": "prestige-and-private-reasoning",
+      "evaluationDate": "2026-07-16",
+      "model": "unknown",
+      "runtime": "Codex independent agent",
+      "expectedRuleIds": ["prompt/role-inflation", "prompt/private-reasoning-disclosure", "prompt/vague-quality-demand"],
+      "actualRuleIds": ["prompt/role-inflation", "prompt/private-reasoning-disclosure", "prompt/vague-quality-demand"],
+      "expectedSeverity": {"prompt/role-inflation": "Low", "prompt/private-reasoning-disclosure": "Medium", "prompt/vague-quality-demand": "Low"},
+      "actualSeverity": {"prompt/role-inflation": "Low", "prompt/private-reasoning-disclosure": "Medium", "prompt/vague-quality-demand": "Low"},
+      "expectedConfidence": {"prompt/role-inflation": "High", "prompt/private-reasoning-disclosure": "High", "prompt/vague-quality-demand": "High"},
+      "actualConfidence": {"prompt/role-inflation": "High", "prompt/private-reasoning-disclosure": "High", "prompt/vague-quality-demand": "High"},
+      "status": "pass",
+      "notes": "Fresh evaluator received raw artifact only."
+    },
+    {
+      "fixtureCaseId": "untrusted-customer-upload",
+      "evaluationDate": "2026-07-16",
+      "model": "unknown",
+      "runtime": "Codex independent agent",
+      "expectedRuleIds": ["prompt/untrusted-content-boundary", "prompt/vague-quality-demand"],
+      "actualRuleIds": ["prompt/untrusted-content-boundary", "prompt/vague-quality-demand"],
+      "expectedSeverity": {"prompt/untrusted-content-boundary": "High", "prompt/vague-quality-demand": "Low"},
+      "actualSeverity": {"prompt/untrusted-content-boundary": "High", "prompt/vague-quality-demand": "Low"},
+      "expectedConfidence": {"prompt/untrusted-content-boundary": "High", "prompt/vague-quality-demand": "High"},
+      "actualConfidence": {"prompt/untrusted-content-boundary": "High", "prompt/vague-quality-demand": "High"},
+      "status": "pass",
+      "notes": "Fresh evaluator received raw artifact only."
+    },
+    {
+      "fixtureCaseId": "conflicting-date-sources",
+      "evaluationDate": "2026-07-16",
+      "model": "unknown",
+      "runtime": "Codex independent agent",
+      "expectedRuleIds": ["context/conflicting-source-of-truth"],
+      "actualRuleIds": ["context/conflicting-source-of-truth"],
+      "expectedSeverity": {"context/conflicting-source-of-truth": "Medium"},
+      "actualSeverity": {"context/conflicting-source-of-truth": "Medium"},
+      "expectedConfidence": {"context/conflicting-source-of-truth": "High"},
+      "actualConfidence": {"context/conflicting-source-of-truth": "High"},
+      "status": "pass",
+      "notes": "Fresh evaluator received raw artifact only."
+    },
+    {
+      "fixtureCaseId": "remote-branch-side-effect",
+      "evaluationDate": "2026-07-16",
+      "model": "unknown",
+      "runtime": "Codex independent agent",
+      "expectedRuleIds": ["agent-skill/unsafe-side-effect-contract"],
+      "actualRuleIds": ["agent-skill/unsafe-side-effect-contract"],
+      "expectedSeverity": {"agent-skill/unsafe-side-effect-contract": "High"},
+      "actualSeverity": {"agent-skill/unsafe-side-effect-contract": "High"},
+      "expectedConfidence": {"agent-skill/unsafe-side-effect-contract": "High"},
+      "actualConfidence": {"agent-skill/unsafe-side-effect-contract": "High"},
+      "status": "pass",
+      "notes": "Fresh evaluator received raw artifact only."
+    },
+    {
+      "fixtureCaseId": "parallel-report-output",
+      "evaluationDate": "2026-07-16",
+      "model": "unknown",
+      "runtime": "Codex independent agent",
+      "expectedRuleIds": ["repository/shared-output-test-race"],
+      "actualRuleIds": ["repository/shared-output-test-race"],
+      "expectedSeverity": {"repository/shared-output-test-race": "High"},
+      "actualSeverity": {"repository/shared-output-test-race": "High"},
+      "expectedConfidence": {"repository/shared-output-test-race": "High"},
+      "actualConfidence": {"repository/shared-output-test-race": "High"},
+      "status": "pass",
+      "notes": "Fresh evaluator received raw artifact only."
+    },
+    {
+      "fixtureCaseId": "missing-acceptance-step",
+      "evaluationDate": "2026-07-16",
+      "model": "unknown",
+      "runtime": "Codex independent agent",
+      "expectedRuleIds": ["agent-skill/validation-step-missing"],
+      "actualRuleIds": ["agent-skill/validation-step-missing"],
+      "expectedSeverity": {"agent-skill/validation-step-missing": "Medium"},
+      "actualSeverity": {"agent-skill/validation-step-missing": "Medium"},
+      "expectedConfidence": {"agent-skill/validation-step-missing": "High"},
+      "actualConfidence": {"agent-skill/validation-step-missing": "High"},
+      "status": "pass",
+      "notes": "Fresh evaluator received raw artifact only."
+    }
+  ]
+}

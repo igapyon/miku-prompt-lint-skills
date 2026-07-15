@@ -3,40 +3,33 @@
 ## Input Summary
 
 ```text
-SKILL.md contains activation rules, a long tutorial, five examples, detailed output templates, and development notes. The skill has no references/ or examples/ directory.
+SKILL.md contains activation rules, a long tutorial, five examples, detailed
+output templates, and development notes. The package has no references/,
+templates/, or examples/ directory.
 ```
 
-## Review
+## Findings
 
-**Strengths**
+- `Level`: Agent Skill
+  `Severity`: Medium
+  `Confidence`: High
+  `Applicability`: Applicable
+  `Category`: Skill structure
+  `Issue`: Stable tutorials, examples, and output shapes are loaded through one `SKILL.md`.
+  `Rule`: agent-skill/skill-monolith
+  `Evidence`: The supplied package has no `references/`, `templates/`, or `examples/` directories.
+  `Why it matters`: Activation and routing cannot be read separately from detailed knowledge.
+  `Suggestion`: Keep activation and routing in `SKILL.md`; move stable details into linked resources.
+  `Change type`: maintainability
 
-- The package keeps the important information in one visible place, so the intended workflow is not hidden.
-
-**Findings**
-
-- `High` SKILL.md Bloat: Stable detailed guidance and examples are embedded directly in `SKILL.md`.
-  Reason: `SKILL.md` should stay focused on activation, routing, and the core workflow so agents can load it cheaply.
-  Suggestion: Move detailed rubrics to `references/` and demonstrations to `examples/`.
-
-- `Medium` Missing Examples Directory: Examples exist, but they are not separated from core instructions.
-  Reason: Examples are useful only when needed; forcing them into every activation wastes context.
-  Suggestion: Create `examples/normal-case.md` and `examples/edge-case.md` with expected outputs.
-
-- `Medium` Missing Templates: Output structures are described in prose instead of reusable templates.
-  Reason: Repeated report shapes should be easy to copy and adapt.
-  Suggestion: Add `templates/review-report.md`.
-
-**Revised Structure**
-
-```text
-skills/example-skill/
-├── SKILL.md
-├── references/
-│   ├── workflow.md
-│   └── output-rules.md
-├── templates/
-│   └── review-report.md
-└── examples/
-    ├── normal-case.md
-    └── edge-case.md
-```
+- `Level`: Agent Skill
+  `Severity`: Medium
+  `Confidence`: High
+  `Applicability`: Applicable
+  `Category`: Reusable output shape
+  `Issue`: Repeated report structures exist only as prose in `SKILL.md`.
+  `Rule`: agent-skill/reusable-output-shape-missing
+  `Evidence`: The supplied package has no `templates/` directory despite repeated report instructions.
+  `Why it matters`: Output shape drifts when a reusable template is unavailable.
+  `Suggestion`: Add a report template and route the workflow to it when that report is requested.
+  `Change type`: maintainability

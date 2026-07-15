@@ -21,7 +21,6 @@ TODO: Provide relevant files, constraints, environment details, or background.
 - Preserve unrelated user changes.
 - Keep edits scoped to the requested behavior.
 - Do not invent requirements; mark unknowns as `TODO:`.
-- Do not expose hidden Chain-of-Thought. Provide concise reasoning summaries when helpful.
 
 ## Expected Output
 

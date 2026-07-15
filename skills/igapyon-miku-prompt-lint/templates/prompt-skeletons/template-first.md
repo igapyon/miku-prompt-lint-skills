@@ -29,4 +29,3 @@ TODO: List the inputs the assistant should use.
 
 - Preserve the template headings unless the user explicitly asks for a different structure.
 - Fill unknown details with `TODO:` instead of guessing.
-- Do not expose hidden Chain-of-Thought. Use concise rationale when needed.

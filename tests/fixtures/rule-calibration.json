@@ -1,0 +1,54 @@
+{
+  "schemaVersion": 1,
+  "cases": [
+    {
+      "id": "prompt-positive-contract-gaps",
+      "level": "Prompt",
+      "artifact": "A supplied prompt contains nonfunctional role claims, requests private reasoning, has no required input, and treats pasted content as instruction.",
+      "expectedFindings": ["prompt/role-inflation", "prompt/private-reasoning-disclosure", "prompt/missing-required-input", "prompt/untrusted-content-boundary"],
+      "expectedNotApplicable": ["prompt/ornamental-reasoning-cue"]
+    },
+    {
+      "id": "prompt-full-positive-coverage",
+      "level": "Prompt",
+      "artifact": "Focused fixture for remaining Prompt rules.",
+      "expectedFindings": ["prompt/ornamental-reasoning-cue", "prompt/vague-quality-demand", "prompt/coercive-framing", "prompt/prompt-bloat", "prompt/repeated-instructions", "prompt/excessive-negative-rules", "prompt/underspecified-context", "prompt/missing-output-format", "prompt/instruction-conflict", "prompt/missing-success-criteria", "prompt/missing-fallback-behavior", "prompt/missing-evidence-contract", "prompt/undeclared-capability-or-authority"],
+      "expectedNotApplicable": ["prompt/private-reasoning-disclosure"]
+    },
+    {
+      "id": "context-positive-coverage",
+      "level": "Context",
+      "artifact": "Context fixture covering placement, completeness, source ownership, and routing risks.",
+      "expectedFindings": ["context/knowledge-in-prompt", "context/missing-required-context", "context/context-bloat", "context/missing-examples", "context/weak-examples", "context/missing-output-format", "context/weak-template", "context/template-as-instruction", "context/conflicting-source-of-truth", "context/stale-or-unversioned-context", "context/context-without-navigation"],
+      "expectedNotApplicable": ["context/missing-required-context"]
+    },
+    {
+      "id": "agent-skill-positive-coverage",
+      "level": "Agent Skill",
+      "artifact": "Skill fixture covering activation, routing, capability, validation, and safe operation risks.",
+      "expectedFindings": ["agent-skill/activation-boundary-mismatch", "agent-skill/skill-monolith", "agent-skill/reusable-knowledge-not-separated", "agent-skill/reusable-output-shape-missing", "agent-skill/behavior-examples-missing", "agent-skill/resource-routing-missing", "agent-skill/validation-step-missing", "agent-skill/behavior-not-validated", "agent-skill/broken-resource-route", "agent-skill/invalid-package-metadata", "agent-skill/tool-contract-missing", "agent-skill/unsafe-side-effect-contract"],
+      "expectedNotApplicable": ["agent-skill/behavior-not-validated"]
+    },
+    {
+      "id": "repository-positive-coverage",
+      "level": "Repository/Harness",
+      "artifact": "Repository fixture covering user-facing onboarding, index contract, isolated tests, generated artifacts, and evaluation leakage.",
+      "expectedFindings": ["repository/maintainer-first-readme", "repository/index-contract-broken", "repository/shared-output-test-race", "repository/artifact-identity-gap", "repository/nonreproducible-generated-artifact", "repository/evaluation-answer-leakage"],
+      "expectedNotApplicable": ["repository/index-contract-broken"]
+    },
+    {
+      "id": "boundary-validation-versus-evidence",
+      "level": "Agent Skill",
+      "artifact": "A workflow lacks an acceptance step and no evaluation evidence is supplied.",
+      "expectedFindings": ["agent-skill/validation-step-missing"],
+      "expectedNotApplicable": ["agent-skill/behavior-not-validated"]
+    },
+    {
+      "id": "fully-specified-safe-control",
+      "level": "Repository/Harness",
+      "artifact": "A control artifact supplies scoped inputs, explicit outputs, precedence, routing, validation evidence, isolated paths, and no executable instructions in untrusted content.",
+      "expectedFindings": [],
+      "expectedNotApplicable": ["prompt/role-inflation", "prompt/private-reasoning-disclosure", "prompt/ornamental-reasoning-cue", "prompt/vague-quality-demand", "prompt/coercive-framing", "prompt/prompt-bloat", "prompt/repeated-instructions", "prompt/excessive-negative-rules", "prompt/missing-required-input", "prompt/underspecified-context", "prompt/missing-output-format", "prompt/instruction-conflict", "prompt/missing-success-criteria", "prompt/missing-fallback-behavior", "prompt/missing-evidence-contract", "prompt/untrusted-content-boundary", "prompt/undeclared-capability-or-authority", "context/knowledge-in-prompt", "context/missing-required-context", "context/context-bloat", "context/missing-examples", "context/weak-examples", "context/missing-output-format", "context/weak-template", "context/template-as-instruction", "context/conflicting-source-of-truth", "context/stale-or-unversioned-context", "context/context-without-navigation", "agent-skill/activation-boundary-mismatch", "agent-skill/skill-monolith", "agent-skill/reusable-knowledge-not-separated", "agent-skill/reusable-output-shape-missing", "agent-skill/behavior-examples-missing", "agent-skill/resource-routing-missing", "agent-skill/validation-step-missing", "agent-skill/behavior-not-validated", "agent-skill/broken-resource-route", "agent-skill/invalid-package-metadata", "agent-skill/tool-contract-missing", "agent-skill/unsafe-side-effect-contract", "repository/maintainer-first-readme", "repository/index-contract-broken", "repository/shared-output-test-race", "repository/artifact-identity-gap", "repository/nonreproducible-generated-artifact", "repository/evaluation-answer-leakage"]
+    }
+  ]
+}

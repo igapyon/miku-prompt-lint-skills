@@ -1,64 +1,26 @@
 import assert from "node:assert/strict";
+import crypto from "node:crypto";
 import fs from "node:fs";
 import path from "node:path";
 import { execFileSync } from "node:child_process";
 import test from "node:test";
 
 const ROOT = process.cwd();
+const packageJson = JSON.parse(fs.readFileSync(path.resolve(ROOT, "package.json"), "utf8"));
 const repoName = "miku-prompt-lint-skills";
 const skillName = "igapyon-miku-prompt-lint";
-const packageJson = JSON.parse(
-  fs.readFileSync(path.resolve(ROOT, "package.json"), "utf8")
-);
 const zipPath = path.resolve(ROOT, `bundle/igapyon-${repoName}-${packageJson.version}.zip`);
+const checksumPath = `${zipPath}.sha256`;
 
-test("release zip contains installable skill files and excludes development-only files", () => {
-  execFileSync("npm", ["run", "build:bundle:zip"], {
-    cwd: ROOT,
-    encoding: "utf8"
-  });
-
-  assert.equal(fs.existsSync(zipPath), true);
-
-  const entries = execFileSync("unzip", ["-Z1", zipPath], {
-    cwd: ROOT,
-    encoding: "utf8"
-  }).trim().split(/\n/).filter(Boolean);
-
-  assertIncludes(entries, `skills/${skillName}/SKILL.md`);
-  assertIncludes(entries, `skills/${skillName}/index.json`);
-  assertIncludes(entries, `skills/${skillName}/references/prompt/anti-patterns.md`);
-  assertIncludes(entries, `skills/${skillName}/references/prompt/checkpoints.md`);
-  assertIncludes(entries, `skills/${skillName}/references/prompt/rewrite-patterns.md`);
-  assertIncludes(entries, `skills/${skillName}/references/context/anti-patterns.md`);
-  assertIncludes(entries, `skills/${skillName}/references/context/checkpoints.md`);
-  assertIncludes(entries, `skills/${skillName}/references/agent-skills/anti-patterns.md`);
-  assertIncludes(entries, `skills/${skillName}/references/agent-skills/checkpoints.md`);
-  assertIncludes(entries, `skills/${skillName}/references/output-format.md`);
-  assertIncludes(entries, `skills/${skillName}/references/template-selection/INDEX.md`);
-  assertIncludes(entries, `skills/${skillName}/references/template-selection/workflow.md`);
-  assertIncludes(entries, `skills/${skillName}/references/template-selection/skeleton-types.md`);
-  assertIncludes(entries, `skills/${skillName}/references/template-selection/handoff.md`);
-  assertIncludes(entries, `skills/${skillName}/templates/review-report.md`);
-  assertIncludes(entries, `skills/${skillName}/templates/revised-context-structure.md`);
-  assertIncludes(entries, `skills/${skillName}/templates/revised-agent-skill-structure.md`);
-  assertIncludes(entries, `skills/${skillName}/templates/prompt-skeletons/basic.md`);
-  assertIncludes(entries, `skills/${skillName}/templates/prompt-skeletons/template-first.md`);
-  assertIncludes(entries, `skills/${skillName}/templates/prompt-skeletons/reviewer.md`);
-  assertIncludes(entries, `skills/${skillName}/templates/prompt-skeletons/few-shot.md`);
-  assertIncludes(entries, `skills/${skillName}/templates/prompt-skeletons/agent-workflow.md`);
-  assertIncludes(entries, `skills/${skillName}/templates/prompt-skeletons/ipo.md`);
-  assertIncludes(entries, `skills/${skillName}/examples/legacy-role-cot.md`);
-  assertIncludes(entries, `skills/${skillName}/examples/context-navigation.md`);
-
-  assert.equal(entries.some((entry) => entry.includes(".DS_Store")), false);
-  assert.equal(entries.some((entry) => entry.startsWith("tests/")), false);
-  assert.equal(entries.some((entry) => entry.startsWith("docs/")), false);
-  assert.equal(entries.some((entry) => entry.startsWith("bundle/")), false);
-  assert.equal(entries.some((entry) => entry.includes("node_modules/")), false);
-  assert.equal(entries.some((entry) => entry.startsWith("workplace/")), false);
+test("existing release zip contains exactly the indexed installable files", () => {
+  assert.equal(fs.existsSync(zipPath), true, "build the zip before verification");
+  assert.equal(fs.existsSync(checksumPath), true, "build the checksum before verification");
+  const entries = execFileSync("unzip", ["-Z1", zipPath], { cwd: ROOT, encoding: "utf8" })
+    .trim().split(/\n/).filter(Boolean).filter((entry) => !entry.endsWith("/"));
+  const index = JSON.parse(fs.readFileSync(path.resolve(ROOT, "skills", skillName, "index.json"), "utf8"));
+  const expected = new Set(index.files.map((entry) => `skills/${skillName}/${entry.path}`));
+  expected.add(`skills/${skillName}/index.json`);
+  assert.deepEqual(new Set(entries), expected);
+  const checksum = fs.readFileSync(checksumPath, "utf8").trim().split(/\s+/)[0];
+  assert.equal(crypto.createHash("sha256").update(fs.readFileSync(zipPath)).digest("hex"), checksum);
 });
-
-function assertIncludes(entries, expected) {
-  assert.ok(entries.includes(expected), `missing zip entry: ${expected}`);
-}

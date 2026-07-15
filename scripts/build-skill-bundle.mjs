@@ -3,6 +3,7 @@
 import fs from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
+import { execFileSync } from "node:child_process";
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -18,6 +19,10 @@ main();
 
 function main() {
   ensureSourceExists(sourceSkillRoot, `skills/${skillName}`);
+  execFileSync("node", ["scripts/verify-miku-index.mjs"], {
+    cwd: repoRoot,
+    stdio: "inherit"
+  });
 
   fs.rmSync(bundleRoot, {
     recursive: true,
@@ -31,14 +36,31 @@ function main() {
     recursive: true,
     filter: shouldCopyBundleEntry
   });
+  normalizeMtime(bundleSkillRoot, new Date("1980-01-01T00:00:00Z"));
 
   process.stdout.write([
     `[build:bundle] generated bundle/${repoName}`,
-    "[build:bundle] copy this directory's contents under your skill home root",
+    "[build:bundle] copy this directory's contents under the agent home root, or copy skills/igapyon-miku-prompt-lint under the skills root",
     "[build:bundle] included:",
     `  - skills/${skillName}`
   ].join("\n"));
   process.stdout.write("\n");
+}
+
+function normalizeMtime(dir, timestamp) {
+  for (const name of fs.readdirSync(dir).sort(compareUtf16)) {
+    const target = path.join(dir, name);
+    const stat = fs.statSync(target);
+    if (stat.isDirectory()) {
+      normalizeMtime(target, timestamp);
+    }
+    fs.utimesSync(target, timestamp, timestamp);
+  }
+  fs.utimesSync(dir, timestamp, timestamp);
+}
+
+function compareUtf16(left, right) {
+  return left < right ? -1 : left > right ? 1 : 0;
 }
 
 function ensureSourceExists(targetPath, label) {

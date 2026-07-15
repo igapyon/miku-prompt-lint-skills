@@ -1,22 +1,35 @@
-# Prompt Review
+# Review Report
 
-**Strengths**
+## Target Context
 
-- What is already working and should be preserved.
+- Model / reasoning mode / runtime / instruction layer / tools: <known values or Unknown>
 
-**Findings**
+## Findings
 
-- `Severity` Category: Issue.
-  Rule: Anti-pattern ID when applicable.
-  Why it matters: Why this weakens prompt, context, or Agent Skill quality.
-  Suggestion: Concrete improvement.
+- `Level`: Prompt | Context | Agent Skill | Repository/Harness
+  `Severity`: High | Medium | Low
+  `Confidence`: High | Medium | Low
+  `Applicability`: Applicable
+  `Category`: <category>
+  `Issue`: <specific problem>
+  `Rule`: prompt/<id> | context/<id> | agent-skill/<id> | repository/<id> | N/A
+  `Evidence`: <file/line or exact fragment>
+  `Why it matters`: <effect>
+  `Suggestion`: <concrete improvement>
+  `Change type`: correctness | security | reliability | reproducibility | maintainability | optional polish
 
-**Needed Inputs**
+## Assessment Notes
 
-- Missing input, if any.
+- <Not applicable or Not assessed scope, if material>
 
-**Revised Prompt**
+## Strengths
 
-```text
-<revised prompt>
-```
+- <behavior worth preserving>
+
+## Needed Inputs (only when blocking)
+
+- <missing input>
+
+## Revised Material (only when useful)
+
+<revision>
