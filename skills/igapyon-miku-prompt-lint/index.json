@@ -1,134 +1,49 @@
 {
-  "generatedBy": "scripts/generate-skill-index.mjs",
-  "skill": "igapyon-miku-prompt-lint",
-  "files": [
-    {
-      "path": "SKILL.md",
-      "bytes": 7457
-    },
-    {
-      "path": "agents/openai.yaml",
-      "bytes": 254
-    },
-    {
-      "path": "examples/agent-skill-bloat.md",
-      "bytes": 1500
-    },
-    {
-      "path": "examples/ambiguous-output.md",
-      "bytes": 1119
-    },
-    {
-      "path": "examples/context-navigation.md",
-      "bytes": 1372
-    },
-    {
-      "path": "examples/legacy-role-cot.md",
-      "bytes": 1147
-    },
-    {
-      "path": "references/agent-skills/INDEX.md",
-      "bytes": 261
-    },
-    {
-      "path": "references/agent-skills/anti-patterns.md",
-      "bytes": 5878
-    },
-    {
-      "path": "references/agent-skills/checkpoints.md",
-      "bytes": 4872
-    },
-    {
-      "path": "references/context/INDEX.md",
-      "bytes": 289
-    },
-    {
-      "path": "references/context/anti-patterns.md",
-      "bytes": 2713
-    },
-    {
-      "path": "references/context/checkpoints.md",
-      "bytes": 2823
-    },
-    {
-      "path": "references/output-format.md",
-      "bytes": 2285
-    },
-    {
-      "path": "references/prompt/INDEX.md",
-      "bytes": 309
-    },
-    {
-      "path": "references/prompt/anti-patterns.md",
-      "bytes": 6790
-    },
-    {
-      "path": "references/prompt/checkpoints.md",
-      "bytes": 3519
-    },
-    {
-      "path": "references/prompt/rewrite-patterns.md",
-      "bytes": 1287
-    },
-    {
-      "path": "references/review-levels.md",
-      "bytes": 2389
-    },
-    {
-      "path": "references/template-selection/INDEX.md",
-      "bytes": 459
-    },
-    {
-      "path": "references/template-selection/handoff.md",
-      "bytes": 904
-    },
-    {
-      "path": "references/template-selection/skeleton-types.md",
-      "bytes": 1677
-    },
-    {
-      "path": "references/template-selection/workflow.md",
-      "bytes": 1437
-    },
-    {
-      "path": "templates/prompt-skeletons/agent-workflow.md",
-      "bytes": 852
-    },
-    {
-      "path": "templates/prompt-skeletons/basic.md",
-      "bytes": 637
-    },
-    {
-      "path": "templates/prompt-skeletons/few-shot.md",
-      "bytes": 676
-    },
-    {
-      "path": "templates/prompt-skeletons/ipo.md",
-      "bytes": 663
-    },
-    {
-      "path": "templates/prompt-skeletons/reviewer.md",
-      "bytes": 861
-    },
-    {
-      "path": "templates/prompt-skeletons/template-first.md",
-      "bytes": 628
-    },
-    {
-      "path": "templates/review-report.md",
-      "bytes": 376
-    },
-    {
-      "path": "templates/revised-agent-skill-structure.md",
-      "bytes": 754
-    },
-    {
-      "path": "templates/revised-context-structure.md",
-      "bytes": 409
-    },
-    {
-      "path": "templates/revised-prompt.md",
-      "bytes": 252
-    }
-  ]
+ "title": "Miku Prompt Lint Skill Index",
+ "generator": "miku-indexgen",
+ "generation": {"schemaVersion":1,"inputPath":".","markdownOutput":false,"recursive":true,"includeExtensions":["md","mjs","json","yaml"],"inputEncoding":"utf8","outputEncoding":"utf8","title":"Miku Prompt Lint Skill Index","includeGeneratorMetadata":true},
+ "basePath": ".",
+ "files": [
+  {"name":"SKILL.md","path":"SKILL.md","ext":"md","dir":"","size":2090,"description":"Use only when the user explicitly names miku-prompt-lint or igapyon-miku-prompt-lint, or asks to lint, audit, or diagnose an LLM prompt, AI-agent context package, Agent Skill, or supplied Agent Skill repository/harness for prompt/context-engineering qua...","summary":"igapyon-miku-prompt-lint"},
+  {"name":"openai.yaml","path":"agents/openai.yaml","ext":"yaml","dir":"agents","size":339},
+  {"name":"agent-skill-bloat.md","path":"examples/agent-skill-bloat.md","ext":"md","dir":"examples","size":1416,"summary":"Example: Bloated Agent Skill"},
+  {"name":"agent-skill-unsafe-side-effect.md","path":"examples/agent-skill-unsafe-side-effect.md","ext":"md","dir":"examples","size":843,"summary":"Example: Unsafe Side Effect Contract"},
+  {"name":"ambiguous-output.md","path":"examples/ambiguous-output.md","ext":"md","dir":"examples","size":1179,"summary":"Example: Ambiguous Output Prompt"},
+  {"name":"context-navigation.md","path":"examples/context-navigation.md","ext":"md","dir":"examples","size":1333,"summary":"Example: Context Without Navigation"},
+  {"name":"context-source-of-truth.md","path":"examples/context-source-of-truth.md","ext":"md","dir":"examples","size":780,"summary":"Example: Conflicting Sources Of Truth"},
+  {"name":"legacy-role-cot.md","path":"examples/legacy-role-cot.md","ext":"md","dir":"examples","size":1336,"summary":"Example: Role Inflation And Private-Reasoning Disclosure"},
+  {"name":"prompt-untrusted-boundary.md","path":"examples/prompt-untrusted-boundary.md","ext":"md","dir":"examples","size":787,"summary":"Example: Untrusted Content Boundary"},
+  {"name":"repository-harness-race.md","path":"examples/repository-harness-race.md","ext":"md","dir":"examples","size":704,"summary":"Example: Repository Harness Race"},
+  {"name":"INDEX.md","path":"references/agent-skills/INDEX.md","ext":"md","dir":"references/agent-skills","size":710,"summary":"Agent Skill Review References"},
+  {"name":"anti-patterns.md","path":"references/agent-skills/anti-patterns.md","ext":"md","dir":"references/agent-skills","size":6018,"summary":"Agent Skill Anti-Patterns"},
+  {"name":"checkpoints.md","path":"references/agent-skills/checkpoints.md","ext":"md","dir":"references/agent-skills","size":262,"summary":"Agent Skill Review Rubric"},
+  {"name":"INDEX.md","path":"references/context/INDEX.md","ext":"md","dir":"references/context","size":730,"summary":"Context Review References"},
+  {"name":"anti-patterns.md","path":"references/context/anti-patterns.md","ext":"md","dir":"references/context","size":5266,"summary":"Context Anti-Patterns"},
+  {"name":"checkpoints.md","path":"references/context/checkpoints.md","ext":"md","dir":"references/context","size":206,"summary":"Context Review Rubric"},
+  {"name":"output-format.md","path":"references/output-format.md","ext":"md","dir":"references","size":1255,"summary":"Review Output Contract"},
+  {"name":"INDEX.md","path":"references/prompt/INDEX.md","ext":"md","dir":"references/prompt","size":837,"summary":"Prompt Review References"},
+  {"name":"anti-patterns.md","path":"references/prompt/anti-patterns.md","ext":"md","dir":"references/prompt","size":8425,"summary":"Prompt Anti-Patterns"},
+  {"name":"checkpoints.md","path":"references/prompt/checkpoints.md","ext":"md","dir":"references/prompt","size":315,"summary":"Prompt Review Rubric"},
+  {"name":"rewrite-patterns.md","path":"references/prompt/rewrite-patterns.md","ext":"md","dir":"references/prompt","size":1269,"summary":"Rewrite Patterns"},
+  {"name":"INDEX.md","path":"references/repository/INDEX.md","ext":"md","dir":"references/repository","size":291,"summary":"Repository/Harness Review References"},
+  {"name":"anti-patterns.md","path":"references/repository/anti-patterns.md","ext":"md","dir":"references/repository","size":3139,"summary":"Repository/Harness Anti-Patterns"},
+  {"name":"checkpoints.md","path":"references/repository/checkpoints.md","ext":"md","dir":"references/repository","size":242,"summary":"Repository/Harness Review Rubric"},
+  {"name":"review-levels.md","path":"references/review-levels.md","ext":"md","dir":"references","size":707,"summary":"Review Levels"},
+  {"name":"rule-contract.md","path":"references/rule-contract.md","ext":"md","dir":"references","size":511,"summary":"Rule Authoring Contract"},
+  {"name":"rule-migrations.json","path":"references/rule-migrations.json","ext":"json","dir":"references","size":3280},
+  {"name":"INDEX.md","path":"references/template-selection/INDEX.md","ext":"md","dir":"references/template-selection","size":459,"summary":"Template Selection References"},
+  {"name":"handoff.md","path":"references/template-selection/handoff.md","ext":"md","dir":"references/template-selection","size":904,"summary":"Skeleton Assistance Handoff"},
+  {"name":"skeleton-types.md","path":"references/template-selection/skeleton-types.md","ext":"md","dir":"references/template-selection","size":1677,"summary":"Prompt Skeleton Types"},
+  {"name":"workflow.md","path":"references/template-selection/workflow.md","ext":"md","dir":"references/template-selection","size":1437,"summary":"Optional Skeleton Assistance Workflow"},
+  {"name":"agent-workflow.md","path":"templates/prompt-skeletons/agent-workflow.md","ext":"md","dir":"templates/prompt-skeletons","size":761,"summary":"TODO: Agent Workflow Prompt Title"},
+  {"name":"basic.md","path":"templates/prompt-skeletons/basic.md","ext":"md","dir":"templates/prompt-skeletons","size":547,"summary":"TODO: Prompt Title"},
+  {"name":"few-shot.md","path":"templates/prompt-skeletons/few-shot.md","ext":"md","dir":"templates/prompt-skeletons","size":635,"summary":"TODO: Few-Shot Prompt Title"},
+  {"name":"ipo.md","path":"templates/prompt-skeletons/ipo.md","ext":"md","dir":"templates/prompt-skeletons","size":622,"summary":"TODO: Input-Process-Output Prompt Title"},
+  {"name":"reviewer.md","path":"templates/prompt-skeletons/reviewer.md","ext":"md","dir":"templates/prompt-skeletons","size":810,"summary":"TODO: Review Prompt Title"},
+  {"name":"template-first.md","path":"templates/prompt-skeletons/template-first.md","ext":"md","dir":"templates/prompt-skeletons","size":552,"summary":"TODO: Prompt Title"},
+  {"name":"review-report.md","path":"templates/review-report.md","ext":"md","dir":"templates","size":889,"summary":"Review Report"},
+  {"name":"revised-agent-skill-structure.md","path":"templates/revised-agent-skill-structure.md","ext":"md","dir":"templates","size":981,"summary":"Revised Agent Skill Structure"},
+  {"name":"revised-context-structure.md","path":"templates/revised-context-structure.md","ext":"md","dir":"templates","size":647,"summary":"Revised Context Structure"},
+  {"name":"revised-prompt.md","path":"templates/revised-prompt.md","ext":"md","dir":"templates","size":252,"summary":"Task: <state the task directly> Input: - <input name>: <input placeholder> Constraints: - <constraint> Output: 1. <required section or field> 2. <required section or field> If required information is missing, ask for it before completing the task."}
+ ]
 }

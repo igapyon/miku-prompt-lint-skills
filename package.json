@@ -1,13 +1,23 @@
 {
   "name": "miku-prompt-lint-skills",
-  "version": "0.4.1",
+  "version": "0.5.0",
   "private": true,
   "type": "module",
+  "engines": {
+    "node": ">=24 <25"
+  },
+  "mikuIndex": {
+    "path": "skills/igapyon-miku-prompt-lint/index.json",
+    "required": true
+  },
   "scripts": {
-    "generate:index": "node scripts/generate-skill-index.mjs",
-    "test": "node --test --test-concurrency=1 tests/*.test.mjs",
-    "build": "npm test && npm run build:bundle:zip",
+    "check:index": "node scripts/verify-miku-index.mjs",
+    "test": "npm run check:index && node --test --test-concurrency=1 tests/skill-structure.test.mjs tests/content-contract.test.mjs tests/rule-migrations.test.mjs tests/rule-calibration-contract.test.mjs",
+    "verify:bundle": "node --test --test-concurrency=1 tests/isolated-bundle-smoke.test.mjs tests/release-bundle-contents.test.mjs",
+    "build": "npm test && npm run build:bundle:zip && npm run verify:bundle",
     "build:bundle": "node scripts/build-skill-bundle.mjs",
-    "build:bundle:zip": "node scripts/build-skill-bundle-zip.mjs"
+    "build:bundle:zip": "node scripts/build-skill-bundle-zip.mjs",
+    "checksum:bundle": "node scripts/build-skill-bundle-zip.mjs",
+    "verify:reproducible": "node scripts/check-reproducible-bundle.mjs"
   }
 }

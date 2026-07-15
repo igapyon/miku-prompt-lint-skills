@@ -24,7 +24,7 @@ Do not use this workflow for ordinary prompt writing, content generation, Agent 
 ## Filling Rules
 
 - Keep the user's intent and domain.
-- Do not add hidden Chain-of-Thought instructions.
+- Do not add requests to expose private reasoning.
 - Prefer explicit inputs, constraints, output format, and acceptance criteria.
 - Avoid converting the result into an Agent Skill package unless the user starts a separate Agent Skill creation task.
 - If the user's request exceeds skeleton selection, read `handoff.md` and hand off the work boundary clearly.

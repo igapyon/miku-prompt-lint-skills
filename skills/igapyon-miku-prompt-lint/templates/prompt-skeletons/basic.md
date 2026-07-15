@@ -12,7 +12,6 @@ TODO: Describe the task the assistant should perform.
 ## Constraints
 
 - TODO: State domain, tone, scope, safety, or formatting constraints.
-- Do not expose hidden Chain-of-Thought. Provide concise reasoning summaries when useful.
 
 ## Output
 

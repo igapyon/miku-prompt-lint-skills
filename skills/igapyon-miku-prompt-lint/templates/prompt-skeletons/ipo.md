@@ -31,4 +31,3 @@ TODO: Required transformed content.
 - Preserve source meaning.
 - Mark missing source information as `TODO:`.
 - Do not add facts that are not present in the input.
-- Do not expose hidden Chain-of-Thought.

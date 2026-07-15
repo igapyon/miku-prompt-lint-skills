@@ -50,4 +50,3 @@ TODO: Actual input goes here.
 
 - TODO: Required format.
 - TODO: Required completeness criteria.
-- Do not expose hidden Chain-of-Thought.
