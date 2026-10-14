@@ -75,6 +75,20 @@ test("examples use the canonical finding fields, active Rule IDs, and valid chan
   }
 });
 
+test("routing and bloat examples follow Rule ownership and specific-over-umbrella precedence", () => {
+  const examples = path.resolve(skillRoot, "examples");
+  const routing = readExampleFindings(path.resolve(examples, "context-navigation.md"));
+  assert.deepEqual(routing.map(({ level, rule }) => [level, rule]), [
+    ["Agent Skill", "agent-skill/resource-routing-missing"]
+  ]);
+  const bloat = readExampleFindings(path.resolve(examples, "agent-skill-bloat.md"));
+  assert.deepEqual(bloat.map(({ level, rule }) => [level, rule]), [
+    ["Agent Skill", "agent-skill/reusable-knowledge-not-separated"],
+    ["Agent Skill", "agent-skill/reusable-output-shape-missing"]
+  ]);
+  assert.equal(bloat.some(({ rule }) => rule === "agent-skill/skill-monolith"), false);
+});
+
 function activeRuleDefaults() {
   const defaults = new Map();
   for (const file of ruleFiles) {
@@ -83,6 +97,14 @@ function activeRuleDefaults() {
     }
   }
   return defaults;
+}
+
+function readExampleFindings(file) {
+  const text = fs.readFileSync(file, "utf8");
+  return text.split(/^\- `Level`:/m).slice(1).map((finding) => ({
+    level: finding.split("\n", 1)[0].trim(),
+    rule: finding.match(/`Rule`:\s*([^\n]+)/)?.[1].trim()
+  }));
 }
 
 function ruleEntries(text) {
