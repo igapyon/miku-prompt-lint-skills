@@ -21,7 +21,7 @@ Decisions adopted:
 - keep canonical skill source under `skills/igapyon-miku-prompt-lint/`
 - keep `SKILL.md` lean and move review criteria into `references/`
 - include bundle and zip scripts from the miku-soft Agent Skills starter shape
-- include a generated `index.json` plus a non-mutating freshness check
+- use direct task-based references and scoped search; no root index contract is required
 - separate source tests from verification of one already-built bundle and zip
 - generate deterministic zip files with a SHA-256 sidecar
 - model the review surface as Prompt, Context, Agent Skill, and Repository/Harness levels
@@ -37,8 +37,8 @@ Decisions rejected:
 
 - Node.js 24 is the supported build runtime.
 - `npm test` runs non-mutating source and content-contract checks.
-- `npm run build` checks the index, creates one deterministic bundle/zip pair,
-  and verifies that exact pair.
+- `npm run build` creates one deterministic bundle/zip pair and verifies that
+  exact pair.
 - `npm run verify:reproducible` rebuilds in CI and compares SHA-256 values.
 - pull requests and pushes run CI before merge.
 - a `v*` tag creates a draft GitHub Release with the verified zip and checksum;
@@ -46,11 +46,8 @@ Decisions rejected:
 
 ## Index Contract
 
-`package.json` declares the repository's `mikuIndex` contract. The freshness
-check is intentionally conditional: it validates an existing index, skips an
-optional absent index, and fails when a required index is absent. It never
-creates or rewrites an index. Use `miku-indexgen` only to refresh an index that
-already exists.
+The package uses `SKILL.md` and task-based references for discovery. It does not
+declare a `mikuIndex` contract or generate a root index.
 
 ## Rule Calibration
 

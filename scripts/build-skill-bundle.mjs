@@ -3,7 +3,6 @@
 import fs from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
-import { execFileSync } from "node:child_process";
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -19,11 +18,6 @@ main();
 
 function main() {
   ensureSourceExists(sourceSkillRoot, `skills/${skillName}`);
-  execFileSync("node", ["scripts/verify-miku-index.mjs"], {
-    cwd: repoRoot,
-    stdio: "inherit"
-  });
-
   fs.rmSync(bundleRoot, {
     recursive: true,
     force: true,

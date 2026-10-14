@@ -138,15 +138,10 @@ This assistance is lint-oriented. It helps select a single Markdown prompt skele
 
 ## Development
 
-When a bundled Skill already has an `index.json`, regenerate that existing
-discovery index after changing bundled Skill files with `miku-indexgen`; do not
-edit it by hand. Do not create an index merely because it is absent. For this
-package, use:
-
-```bash
-java -jar <miku-indexgen-jar> \
-  --refresh-index skills/igapyon-miku-prompt-lint/index.json
-```
+A repository may declare a generated index only when a concrete consumer uses
+it. Absence alone is not a defect. If an index is explicitly adopted, document
+its consumer and refresh the generated file with `miku-indexgen`; do not edit it
+by hand. This package does not maintain a root index.
 
 Run repository checks:
 
