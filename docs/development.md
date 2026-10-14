@@ -51,9 +51,20 @@ declare a `mikuIndex` contract or generate a root index.
 
 ## Rule Calibration
 
-The Skill is content-only, so automated tests validate contracts rather than
-claiming to measure LLM quality. `tests/fixtures/rule-calibration.json` records
-machine-readable positive, non-applicable, and ownership-boundary cases for
-every active Rule. Before a release that changes Rule semantics, perform an
-independent manual review against these fixtures and record the result in the
-release review; do not encode expected answers into the reviewed artifact.
+The Skill is content-only, so automated tests validate fixture structure and
+evidence references; they do not establish Rule applicability or measure LLM
+accuracy. `tests/fixtures/rule-calibration.json` uses schema version 2 and has a
+concrete positive and counterexample artifact for every active Rule. Each case
+scores its focal Rule, and only an explicit `expectedNotApplicable` case counts
+as its counterexample. `Not assessed` and `suppressed` are not counterexamples.
+An unlisted Rule has no disposition and must not be treated as non-applicable.
+Positive evidence must occur in the raw artifact;
+the structural check does not prove that the evidence semantically supports the
+finding. Manual and ownership fixtures retain schema version 1.
+
+Before a release that changes Rule semantics, run an independent blind
+evaluation using only each raw artifact, target context, and the normal Skill
+invocation. Keep case IDs, rationales, expected findings, dispositions, and
+fixes hidden until the response is complete. Record the observed evaluation
+separately. Existing baseline records are historical and must not be reused as
+results for rewritten cases.

@@ -1,35 +1,24 @@
-# Example: Context Without Navigation
+# Example: Skill Resource Routing Without a Task Map
 
 ## Input Summary
 
 ```text
-The package has references/api.md, references/policy.md, references/style.md,
-templates/report.md, and examples/sample.md. SKILL.md only says “read the
-relevant files” and does not explain which file to use when.
+The Skill package has references/api.md, references/policy.md,
+references/style.md, templates/report.md, and examples/sample.md. Its SKILL.md
+only says “read the relevant files”; it does not map task conditions to the
+reference, template, or example that should be loaded.
 ```
 
 ## Findings
 
-- `Level`: Context
+- `Level`: Agent Skill
   `Severity`: Medium
   `Confidence`: High
   `Applicability`: Applicable
   `Category`: Navigation
-  `Issue`: Useful context files have no task-to-file route map.
-  `Rule`: context/context-without-navigation
-  `Evidence`: The only routing instruction is “read the relevant files.”
+  `Issue`: The Skill has multiple package resources but no task-to-resource routing.
+  `Rule`: agent-skill/resource-routing-missing
+  `Evidence`: `SKILL.md` only says “read the relevant files” and does not map task conditions to resources.
   `Why it matters`: The agent must investigate blindly before choosing context.
-  `Suggestion`: Add an index that maps task conditions to references, templates, and examples.
+  `Suggestion`: Add direct task-condition routes to the relevant references, template, and example.
   `Change type`: reliability
-
-- `Level`: Context
-  `Severity`: Low
-  `Confidence`: High
-  `Applicability`: Applicable
-  `Category`: Examples
-  `Issue`: `sample.md` does not identify its scenario or expected behavior.
-  `Rule`: context/weak-examples
-  `Evidence`: Its filename and the supplied navigation provide no normal-case, edge-case, or expected-output role.
-  `Why it matters`: The example cannot reliably guide execution.
-  `Suggestion`: Label its scenario and expected result, or replace it with a focused example.
-  `Change type`: maintainability
