@@ -10,7 +10,7 @@ Review the artifact, not its author; do not request private reasoning.
 
 ## Workflow
 
-1. If [index.json](index.json) exists, read it for discovery; otherwise continue without creating one.
+1. Use the linked reference routes below and open only material needed for the review. Search within the relevant subdirectory when the links do not identify the target.
 2. Read [review-levels.md](references/review-levels.md) and identify only supplied Levels.
 3. Read each selected `checkpoints.md` and `anti-patterns.md` before emitting a Rule ID or formal finding.
 4. Read [output-format.md](references/output-format.md) and the report template before reporting.

@@ -16,7 +16,7 @@ test("existing bundle installs under the documented agent-home layout", () => {
     fs.cpSync(sourceBundle, agentHome, { recursive: true });
     const installedSkillRoot = path.resolve(agentHome, "skills", skillName);
     assert.equal(fs.existsSync(path.resolve(installedSkillRoot, "SKILL.md")), true);
-    assert.equal(fs.existsSync(path.resolve(installedSkillRoot, "index.json")), true);
+    assert.equal(fs.existsSync(path.resolve(installedSkillRoot, "index.json")), false);
     assert.equal(fs.existsSync(path.resolve(agentHome, "skills", "skills", skillName, "SKILL.md")), false);
   } finally {
     fs.rmSync(agentHome, { recursive: true, force: true });
