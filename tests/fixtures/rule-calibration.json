@@ -1072,7 +1072,7 @@
         "runtime": "Unknown",
         "fixtureNote": "Synthetic calibration input. Scenario statements and observations are supplied assumptions, not claims about production or a live runtime."
       },
-      "artifact": "Description: Use for every writing request. Intended use: only transform supplied JSON into a CSV file.",
+      "artifact": "Declared policy: only the exact name acme-json-csv or alias json-csv requests this JSON-to-CSV workflow. Input \"Use acme-json-csv to convert the supplied JSON\" should activate; input \"Rewrite this paragraph\" should stay inactive. Discovery description: Use for every writing request.",
       "expectedFindings": [
         {
           "rule": "agent-skill/activation-boundary-mismatch",
@@ -1082,7 +1082,7 @@
       "expectedNotApplicable": [],
       "expectedNotAssessed": [],
       "expectedSuppressed": [],
-      "rationale": "The broad trigger captures unrelated requests beyond the documented intended task. This calibration case scores the focal Rule; other Rules are unscored."
+      "rationale": "The discovery description contradicts the declared name-based policy and captures the concrete unrelated writing request. This case scores only the focal Rule."
     },
     {
       "id": "counterexample-skill-activation-boundary-mismatch",
@@ -1092,14 +1092,152 @@
         "runtime": "Unknown",
         "fixtureNote": "Synthetic calibration input. Scenario statements and observations are supplied assumptions, not claims about production or a live runtime."
       },
-      "artifact": "Description: Use only when explicitly asked to convert supplied JSON to CSV. The scope is intentionally opt-in.",
+      "artifact": "Declared policy and discovery description: activate only on the complete name acme-json-csv or registered alias json-csv. Input \"Use acme-json-csv to convert this JSON\" starts the workflow. Input \"Use json-csv for this JSON\" also starts it. Input \"Convert this JSON to CSV\" with neither name leaves the Skill inactive. This intentionally explicit-first Skill does not offer candidate suggestions.",
       "expectedFindings": [],
       "expectedNotApplicable": [
         "agent-skill/activation-boundary-mismatch"
       ],
       "expectedNotAssessed": [],
       "expectedSuppressed": [],
-      "rationale": "The activation scope is narrow and documented. This is an explicit counterexample for the focal Rule; other Rules are unscored."
+      "rationale": "Exact-name and registered-alias invocation work as declared. Remaining inactive for an unnamed in-domain task and omitting optional candidate suggestions are intentional design choices, not activation defects. This case scores only the focal Rule."
+    },
+    {
+      "id": "counterexample-skill-candidate-introduction-consent",
+      "level": "Agent Skill",
+      "targetContext": {
+        "model": "Unknown",
+        "runtime": "Synthetic metadata-first Skill host",
+        "fixtureNote": "Synthetic calibration input. Scenario statements and observations are supplied assumptions, not claims about production or a live runtime.",
+        "profileAssumption": "The host exposes name and description before optional full-instruction loading. Evaluate the supplied policy and discovery instructions; do not assume another host configuration."
+      },
+      "artifact": "Declared policy and discovery description: acme-prompt-audit and prompt-audit are direct names. The three complete words acme prompt audit, in order and separated only by whitespace, identify a candidate only when a review is requested. Input \"Use prompt-audit to review this prompt\" activates. Input \"acme prompt audit this prompt\" produces an introduction from metadata and a question without loading SKILL.md. A pending suggestion followed by \"Yes, use it\" loads the Skill and starts that review without another confirmation. No answer or \"No\" leaves it inactive. Input \"What does acme prompt audit mean?\" produces no candidate introduction; an unnamed review request stays inactive.",
+      "expectedFindings": [],
+      "expectedNotApplicable": [
+        "agent-skill/activation-boundary-mismatch"
+      ],
+      "expectedNotAssessed": [],
+      "expectedSuppressed": [],
+      "rationale": "The direct, introduction-only, accepted, declined, and out-of-context routes match the declared policy. Candidate introduction does not grant permission to load or execute. This case scores only the focal Rule."
+    },
+    {
+      "id": "positive-skill-introduction-loads-before-consent",
+      "level": "Agent Skill",
+      "targetContext": {
+        "model": "Unknown",
+        "runtime": "Synthetic metadata-first Skill host",
+        "fixtureNote": "Synthetic calibration input. Scenario statements and observations are supplied assumptions, not claims about production or a live runtime.",
+        "profileAssumption": "The host exposes name and description before optional full-instruction loading. Evaluate the supplied policy and discovery instructions; do not assume another host configuration."
+      },
+      "artifact": "Declared policy: the exact name acme-prompt-audit activates a requested review. The phrase acme prompt audit with review intent permits a metadata-only introduction; loading instructions waits for agreement. Input \"Use acme-prompt-audit to review this prompt\" should activate. Input \"Review this prompt\" should stay inactive. For input \"acme prompt audit this prompt\", the discovery instruction says: read full SKILL.md before asking for agreement.",
+      "expectedFindings": [
+        {
+          "rule": "agent-skill/activation-boundary-mismatch",
+          "evidenceContains": "read full SKILL.md before asking for agreement"
+        }
+      ],
+      "expectedNotApplicable": [],
+      "expectedNotAssessed": [],
+      "expectedSuppressed": [],
+      "rationale": "The introduction route loads full instructions before the declared consent boundary. The defect exists in the supplied discovery instruction and does not depend on an inferred live-host behavior. This case scores only the focal Rule."
+    },
+    {
+      "id": "positive-skill-meta-and-artifact-name-capture",
+      "level": "Agent Skill",
+      "targetContext": {
+        "model": "Unknown",
+        "runtime": "Synthetic metadata-first Skill host",
+        "fixtureNote": "Synthetic calibration input. Scenario statements and observations are supplied assumptions, not claims about production or a live runtime.",
+        "profileAssumption": "The host exposes name and description before optional full-instruction loading. Evaluate the supplied policy and discovery instructions; do not assume another host configuration."
+      },
+      "artifact": "Declared policy: the exact name acme-prompt-audit with a review request activates the review workflow. Explanation or maintenance requests about the Skill are meta tasks, and names inside supplied artifacts are data. Input \"Use acme-prompt-audit to review this prompt\" should activate. Input \"Explain acme-prompt-audit\" and a request to summarize an article containing that name should not start review. Discovery description: Run review when the name appears anywhere, including supplied artifacts or explanation requests.",
+      "expectedFindings": [
+        {
+          "rule": "agent-skill/activation-boundary-mismatch",
+          "evidenceContains": "Run review when the name appears anywhere, including supplied artifacts or explanation requests"
+        }
+      ],
+      "expectedNotApplicable": [],
+      "expectedNotAssessed": [],
+      "expectedSuppressed": [],
+      "rationale": "The description contradicts the declared meta and artifact boundaries. Reading a Skill to answer an authorized explanation request would be allowed; automatically starting its review workflow is the defect here. This case scores only the focal Rule."
+    },
+    {
+      "id": "positive-skill-advertised-alias-rejected",
+      "level": "Agent Skill",
+      "targetContext": {
+        "model": "Unknown",
+        "runtime": "Synthetic metadata-first Skill host",
+        "fixtureNote": "Synthetic calibration input. Scenario statements and observations are supplied assumptions, not claims about production or a live runtime.",
+        "profileAssumption": "The host exposes name and description before optional full-instruction loading. Evaluate the supplied policy and discovery instructions; do not assume another host configuration."
+      },
+      "artifact": "Declared policy: acme-prompt-audit and the registered alias prompt-audit both directly invoke review. Input \"Use prompt-audit to review this prompt\" should activate; an unnamed review request should stay inactive. The discovery entry permits only acme-prompt-audit and says: Reject prompt-audit even when the user requests the review with that alias.",
+      "expectedFindings": [
+        {
+          "rule": "agent-skill/activation-boundary-mismatch",
+          "evidenceContains": "Reject prompt-audit even when the user requests the review with that alias"
+        }
+      ],
+      "expectedNotApplicable": [],
+      "expectedNotAssessed": [],
+      "expectedSuppressed": [],
+      "rationale": "An explicitly advertised alias is blocked by the discovery entry. The correction restores that intended alias without broadening activation to unnamed review requests. This case scores only the focal Rule."
+    },
+    {
+      "id": "counterexample-skill-capability-overlap-distinct-names",
+      "level": "Agent Skill",
+      "targetContext": {
+        "model": "Unknown",
+        "runtime": "Synthetic metadata-first Skill host",
+        "fixtureNote": "Synthetic calibration input. Scenario statements and observations are supplied assumptions, not claims about production or a live runtime.",
+        "profileAssumption": "The host exposes name and description before optional full-instruction loading. Evaluate the supplied policy and discovery instructions; do not assume another host configuration."
+      },
+      "artifact": "Two installed Skills both draft PR text. Skill A activates only on the complete user name acme-local-pr; Skill B activates only on acme-scm-pr. Neither description activates on an unnamed PR request or merely on the other name. Input \"Use acme-local-pr to draft this PR\" activates only A. Input \"Use acme-scm-pr to draft this PR\" activates only B. Input \"Draft PR text\" activates neither.",
+      "expectedFindings": [],
+      "expectedNotApplicable": [
+        "agent-skill/activation-boundary-mismatch"
+      ],
+      "expectedNotAssessed": [],
+      "expectedSuppressed": [],
+      "rationale": "The capabilities overlap but the declared entry points and concrete trigger cases are disjoint. Capability overlap alone is insufficient evidence of an activation collision. This case scores only the focal Rule."
+    },
+    {
+      "id": "counterexample-skill-intentional-automatic-mode",
+      "level": "Agent Skill",
+      "targetContext": {
+        "model": "Unknown",
+        "runtime": "Synthetic metadata-first Skill host",
+        "fixtureNote": "Synthetic calibration input. Scenario statements and observations are supplied assumptions, not claims about production or a live runtime.",
+        "profileAssumption": "The host exposes name and description before optional full-instruction loading. Evaluate the supplied policy and discovery instructions; do not assume another host configuration."
+      },
+      "artifact": "Declared policy: pdf-text-extract intentionally activates automatically when the user requests text extraction from a supplied PDF, without needing its name. The discovery description uses that same condition. Input \"Extract the text from attached report.pdf\" activates. Input \"Write a paragraph about the PDF format\" without an extraction task leaves it inactive.",
+      "expectedFindings": [],
+      "expectedNotApplicable": [
+        "agent-skill/activation-boundary-mismatch"
+      ],
+      "expectedNotAssessed": [],
+      "expectedSuppressed": [],
+      "rationale": "The automatic mode is intentional and matches its declared task boundary. The explicit-first baseline for specialized personal workflows does not prohibit intentionally automatic Skills. This case scores only the focal Rule."
+    },
+    {
+      "id": "positive-skill-accepted-introduction-reconfirmed",
+      "level": "Agent Skill",
+      "targetContext": {
+        "model": "Unknown",
+        "runtime": "Synthetic metadata-first Skill host",
+        "fixtureNote": "Synthetic calibration input. Scenario statements and observations are supplied assumptions, not claims about production or a live runtime.",
+        "profileAssumption": "The host exposes name and description before optional full-instruction loading. Evaluate the supplied policy and discovery instructions; do not assume another host configuration."
+      },
+      "artifact": "Declared policy: the name acme-prompt-audit invokes review, and a metadata-only candidate introduction may also be accepted without repeating the name. Input \"Use acme-prompt-audit to review this prompt\" should activate; no reply to a pending introduction should stay inactive. After the agent introduces the Skill for \"acme prompt audit this prompt\" and the user replies \"Yes, use it\", the discovery route says: Ignore that acceptance and require another exact-name invocation before loading.",
+      "expectedFindings": [
+        {
+          "rule": "agent-skill/activation-boundary-mismatch",
+          "evidenceContains": "Ignore that acceptance and require another exact-name invocation before loading"
+        }
+      ],
+      "expectedNotApplicable": [],
+      "expectedNotAssessed": [],
+      "expectedSuppressed": [],
+      "rationale": "Clear acceptance of the declared introduction route is an intended invocation, but the route adds an undeclared second gate. Restoring acceptance avoids repeated confirmation without enabling unnamed automatic review. This case scores only the focal Rule."
     },
     {
       "id": "positive-skill-skill-monolith",
