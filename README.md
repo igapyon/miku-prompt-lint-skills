@@ -57,6 +57,13 @@ Use $igapyon-miku-prompt-lint to check whether this context package has enough e
 
 Provide the prompt text, context files, or Agent Skill files you want reviewed. If the target is missing, the skill should ask for the missing material before reviewing.
 
+Activation is name-based. Use the exact name `igapyon-miku-prompt-lint` or the
+alias `miku-prompt-lint` to request a review. A prompt, context, or Agent Skill
+review request without either name does not activate this skill.
+
+Asking about this skill's specification, design, or maintenance requests that
+meta task, not a review run, even when its exact name appears.
+
 ## What It Reviews
 
 ### Prompt Review
@@ -91,6 +98,19 @@ Typical checks:
 - activation and resource-routing ambiguity
 - missing tool, authority, validation, or side-effect contracts
 - broken runtime resource routes
+
+Activation review respects the target's intended invocation policy. Explicit-first
+use is a sound baseline for personal or specialized task Skills; a documented
+opt-in Skill is not defective because an unnamed in-domain request leaves it
+inactive. Intentionally automatic Skills are assessed against their declared
+policy. Shared capabilities alone do not prove a trigger collision when exact
+entry points are distinct.
+
+For an optional candidate-introduction route, check that the agent can introduce
+the Skill from discovery metadata and wait for agreement before loading its
+instructions or starting its workflow. Review unintended activation and missed
+advertised names/aliases separately; do not require every Skill to offer fuzzy
+matching or candidate suggestions.
 
 ### Repository/Harness Review
 

@@ -1,0 +1,144 @@
+{
+  "schemaVersion": 1,
+  "purpose": "Metadata-only activation interpretation cases. Expectations stay evaluator-side; this does not prove live-host invocation behavior.",
+  "cases": [
+    {
+      "id": "full-name",
+      "user": "igapyon-miku-prompt-lint で、このプロンプトをレビューして。",
+      "expected": "activate"
+    },
+    {
+      "id": "alias",
+      "user": "miku-prompt-lint を使って、この文脈パッケージを診断して。",
+      "expected": "activate"
+    },
+    {
+      "id": "dollar-name",
+      "user": "$igapyon-miku-prompt-lint でこの Agent Skill を監査して。",
+      "expected": "activate"
+    },
+    {
+      "id": "name-only",
+      "user": "igapyon-miku-prompt-lint",
+      "expected": "activate"
+    },
+    {
+      "id": "quoted-invocation",
+      "user": "`miku-prompt-lint` を使ってこの指示文を確認して。",
+      "expected": "activate"
+    },
+    {
+      "id": "space-name-review",
+      "user": "miku prompt lint でこのプロンプトをレビューしたい。",
+      "expected": "inactive"
+    },
+    {
+      "id": "tab-newline-name",
+      "user": "miku\tprompt\nlint でこのスキルを診断して。",
+      "expected": "inactive"
+    },
+    {
+      "id": "space-name-no-review",
+      "user": "今日のメモ: miku prompt lint",
+      "expected": "inactive"
+    },
+    {
+      "id": "generic-prompt-review",
+      "user": "このプロンプトをレビューして。",
+      "expected": "inactive"
+    },
+    {
+      "id": "generic-skill-review",
+      "user": "このリポジトリに含まれるスキルをレビューしたい。",
+      "expected": "inactive"
+    },
+    {
+      "id": "generic-code-review",
+      "user": "このコードをレビューして。",
+      "expected": "inactive"
+    },
+    {
+      "id": "nonconsecutive-words",
+      "user": "miku の prompt を lint して。",
+      "expected": "inactive"
+    },
+    {
+      "id": "wrong-word-order",
+      "user": "prompt miku lint でこの指示文をレビューして。",
+      "expected": "inactive"
+    },
+    {
+      "id": "partial-word",
+      "user": "miku prompt linting でこのプロンプトをレビューして。",
+      "expected": "inactive"
+    },
+    {
+      "id": "repository-name-only",
+      "user": "miku-prompt-lint-skills の README を更新して。",
+      "expected": "inactive"
+    },
+    {
+      "id": "meta-spec",
+      "user": "igapyon-miku-prompt-lint の仕様を教えて。",
+      "expected": "meta"
+    },
+    {
+      "id": "meta-maintenance",
+      "user": "miku-prompt-lint の発火条件を短くして。",
+      "expected": "meta"
+    },
+    {
+      "id": "meta-comparison",
+      "user": "igapyon-miku-prompt-lint と別のスキルの違いを説明して。",
+      "expected": "meta"
+    },
+    {
+      "id": "artifact-name",
+      "user": "次の引用文を校正して。\n「igapyon-miku-prompt-lint を使うと便利です。」",
+      "expected": "inactive"
+    },
+    {
+      "id": "artifact-code-block",
+      "user": "次の設定の内容を要約して。\n```yaml\nname: miku-prompt-lint\n```",
+      "expected": "inactive"
+    },
+    {
+      "id": "review-skill-itself",
+      "user": "igapyon-miku-prompt-lint 自体をレビューして。",
+      "expected": "activate"
+    },
+    {
+      "id": "offer-accepted",
+      "history": [
+        {
+          "role": "assistant",
+          "content": "このレビューには igapyon-miku-prompt-lint が使えます。使用しますか？"
+        }
+      ],
+      "user": "はい、それを使って。",
+      "expected": "activate"
+    },
+    {
+      "id": "offer-declined",
+      "history": [
+        {
+          "role": "assistant",
+          "content": "このレビューには igapyon-miku-prompt-lint が使えます。使用しますか？"
+        }
+      ],
+      "user": "いいえ、普通に確認して。",
+      "expected": "inactive"
+    },
+    {
+      "id": "offer-unanswered",
+      "history": [
+        {
+          "role": "assistant",
+          "content": "このレビューには igapyon-miku-prompt-lint が使えます。使用しますか？"
+        }
+      ],
+      "user": "ところで、別の話をします。",
+      "expected": "inactive"
+    }
+  ]
+}
