@@ -45,3 +45,18 @@ collision when explicit entry points are distinct.
 Use the supplied host profile for claims about loading and explicit-command
 behavior. Do not require one host's invocation flags in another host, or claim
 that a natural-language trigger is a deterministic string-matching guarantee.
+
+## Resource Read Policy
+
+For each in-scope workflow, inspect the target `SKILL.md` and the package
+resources it routes to. When a reference contains required rules or procedures,
+check that the workflow directs the agent to read or consult it before the step
+that depends on it, and to apply the relevant guidance. A link or file inventory
+alone does not establish a read/use route.
+
+Read the relevant supplied reference contents before judging the route or its
+consistency. Follow only routes relevant to the supplied task; do not require
+unrelated branches or optional examples to be loaded. Assess the route and the
+resource contents as separate evidence. A partial package cannot establish that
+a linked file is missing; mark that question `Not assessed` unless package
+completeness or a target-runtime read failure is evidenced.

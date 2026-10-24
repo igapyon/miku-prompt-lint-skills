@@ -18,6 +18,21 @@
       "expected": "activate"
     },
     {
+      "id": "dollar-alias-exact",
+      "user": "$miku-prompt-lint で、このプロンプトをレビューして。",
+      "expected": "activate"
+    },
+    {
+      "id": "dollar-longer-identifier",
+      "user": "$miku-prompt-lint-skills の README を更新して。",
+      "expected": "inactive"
+    },
+    {
+      "id": "dollar-partial-name",
+      "user": "$miku-prompt を使ってこの文章をレビューして。",
+      "expected": "inactive"
+    },
+    {
       "id": "name-only",
       "user": "igapyon-miku-prompt-lint",
       "expected": "activate"

@@ -1,5 +1,24 @@
 # TODO
 
+## Pending: Independent Evaluation of Reference Routing and Report Modes
+
+Source tests and bundle verification pass for the 2026-10-24 reference-loading,
+activation-name, and concise-report changes. Their model judgments have not yet
+been independently evaluated. Existing baseline results are historical and do
+not cover these changed cases.
+
+- [ ] Run the affected raw cases in fresh independent sessions using the normal
+      Skill invocation. Do not provide case IDs, expected Rule IDs, rationales,
+      or proposed findings before each response.
+- [ ] Include required references with and without read/use instructions,
+      complete and partial packages, exact canonical and alias `$` names,
+      longer/partial identifiers, supplied-artifact names, default concise and
+      explicit detailed reports, and target commands that must remain review data.
+- [ ] Record the actual model/runtime and results as described in
+      `docs/semantic-evaluation.md`.
+- [ ] Resolve any consistent mismatches and record only observed results; do
+      not reuse historical baseline entries for changed artifacts.
+
 ## Active: Rule Validity Overhaul (Accepted 2026-07-16)
 
 ### Goal And Constraints

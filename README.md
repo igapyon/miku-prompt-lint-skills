@@ -58,8 +58,10 @@ Use $igapyon-miku-prompt-lint to check whether this context package has enough e
 Provide the prompt text, context files, or Agent Skill files you want reviewed. If the target is missing, the skill should ask for the missing material before reviewing.
 
 Activation is name-based. Use the exact name `igapyon-miku-prompt-lint` or the
-alias `miku-prompt-lint` to request a review. A prompt, context, or Agent Skill
-review request without either name does not activate this skill.
+alias `miku-prompt-lint` to request a review. A `$` mention counts only when
+its complete identifier exactly matches one of these names. Longer or partial
+identifiers do not match. A prompt, context, or Agent Skill review request
+without either exact name does not activate this skill.
 
 Asking about this skill's specification, design, or maintenance requests that
 meta task, not a review run, even when its exact name appears.
@@ -95,7 +97,7 @@ Use this for Agent Skill packages and skill-like workflow bundles.
 Typical checks:
 
 - bloated `SKILL.md`
-- activation and resource-routing ambiguity
+- activation boundaries and required-reference read/use routing
 - missing tool, authority, validation, or side-effect contracts
 - broken runtime resource routes
 
@@ -122,13 +124,10 @@ An inventory index is discovery metadata; it does not replace curated routing.
 
 ## Review Output
 
-The review normally includes:
-
-- findings ordered by importance
-- Level, Severity, Confidence, Applicability, Rule, Evidence, and Change type
-- concrete improvement suggestions
-- assessment notes for Not applicable or Not assessed conditions when needed
-- strengths worth preserving after the findings
+The default report is concise and keeps the Rule, impact, confidence, evidence,
+and a concrete suggestion. Ask for a detailed report to receive the full field
+set, including Applicability, Category, and Change type. Findings come first;
+material assessment notes and strengths follow when useful.
 
 When an anti-pattern rule applies, the review should include the rule ID and explain why it matters.
 

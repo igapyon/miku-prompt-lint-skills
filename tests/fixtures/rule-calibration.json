@@ -1408,6 +1408,26 @@
       "rationale": "Multiple package resources lack task-based selection guidance. This calibration case scores the focal Rule; other Rules are unscored."
     },
     {
+      "id": "positive-skill-required-reference-not-read",
+      "level": "Agent Skill",
+      "targetContext": {
+        "model": "Unknown",
+        "runtime": "Unknown",
+        "fixtureNote": "Synthetic calibration input. Scenario statements and observations are supplied assumptions, not claims about production or a live runtime."
+      },
+      "artifact": "Complete package inventory: SKILL.md and references/report-policy.md. --- SKILL.md --- Resources: Reports → [report-policy.md](references/report-policy.md). Workflow: ## Workflow\n1. Draft the report. --- references/report-policy.md --- Before drafting, apply required rounding and disclosure rules.",
+      "expectedFindings": [
+        {
+          "rule": "agent-skill/resource-routing-missing",
+          "evidenceContains": "## Workflow\n1. Draft the report."
+        }
+      ],
+      "expectedNotApplicable": [],
+      "expectedNotAssessed": [],
+      "expectedSuppressed": [],
+      "rationale": "The resource is mapped to the report task, but required policy is only linked; the workflow does not direct the agent to consult it before drafting."
+    },
+    {
       "id": "counterexample-skill-resource-routing-missing",
       "level": "Agent Skill",
       "targetContext": {
@@ -1415,14 +1435,14 @@
         "runtime": "Unknown",
         "fixtureNote": "Synthetic calibration input. Scenario statements and observations are supplied assumptions, not claims about production or a live runtime."
       },
-      "artifact": "SKILL.md links its sole reference directly for the only workflow; no alternative resource exists.",
+      "artifact": "Complete package inventory: SKILL.md and references/report-policy.md. --- SKILL.md --- Workflow: Before drafting, read [report-policy.md](references/report-policy.md) and apply its required rounding and disclosure rules. --- references/report-policy.md --- Round totals to whole units and disclose excluded entries.",
       "expectedFindings": [],
       "expectedNotApplicable": [
         "agent-skill/resource-routing-missing"
       ],
       "expectedNotAssessed": [],
       "expectedSuppressed": [],
-      "rationale": "A small self-explanatory set has a direct route. This is an explicit counterexample for the focal Rule; other Rules are unscored."
+      "rationale": "The single required reference has a direct route and explicit read/use timing, so no task selection ambiguity remains."
     },
     {
       "id": "positive-skill-validation-step-missing",
@@ -1506,11 +1526,11 @@
         "runtime": "Unknown",
         "fixtureNote": "Synthetic calibration input. Scenario statements and observations are supplied assumptions, not claims about production or a live runtime."
       },
-      "artifact": "SKILL.md requires references/policy.md before processing, but that required file is absent from the package and no alternate route exists.",
+      "artifact": "Complete package inventory: SKILL.md and references/overview.md; references/policy.md is absent. --- SKILL.md --- Read references/policy.md before processing. No alternate route is documented.",
       "expectedFindings": [
         {
           "rule": "agent-skill/broken-resource-route",
-          "evidenceContains": "that required file is absent from the package"
+          "evidenceContains": "Complete package inventory: SKILL.md and references/overview.md; references/policy.md is absent."
         }
       ],
       "expectedNotApplicable": [],
@@ -1534,6 +1554,23 @@
       "expectedNotAssessed": [],
       "expectedSuppressed": [],
       "rationale": "The resource is optional and an alternate route works. This is an explicit counterexample for the focal Rule; other Rules are unscored."
+    },
+    {
+      "id": "counterexample-skill-broken-resource-route-partial-package",
+      "level": "Agent Skill",
+      "targetContext": {
+        "model": "Unknown",
+        "runtime": "Unknown",
+        "fixtureNote": "Synthetic calibration input. Scenario statements and observations are supplied assumptions, not claims about production or a live runtime."
+      },
+      "artifact": "Only SKILL.md is supplied. It requires reading references/policy.md before processing, but the package contents are not available for inspection.",
+      "expectedFindings": [],
+      "expectedNotApplicable": [],
+      "expectedNotAssessed": [
+        "agent-skill/broken-resource-route"
+      ],
+      "expectedSuppressed": [],
+      "rationale": "A partial review input cannot establish that the required file is absent from the package."
     },
     {
       "id": "positive-skill-invalid-package-metadata",

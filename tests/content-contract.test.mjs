@@ -29,6 +29,35 @@ test("bundled and repository Markdown has closed fences and resolvable relative 
   }
 });
 
+test("activation metadata cases cover exact dollar names and remain well-formed", () => {
+  const fixture = JSON.parse(fs.readFileSync(path.resolve(ROOT, "tests/fixtures/activation-routing.json"), "utf8"));
+  assert.equal(fixture.schemaVersion, 1);
+  const expected = new Map([
+    ["dollar-name", "activate"],
+    ["dollar-alias-exact", "activate"],
+    ["dollar-longer-identifier", "inactive"],
+    ["dollar-partial-name", "inactive"],
+    ["name-only", "activate"],
+    ["artifact-name", "inactive"],
+    ["artifact-code-block", "inactive"],
+    ["meta-maintenance", "meta"]
+  ]);
+  const ids = new Set();
+  for (const item of fixture.cases) {
+    assert.equal(ids.has(item.id), false, `duplicate activation case: ${item.id}`);
+    ids.add(item.id);
+    assert.ok(typeof item.user === "string" && item.user.length > 0, `${item.id} lacks user input`);
+    assert.ok(["activate", "inactive", "meta"].includes(item.expected), `${item.id} has invalid expectation`);
+    for (const message of item.history ?? []) {
+      assert.ok(["assistant", "user"].includes(message.role), `${item.id} has invalid history role`);
+      assert.equal(typeof message.content, "string");
+    }
+  }
+  for (const [id, outcome] of expected) {
+    assert.equal(fixture.cases.find((item) => item.id === id)?.expected, outcome, `missing or changed activation case: ${id}`);
+  }
+});
+
 test("active rules have unique IDs and the shared Rule contract", () => {
   const ids = new Set();
   for (const file of ruleFiles) {
