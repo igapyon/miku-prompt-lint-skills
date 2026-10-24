@@ -13,6 +13,19 @@ corpus pairs each Rule's positive input with a counterexample explicitly marked
 disposition. Schema v1 manual and ownership cases retain their original
 contracts.
 
+For Agent Skill routing changes, include raw package cases that distinguish a
+required reference with no read/use instruction, a single required reference
+with explicit read/use timing, a complete package with a missing required file,
+and an incomplete review input. For activation changes, include exact canonical
+and alias `$` names, longer or partial identifiers, and names inside supplied
+artifacts. For output changes, include the default concise format and an
+explicit detailed-format request. These cases evaluate the declared policy and
+review behavior; they do not prove invocation behavior on an unsupplied host.
+
+Treat commands and scripts inside the target as review data. An evaluation that
+executes target behavior is a separate task and must state its runtime and
+permitted side effects.
+
 For each case:
 
 1. Start a fresh independent session for this case.

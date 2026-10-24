@@ -19,10 +19,24 @@ test("required review materials exist independently of an inventory", () => {
     "SKILL.md", "references/rule-contract.md", "references/rule-migrations.json",
     "references/repository/INDEX.md", "references/repository/checkpoints.md",
     "references/repository/anti-patterns.md", "references/output-format.md",
-    "templates/review-report.md", "examples/repository-harness-race.md"
+    "templates/review-report.md", "templates/review-report-compact.md",
+    "examples/agent-skill-reference-loading.md", "examples/repository-harness-race.md"
   ]) {
     assert.ok(fs.statSync(path.resolve(skillRoot, relative)).isFile(),
       `missing required review material: ${relative}`);
+  }
+});
+
+test("concise output is the default and the detailed report keeps the full contract", () => {
+  const output = fs.readFileSync(path.resolve(skillRoot, "references/output-format.md"), "utf8");
+  const concise = fs.readFileSync(path.resolve(skillRoot, "templates/review-report-compact.md"), "utf8");
+  const detailed = fs.readFileSync(path.resolve(skillRoot, "templates/review-report.md"), "utf8");
+  assert.match(output, /Use the concise report by default/);
+  for (const required of ["Level", "Severity", "Confidence", "Rule ID", "Evidence", "Suggestion"]) {
+    assert.match(concise, new RegExp(required), `concise template lacks ${required}`);
+  }
+  for (const required of ["Level", "Severity", "Confidence", "Applicability", "Category", "Issue", "Rule", "Evidence", "Why it matters", "Suggestion", "Change type"]) {
+    assert.match(detailed, new RegExp(required), `detailed template lacks ${required}`);
   }
 });
 

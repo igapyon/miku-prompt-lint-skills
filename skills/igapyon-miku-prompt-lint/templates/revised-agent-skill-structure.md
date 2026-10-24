@@ -18,7 +18,7 @@ SKILL.md should contain:
 - any optional candidate-introduction and consent boundary before loading
 - required first checks
 - core workflow
-- links to relevant references
+- task-to-resource routes that say when required references must be read or consulted before dependent steps
 - tool, authority, and side-effect boundaries
 - observable success criteria, evidence, and fallback behavior
 
@@ -26,6 +26,7 @@ References should contain:
 - detailed rules
 - domain knowledge
 - workflow variants
+- a direct route from each relevant workflow; read only the material needed for the selected task
 - navigation through either a shared `topic-guide.md` or per-topic `INDEX.md` files
 
 Templates should contain:

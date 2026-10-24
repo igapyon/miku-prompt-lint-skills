@@ -60,13 +60,13 @@ Recommended fix: add the smallest representative example.
 ## agent-skill/resource-routing-missing
 
 Default severity: `Medium`
-Applies when: multiple package resources lack task-to-resource routing.
-Does not apply when: direct links and a small self-explanatory set suffice.
-Evidence required: resources and ambiguous selection.
+Applies when: an in-scope workflow relies on a package reference or other supporting resource, but the instructions do not make clear which task needs it or do not direct the agent to read or consult required guidance before relying on it. Also applies when branch-specific resources are loaded for unrelated tasks and this obscures the applicable guidance.
+Does not apply when: the workflow directs agents to consult required shared or task-specific guidance before dependent steps, or no material supporting resource is needed. Do not infer a defect from resource count or `SKILL.md` length alone.
+Evidence required: the in-scope workflow, the relevant resource and its content, and the missing, mistimed, or overbroad selection/read/use instruction.
 Target/runtime dependencies: None
-Overlap/precedence: inventory is not routing.
-Why this is a problem: agents explore blindly.
-Recommended fix: route each task to relevant resources.
+Overlap/precedence: inventory is not routing; Context owns defects in reusable resource content or provenance.
+Why this is a problem: the agent may skip required guidance, choose the wrong file, or load unrelated instructions.
+Recommended fix: map each task to its relevant resource and direct the agent to read or consult required guidance before the step that depends on it.
 
 ## agent-skill/validation-step-missing
 
@@ -93,13 +93,13 @@ Recommended fix: add independent raw-artifact forward tests.
 ## agent-skill/broken-resource-route
 
 Default severity: `Medium`
-Applies when: required linked resource is missing or unreadable; raise High if blocked.
-Does not apply when: resource is optional or alternate route works.
-Evidence required: broken required link/path.
-Target/runtime dependencies: Filesystem/package
-Overlap/precedence: repository index is separate.
-Why this is a problem: workflow cannot complete.
-Recommended fix: repair route or state fallback.
+Applies when: a required linked resource is absent from a supplied complete package, or a supplied known target profile shows that the target runtime cannot read it; raise High only when evidence shows the in-scope workflow is blocked.
+Does not apply when: package completeness is unknown, the resource is optional, an alternate route works, or only the reviewer environment lacks access.
+Evidence required: the required route and either a complete package inventory showing the missing file or a known target-runtime read failure.
+Target/runtime dependencies: Filesystem/package; known target profile for runtime-specific read failures
+Overlap/precedence: repository index is separate; missing task selection belongs to `agent-skill/resource-routing-missing`.
+Why this is a problem: the workflow cannot use required guidance.
+Recommended fix: repair the route or state a working fallback.
 
 ## agent-skill/invalid-package-metadata
 

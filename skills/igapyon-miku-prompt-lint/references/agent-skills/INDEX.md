@@ -7,4 +7,5 @@ Use these files for Agent Skill packages and skill-like workflow bundles.
 - [../rule-contract.md](../rule-contract.md): shared Rule contract and precedence
 - [../../templates/revised-agent-skill-structure.md](../../templates/revised-agent-skill-structure.md): revised Skill layout
 - [../../examples/agent-skill-bloat.md](../../examples/agent-skill-bloat.md): Skill-monolith example
+- [../../examples/agent-skill-reference-loading.md](../../examples/agent-skill-reference-loading.md): required reference without a read route
 - [../../examples/agent-skill-unsafe-side-effect.md](../../examples/agent-skill-unsafe-side-effect.md): unsafe-side-effect contract example
