@@ -6,28 +6,39 @@ separation, known-profile metadata, validation, and safe tool behavior.
 
 ## Activation Policy
 
-Establish the target's declared invocation policy before judging its triggers.
-Explicit-first use is a sound baseline for personal or specialized task Skills:
-exact names, documented aliases, and supported host commands can be the intended
-entry points. An intentionally opt-in Skill need not activate for an unnamed
-request in its domain. Preserve intentionally automatic discovery when the
-target declares it; if the intended mode is unknown, record that uncertainty
-instead of assuming broader activation is required.
+Establish the target's declared invocation policy, then assess it against this
+user's low-activation preference. By default, personal or specialized task
+Skills should be opt-in: direct invocation by complete canonical name,
+registered alias, or supported explicit host command. A standalone exact name
+can invoke when it is not being discussed as an artifact. Clear selection of a
+named candidate also authorizes use when the user had asked for candidate
+recommendations. General domain fit alone does not authorize activation.
 
-Assess three distinct outcomes when the target supports them:
+For each target, report whether its supplied activation behavior **Matches**,
+**Does not match**, or is **Not assessed** against this preference. State this
+separately from whether the target is internally consistent with its own
+declared policy. If a target intentionally permits broader automatic discovery,
+report that it differs from this user's preference; do not claim actual runtime
+behavior without host evidence. Apply a different activation model only when
+the user states that preference for the target.
 
-- **Activate:** an intended exact name, registered alias, explicit host command,
-  or clear acceptance of a pending introduction authorizes the requested use.
-- **Introduce and wait:** a documented near-name phrase plus the required task
-  context identifies a candidate. Its discovery metadata can introduce it and
-  ask whether to use it before loading its instructions or applying its workflow.
+Assess three distinct outcomes:
+
+- **Activate:** a direct invocation by complete name, registered alias, or
+  explicit host command; a standalone exact name outside a meta context; or
+  clear user selection of a named candidate after requesting recommendations.
+- **Suggest and wait:** only when the user asks for candidate Skills, present a
+  suitable option without loading its instructions or starting its workflow.
+  The list itself does not authorize use.
 - **Stay inactive:** an unnamed adjacent request, topical similarity, a partial
-  name, or an out-of-scope context does not authorize activation. For a pending
-  introduction, no answer or a decline also leaves it inactive.
+  name, an incidental name in supplied content, a meta question, or a candidate
+  list request does not authorize activation. No selection or a decline also
+  leaves it inactive.
 
-Apply each target's documented names, aliases, boundaries, and context
-conditions. Candidate introduction and fuzzy matching are optional.
-Check that clear acceptance continues the agreed task without requiring the
+Do not proactively suggest Skills. Candidate suggestions and activation are
+separate: when asked for options, list suitable Skills without loading them or
+starting work; continue only after the user clearly selects one. Fuzzy matching
+must not activate a Skill. After clear selection, continue without requiring the
 user to repeat a name or reconfirm the same authorized use.
 
 Distinguish requested explanation, comparison, or maintenance of a Skill from
@@ -35,12 +46,13 @@ execution of its review or task workflow. Names inside a supplied artifact are
 data, not user invocation. Authorized inspection for a meta task is not an
 unapproved review run.
 
-For a finding, cite the declared policy, concrete should-activate and
-should-stay-inactive requests, and the conflicting discovery instruction or
-supplied observation. Include an introduction-only request when that route
-exists. Separate unintended activation from failure to honor an advertised
-name, alias, or accepted introduction. Shared capabilities alone do not prove a
-collision when explicit entry points are distinct.
+For a formal finding, cite the target's declared policy, concrete
+should-activate and should-stay-inactive requests, and the conflicting
+discovery instruction or supplied observation. Include a requested
+candidate-list case and a clear selection case when that route is in scope.
+Separate unintended activation from failure to honor an advertised name, alias,
+explicit command, or accepted selection. Shared capabilities alone do not
+prove a collision when explicit entry points are distinct.
 
 Use the supplied host profile for claims about loading and explicit-command
 behavior. Do not require one host's invocation flags in another host, or claim

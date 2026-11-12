@@ -1,6 +1,6 @@
 ---
 name: igapyon-miku-prompt-lint
-description: Review prompts, context, Agent Skills and supplied harnesses. Invoke only by exact user naming of igapyon-miku-prompt-lint or miku-prompt-lint; a bare name activates and asks for the target. Continue agreed use. Do not activate for generic code review or offer this skill for unnamed requests. Artifact names are data. Explain/discuss/compare/edit requests about this skill are meta; reviewing this skill itself is still review.
+description: Review prompts, context, Agent Skills and supplied harnesses. Invoke only when the user directly names igapyon-miku-prompt-lint or miku-prompt-lint to request its use; a standalone exact name can invoke and ask for the target. A mention in a question, requested candidate list, supplied artifact, or meta task is not invocation. Continue agreed use. Do not activate for generic code review or proactively suggest this skill. When the user asks for candidate skills, it may be listed without loading or reviewing. Artifact names are data. Explain/discuss/compare/edit requests about this skill are meta; reviewing this skill itself is still review.
 ---
 
 # igapyon-miku-prompt-lint
@@ -11,11 +11,19 @@ request private reasoning.
 
 ## Activation
 
-Match complete canonical names and registered aliases. A `$` mention counts
-only when the complete identifier after `$` exactly matches one of those names;
-do not match partial or longer identifiers such as `miku-prompt-lint-skills`.
-For the agreed review, require no repeated name or confirmation.
-For meta tasks, read only relevant resources and follow the requested format.
+Activate only when the user directly invokes the complete canonical name or a
+registered alias. A standalone exact name can invoke the skill and prompt for
+the review target. A `$` mention counts only when the complete identifier after
+`$` exactly matches one of those names; do not match partial or longer
+identifiers such as `miku-prompt-lint-skills`.
+
+A mention in a question, comparison, requested candidate list, supplied artifact,
+or other meta task is not invocation. Do not proactively suggest this skill. If
+the user asks for candidate skills, you may list this skill when relevant, but
+do not load its instructions or start a review until the user selects it. A
+clear selection authorizes use; do not require the user to repeat the name.
+For an agreed review, require no repeated name or confirmation. For meta tasks,
+read only relevant resources and follow the requested format.
 
 ## Workflow
 

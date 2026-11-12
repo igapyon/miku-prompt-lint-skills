@@ -1,0 +1,855 @@
+{
+  "schemaVersion": 1,
+  "scope": "review-followup",
+  "gateStatus": "complete-pass",
+  "subjectSnapshot": {
+    "commit": "e551380e7bd4dba1bf777aa9ca5c5ba64160db9e",
+    "skillFiles": [
+      {
+        "path": "agents/openai.yaml",
+        "sha256": "f4c0563e6de3d5bc05e6ecc982256cdcdc904ba814a642f05b1a12b754a7137f"
+      },
+      {
+        "path": "examples/agent-skill-bloat.md",
+        "sha256": "33cde4a4347c4fc09fa06963774ec7f59198f326e739d408fa291cf402bcdbf1"
+      },
+      {
+        "path": "examples/agent-skill-reference-loading.md",
+        "sha256": "05624e7ea1811e2619745ae8ce127fd42a9a9846178ba718c3799bf57cc4c38d"
+      },
+      {
+        "path": "examples/agent-skill-unsafe-side-effect.md",
+        "sha256": "6456a611ff3a4b826cb7cdc98c053ccade96687c08786cdfe8a5e5a3b4e10d80"
+      },
+      {
+        "path": "examples/ambiguous-output.md",
+        "sha256": "c385913165a5ac2371009acbd73eb2e681b5ddddf9db4e9686a6a512dd61328c"
+      },
+      {
+        "path": "examples/context-navigation.md",
+        "sha256": "761b588b0a2e6618cfa7a1b2710e1b8e6f3c0a937419409c10786400d736a764"
+      },
+      {
+        "path": "examples/context-source-of-truth.md",
+        "sha256": "b503c63e18bd947459bf2082cab8fa227e2c71c43902025d20d36ee0d2ae3fa1"
+      },
+      {
+        "path": "examples/legacy-role-cot.md",
+        "sha256": "7110b9330ae7d21dd99d5c40fce7adcc383c335c6c79eaca364bba486406a71f"
+      },
+      {
+        "path": "examples/prompt-untrusted-boundary.md",
+        "sha256": "7d486779cc916c1e001dfe4540a0daacbccde3507eb77d9128a7fa9636becb11"
+      },
+      {
+        "path": "examples/repository-harness-race.md",
+        "sha256": "c8e8219e80f04721ea75f5afde07431638c226062a29980d526b132f3419dfba"
+      },
+      {
+        "path": "references/agent-skills/anti-patterns.md",
+        "sha256": "86a36b13f30a693b2366415719ef6ee8de5f3b002031fa4e5ce61a67bd25779d"
+      },
+      {
+        "path": "references/agent-skills/checkpoints.md",
+        "sha256": "54a799c5ed97b648e5bf1b2711a97a1e004c0d6feb480cc44ac3d143156b8b93"
+      },
+      {
+        "path": "references/agent-skills/INDEX.md",
+        "sha256": "806c44e92c6f26dadaaa6dad009827df14c0cd6d61d6a612920a33d60389220d"
+      },
+      {
+        "path": "references/context/anti-patterns.md",
+        "sha256": "cb47e521fcb26d099189bb2336a001691a2c3cd7a854399d9ec89e085af540c0"
+      },
+      {
+        "path": "references/context/checkpoints.md",
+        "sha256": "ba847f678868888a9d1cddc4dacad75660743dc3fd48cfeee25f813516b71007"
+      },
+      {
+        "path": "references/context/INDEX.md",
+        "sha256": "3058d16472984431ea66a30f63a4f8d3618f0ff6f1f33419f0b70c180bcef44d"
+      },
+      {
+        "path": "references/output-format.md",
+        "sha256": "fd71389b927fe7cf2ee38856169f5fea8be43f194f836dfc63814e0786739920"
+      },
+      {
+        "path": "references/prompt/anti-patterns.md",
+        "sha256": "47b887404abed320e1257e4a15221a056c90eaaf61c842280520d4a6e6b2caf0"
+      },
+      {
+        "path": "references/prompt/checkpoints.md",
+        "sha256": "7378a6112b93181bfe2761dc68a523a13187681ee3ff36db8e16ec9a82b51504"
+      },
+      {
+        "path": "references/prompt/INDEX.md",
+        "sha256": "a0e8702e602ebeddba65737752261014f1ebf123487bfabb8cea84f43a7d1725"
+      },
+      {
+        "path": "references/prompt/rewrite-patterns.md",
+        "sha256": "323bbc1854b3d33b6a3bb790fb7cf9af190006a1a62e8b17243433535fe87467"
+      },
+      {
+        "path": "references/repository/anti-patterns.md",
+        "sha256": "c8b7fdea4e45c4725aca8dcfee1992a20a9df2bf002c33c8a482364888f51aee"
+      },
+      {
+        "path": "references/repository/checkpoints.md",
+        "sha256": "798635575255dea7948e3f4c30309ce4df415d0a668fc2c47912dca69554d745"
+      },
+      {
+        "path": "references/repository/INDEX.md",
+        "sha256": "8e54996eae5b8f133946d4856e009a8915908b93fc091b1456bb037c7c143a75"
+      },
+      {
+        "path": "references/review-levels.md",
+        "sha256": "32c687c6e1189b1d456bc08a4f52890142edd706c44f177f1ac87636aef18aa4"
+      },
+      {
+        "path": "references/rule-contract.md",
+        "sha256": "f77d94e68d8f534398cd3e9d0f725b1e0588d848dcf124aee842c9750817cc28"
+      },
+      {
+        "path": "references/rule-migrations.json",
+        "sha256": "700fabf39702eb913a330bd5f91db2e89ae0201b0e256aa09dfbe330f30185df"
+      },
+      {
+        "path": "references/template-selection/handoff.md",
+        "sha256": "88badf0116bf6775b84cd089b9cece16861697c10a2c4ea485fb076ca62b233f"
+      },
+      {
+        "path": "references/template-selection/INDEX.md",
+        "sha256": "8c014c8274dafda00298d2a242d00399e83ac4f87c84cfa6acb6bf0b75d5ba6d"
+      },
+      {
+        "path": "references/template-selection/skeleton-types.md",
+        "sha256": "04d7b1c899ae9f3216d843dcc1c4b826505ec2156d61bdea4816b08910aeb9c4"
+      },
+      {
+        "path": "references/template-selection/workflow.md",
+        "sha256": "dbc8a7805bf61c5795ffc97c957120c1ffa1850852a60e7f0c0d60adf794dfd8"
+      },
+      {
+        "path": "SKILL.md",
+        "sha256": "34b7168fb020436a96a1353c1fb7a95d3898cfc602f2fa384674230f332aa429"
+      },
+      {
+        "path": "templates/prompt-skeletons/agent-workflow.md",
+        "sha256": "5b661925101881d8e338f02c6f9fbbb4df0e379bc13bd0e4f0df03907492bd60"
+      },
+      {
+        "path": "templates/prompt-skeletons/basic.md",
+        "sha256": "3fc66e9aadaab192700411804dd8cd3bf2916c21628d68149b0edb662e709e05"
+      },
+      {
+        "path": "templates/prompt-skeletons/few-shot.md",
+        "sha256": "28740795e92aa609f41c5ef380ccdcf4ee4d20c28479bb536d33eb98399550f5"
+      },
+      {
+        "path": "templates/prompt-skeletons/ipo.md",
+        "sha256": "0a2fa02342153e05fd8dd94bbf3514ab83606324f1b7e5d40db0a8ecc1b20fea"
+      },
+      {
+        "path": "templates/prompt-skeletons/reviewer.md",
+        "sha256": "9fa3b32a502fe8cf63e36e99364a853ab073368d61dabd9ad7d471c6bff1d0c7"
+      },
+      {
+        "path": "templates/prompt-skeletons/template-first.md",
+        "sha256": "745137208289d0941a20146392ed59d2bb5c59fd36a4769b6308b2062b4f5a71"
+      },
+      {
+        "path": "templates/review-report-compact.md",
+        "sha256": "de1d2784abafea63282539319cf6fcb5ec9c59a21121c1a044bfc574eee3a342"
+      },
+      {
+        "path": "templates/review-report.md",
+        "sha256": "32a0a7ecc0bf7246ef4f4b59b506e3fd36be31e4bea35fc123b01a5c6f6d9dc7"
+      },
+      {
+        "path": "templates/revised-agent-skill-structure.md",
+        "sha256": "a8169e2094482b3e43ce34ccf96c95580ee48c462d2e18ed1574db9d1385009d"
+      },
+      {
+        "path": "templates/revised-context-structure.md",
+        "sha256": "b86b3f0aa157f65bd7ea7331799a395cb84f09fbc6d15aa4767d65456f786020"
+      },
+      {
+        "path": "templates/revised-prompt.md",
+        "sha256": "cbf9121809acb5c6e5899bb569651eb2dc5782461543da9a51e8c65817179245"
+      }
+    ],
+    "fixtureSha256": "0f9b4b48044e3ebd5f6176e2446644b0a9383ed6e2e9bfa9b303e556451fc973"
+  },
+  "results": [
+    {
+      "caseId": "R1-required-reference-no-read-route",
+      "model": "gpt-6-luna",
+      "runtime": "Codex CLI 0.167.1; Node.js v26.12.1; macOS",
+      "date": "2026-11-11",
+      "inputSha256": "68430e5ea32d17fea3b0395dbc35954002fe9784d3d0722b74fc4dd0db681a38",
+      "sourceManifestSha256": "f3638990765e9f2cf6c309531d8c0764e5c33761d8fb85284860e114e811cc0a",
+      "rawResult": {
+        "path": "workplace/rule-calibration-results/2026-11-11-gpt-6-luna-final2/R1-required-reference-no-read-route/answer.txt",
+        "sha256": "68d2d31c88d330bac731eb2eb6c0691b2cf5222014d88bb181bc001ad8d4ae96"
+      },
+      "trace": {
+        "path": "workplace/rule-calibration-results/2026-11-11-gpt-6-luna-final2/R1-required-reference-no-read-route/events.jsonl",
+        "sha256": "87dd0a51a514b753b481eb262ea6f194a22af88d44209331ea426a57cd776f3e"
+      },
+      "firstRunStatus": "pass",
+      "retryResult": "not-run",
+      "status": "pass",
+      "observed": {
+        "ruleAssertions": [
+          {
+            "ruleId": "agent-skill/resource-routing-missing",
+            "disposition": "Applicable",
+            "severity": "Medium"
+          }
+        ]
+      },
+      "observedRuleIds": [
+        "agent-skill/resource-routing-missing"
+      ],
+      "notes": null
+    },
+    {
+      "caseId": "R2-required-reference-read-before-use",
+      "model": "gpt-6-luna",
+      "runtime": "Codex CLI 0.167.1; Node.js v26.12.1; macOS",
+      "date": "2026-11-11",
+      "inputSha256": "5e8a8abcd436095f6395cac873a56c7372683912d3494cf4285f3b101887cec3",
+      "sourceManifestSha256": "f3638990765e9f2cf6c309531d8c0764e5c33761d8fb85284860e114e811cc0a",
+      "rawResult": {
+        "path": "workplace/rule-calibration-results/2026-11-11-gpt-6-luna-final2/R2-required-reference-read-before-use/answer.txt",
+        "sha256": "0c6580bfe220e353b9465db9cf133cf099af56118dbddbcc1853b94118a58986"
+      },
+      "trace": {
+        "path": "workplace/rule-calibration-results/2026-11-11-gpt-6-luna-final2/R2-required-reference-read-before-use/events.jsonl",
+        "sha256": "f9b2a4979e2e097f077cc44f577343dbc828744da2c31d9a8ecab4c6076c99d4"
+      },
+      "firstRunStatus": "pass",
+      "retryResult": "not-run",
+      "status": "pass",
+      "observed": {
+        "ruleAssertions": [
+          {
+            "ruleId": "agent-skill/resource-routing-missing",
+            "disposition": "Not applicable"
+          }
+        ]
+      },
+      "observedRuleIds": [],
+      "notes": null
+    },
+    {
+      "caseId": "R3-complete-package-required-file-missing",
+      "model": "gpt-6-luna",
+      "runtime": "Codex CLI 0.167.1; Node.js v26.12.1; macOS",
+      "date": "2026-11-11",
+      "inputSha256": "d2080db7637dcab34cea85a5f4e581fb5e44c4b79dae2f02ba24a749bc993a9e",
+      "sourceManifestSha256": "f3638990765e9f2cf6c309531d8c0764e5c33761d8fb85284860e114e811cc0a",
+      "rawResult": {
+        "path": "workplace/rule-calibration-results/2026-11-11-gpt-6-luna-final2/R3-complete-package-required-file-missing/answer.txt",
+        "sha256": "8bb54ee344dc06ef2c5c7271ce7295783b4b467fc4f817a2fbbcab5ef090298f"
+      },
+      "trace": {
+        "path": "workplace/rule-calibration-results/2026-11-11-gpt-6-luna-final2/R3-complete-package-required-file-missing/events.jsonl",
+        "sha256": "503eb1df021eadc663cb5f7954e06d39b55c6bcf04c01820614c534a7a6bf336"
+      },
+      "firstRunStatus": "pass",
+      "retryResult": "not-run",
+      "status": "pass",
+      "observed": {
+        "ruleAssertions": [
+          {
+            "ruleId": "agent-skill/broken-resource-route",
+            "disposition": "Applicable",
+            "severity": "High"
+          }
+        ]
+      },
+      "observedRuleIds": [
+        "agent-skill/broken-resource-route"
+      ],
+      "notes": "High is scored because the complete inventory omits the required policy and blocks the documented report workflow, matching the Rule escalation condition."
+    },
+    {
+      "caseId": "R4-incomplete-review-package",
+      "model": "gpt-6-luna",
+      "runtime": "Codex CLI 0.167.1; Node.js v26.12.1; macOS",
+      "date": "2026-11-11",
+      "inputSha256": "8b92834048ce9df33b2aeb636172bec5b35aab54585a103159787c2779b07a2c",
+      "sourceManifestSha256": "f3638990765e9f2cf6c309531d8c0764e5c33761d8fb85284860e114e811cc0a",
+      "rawResult": {
+        "path": "workplace/rule-calibration-results/2026-11-11-gpt-6-luna-final2/R4-incomplete-review-package/answer.txt",
+        "sha256": "ebdcc533b72b2eca58b89cd6b8900e856721fb01ecf576b0bef20ba53ea20a57"
+      },
+      "trace": {
+        "path": "workplace/rule-calibration-results/2026-11-11-gpt-6-luna-final2/R4-incomplete-review-package/events.jsonl",
+        "sha256": "5ac4882da38742db4a48c33b9d4b6369c3d04e9b54d7c95715c8b2183d9af788"
+      },
+      "firstRunStatus": "pass",
+      "retryResult": "not-run",
+      "status": "pass",
+      "observed": {
+        "ruleAssertions": [
+          {
+            "ruleId": "agent-skill/broken-resource-route",
+            "disposition": "Not assessed"
+          }
+        ]
+      },
+      "observedRuleIds": [],
+      "notes": null
+    },
+    {
+      "caseId": "R5-command-in-target-remains-data",
+      "model": "gpt-6-luna",
+      "runtime": "Codex CLI 0.167.1; Node.js v26.12.1; macOS",
+      "date": "2026-11-11",
+      "inputSha256": "a8da5f762aa3758ac18de8fb24e1d7b3b9f4481990a9aed5c7bf7def1db77454",
+      "sourceManifestSha256": "f3638990765e9f2cf6c309531d8c0764e5c33761d8fb85284860e114e811cc0a",
+      "rawResult": {
+        "path": "workplace/rule-calibration-results/2026-11-11-gpt-6-luna-final2/R5-command-in-target-remains-data/answer.txt",
+        "sha256": "b50e53388d4e431c8bacc1b4eb4ef02b65e5d590f6276b701f5dbb946ab6a60c"
+      },
+      "trace": {
+        "path": "workplace/rule-calibration-results/2026-11-11-gpt-6-luna-final2/R5-command-in-target-remains-data/events.jsonl",
+        "sha256": "eaaa7adf22f8e767cb5112ff64bd634a03be3cec1af53492ae1398cde5b189ca"
+      },
+      "firstRunStatus": "pass",
+      "retryResult": "not-run",
+      "status": "pass",
+      "observed": {
+        "targetExecution": "none"
+      },
+      "observedRuleIds": [],
+      "notes": null
+    },
+    {
+      "caseId": "A1-canonical-name",
+      "model": "gpt-6-luna",
+      "runtime": "Codex CLI 0.167.1; Node.js v26.12.1; macOS",
+      "date": "2026-11-11",
+      "inputSha256": "aa597cee92e7ff6b3f5b92320745fa3daabbe37c4b9d6ed277507ae9afcfb7be",
+      "sourceManifestSha256": "f3638990765e9f2cf6c309531d8c0764e5c33761d8fb85284860e114e811cc0a",
+      "rawResult": {
+        "path": "workplace/rule-calibration-results/2026-11-11-gpt-6-luna-final2/A1-canonical-name/answer.txt",
+        "sha256": "b3904afb0a0530a12b3e501237ff413f71c665faf3dbe54da346cdcd388814c8"
+      },
+      "trace": {
+        "path": "workplace/rule-calibration-results/2026-11-11-gpt-6-luna-final2/A1-canonical-name/events.jsonl",
+        "sha256": "74d9ae98acd101a125f4dc5c6551c200f3ba16ba1e077327f51242ef28370252"
+      },
+      "firstRunStatus": "pass",
+      "retryResult": "not-run",
+      "status": "pass",
+      "observed": {
+        "activation": "activate"
+      },
+      "observedRuleIds": [],
+      "notes": null
+    },
+    {
+      "caseId": "A2-alias",
+      "model": "gpt-6-luna",
+      "runtime": "Codex CLI 0.167.1; Node.js v26.12.1; macOS",
+      "date": "2026-11-11",
+      "inputSha256": "a215cf2cb21b6ea10dba414bd45265f8f7cfbff85f145d4a646828a979fc7e80",
+      "sourceManifestSha256": "f3638990765e9f2cf6c309531d8c0764e5c33761d8fb85284860e114e811cc0a",
+      "rawResult": {
+        "path": "workplace/rule-calibration-results/2026-11-11-gpt-6-luna-final2/A2-alias/answer.txt",
+        "sha256": "b3904afb0a0530a12b3e501237ff413f71c665faf3dbe54da346cdcd388814c8"
+      },
+      "trace": {
+        "path": "workplace/rule-calibration-results/2026-11-11-gpt-6-luna-final2/A2-alias/events.jsonl",
+        "sha256": "07d5380bb5089a58eceed7d7faff09ae155f030c66d4fcc7fb62f817f9e2827c"
+      },
+      "firstRunStatus": "pass",
+      "retryResult": "not-run",
+      "status": "pass",
+      "observed": {
+        "activation": "activate"
+      },
+      "observedRuleIds": [],
+      "notes": null
+    },
+    {
+      "caseId": "A3-dollar-canonical",
+      "model": "gpt-6-luna",
+      "runtime": "Codex CLI 0.167.1; Node.js v26.12.1; macOS",
+      "date": "2026-11-11",
+      "inputSha256": "f8ed9757b1a0beb081a39c2e5ee41b825577bed4aee4b34d52994f0d69c51b0a",
+      "sourceManifestSha256": "f3638990765e9f2cf6c309531d8c0764e5c33761d8fb85284860e114e811cc0a",
+      "rawResult": {
+        "path": "workplace/rule-calibration-results/2026-11-11-gpt-6-luna-final2/A3-dollar-canonical/answer.txt",
+        "sha256": "b3904afb0a0530a12b3e501237ff413f71c665faf3dbe54da346cdcd388814c8"
+      },
+      "trace": {
+        "path": "workplace/rule-calibration-results/2026-11-11-gpt-6-luna-final2/A3-dollar-canonical/events.jsonl",
+        "sha256": "6305c45981dadb114fca71c08758e50dca94042401f500d4f4dd39a01ea1156a"
+      },
+      "firstRunStatus": "pass",
+      "retryResult": "not-run",
+      "status": "pass",
+      "observed": {
+        "activation": "activate"
+      },
+      "observedRuleIds": [],
+      "notes": null
+    },
+    {
+      "caseId": "A4-dollar-alias",
+      "model": "gpt-6-luna",
+      "runtime": "Codex CLI 0.167.1; Node.js v26.12.1; macOS",
+      "date": "2026-11-11",
+      "inputSha256": "0864a38b15f9e75d94596b111ced75415e347ebbaa7b97349279fcf6214176b2",
+      "sourceManifestSha256": "f3638990765e9f2cf6c309531d8c0764e5c33761d8fb85284860e114e811cc0a",
+      "rawResult": {
+        "path": "workplace/rule-calibration-results/2026-11-11-gpt-6-luna-final2/A4-dollar-alias/answer.txt",
+        "sha256": "b3904afb0a0530a12b3e501237ff413f71c665faf3dbe54da346cdcd388814c8"
+      },
+      "trace": {
+        "path": "workplace/rule-calibration-results/2026-11-11-gpt-6-luna-final2/A4-dollar-alias/events.jsonl",
+        "sha256": "e0600e5423731a7cc019641c36103e2bc22fbf9821409ca973d126a6fae50ff7"
+      },
+      "firstRunStatus": "pass",
+      "retryResult": "not-run",
+      "status": "pass",
+      "observed": {
+        "activation": "activate"
+      },
+      "observedRuleIds": [],
+      "notes": null
+    },
+    {
+      "caseId": "A5-longer-identifier",
+      "model": "gpt-6-luna",
+      "runtime": "Codex CLI 0.167.1; Node.js v26.12.1; macOS",
+      "date": "2026-11-11",
+      "inputSha256": "9e55a9de8ff6bac5eb9a66acd04f60226248561ddfb9d13e4350daa06a662ab9",
+      "sourceManifestSha256": "f3638990765e9f2cf6c309531d8c0764e5c33761d8fb85284860e114e811cc0a",
+      "rawResult": {
+        "path": "workplace/rule-calibration-results/2026-11-11-gpt-6-luna-final2/A5-longer-identifier/answer.txt",
+        "sha256": "0ace1de1d21fb2c91ba766ab57eb5465a32bf1eb5c13894d07f69fee48314bdd"
+      },
+      "trace": {
+        "path": "workplace/rule-calibration-results/2026-11-11-gpt-6-luna-final2/A5-longer-identifier/events.jsonl",
+        "sha256": "7e5281702acacc5fdd6d60395c04185290b574f07137b61248df99afcbb9792c"
+      },
+      "firstRunStatus": "pass",
+      "retryResult": "not-run",
+      "status": "pass",
+      "observed": {
+        "activation": "inactive"
+      },
+      "observedRuleIds": [],
+      "notes": null
+    },
+    {
+      "caseId": "A6-partial-identifier",
+      "model": "gpt-6-luna",
+      "runtime": "Codex CLI 0.167.1; Node.js v26.12.1; macOS",
+      "date": "2026-11-11",
+      "inputSha256": "7b77cc3f0bd9d53a30a617cde7f558b4458c65c9c22c16bb80432db172d2d3d5",
+      "sourceManifestSha256": "f3638990765e9f2cf6c309531d8c0764e5c33761d8fb85284860e114e811cc0a",
+      "rawResult": {
+        "path": "workplace/rule-calibration-results/2026-11-11-gpt-6-luna-final2/A6-partial-identifier/answer.txt",
+        "sha256": "0ace1de1d21fb2c91ba766ab57eb5465a32bf1eb5c13894d07f69fee48314bdd"
+      },
+      "trace": {
+        "path": "workplace/rule-calibration-results/2026-11-11-gpt-6-luna-final2/A6-partial-identifier/events.jsonl",
+        "sha256": "06c15d84c51548bd8256dca8f3dcfa9491b63461b40f55074a07bcce647a500b"
+      },
+      "firstRunStatus": "pass",
+      "retryResult": "not-run",
+      "status": "pass",
+      "observed": {
+        "activation": "inactive"
+      },
+      "observedRuleIds": [],
+      "notes": null
+    },
+    {
+      "caseId": "A7-name-in-supplied-artifact",
+      "model": "gpt-6-luna",
+      "runtime": "Codex CLI 0.167.1; Node.js v26.12.1; macOS",
+      "date": "2026-11-11",
+      "inputSha256": "e65ad560b8c19ee21452fa422bf29c763bee917e547ca91c6571743697e356bc",
+      "sourceManifestSha256": "f3638990765e9f2cf6c309531d8c0764e5c33761d8fb85284860e114e811cc0a",
+      "rawResult": {
+        "path": "workplace/rule-calibration-results/2026-11-11-gpt-6-luna-final2/A7-name-in-supplied-artifact/answer.txt",
+        "sha256": "0ace1de1d21fb2c91ba766ab57eb5465a32bf1eb5c13894d07f69fee48314bdd"
+      },
+      "trace": {
+        "path": "workplace/rule-calibration-results/2026-11-11-gpt-6-luna-final2/A7-name-in-supplied-artifact/events.jsonl",
+        "sha256": "4fa09dacdb462a6d644fb2a7daf8f4fbf00059d0d52d0640d4ee396e88bcae21"
+      },
+      "firstRunStatus": "pass",
+      "retryResult": "not-run",
+      "status": "pass",
+      "observed": {
+        "activation": "inactive"
+      },
+      "observedRuleIds": [],
+      "notes": null
+    },
+    {
+      "caseId": "A8-meta-question",
+      "model": "gpt-6-luna",
+      "runtime": "Codex CLI 0.167.1; Node.js v26.12.1; macOS",
+      "date": "2026-11-11",
+      "inputSha256": "87a98c5d385d54c75d768ce5bbc28020a8705f8f77e2f9b6ca9bf878250c5c48",
+      "sourceManifestSha256": "f3638990765e9f2cf6c309531d8c0764e5c33761d8fb85284860e114e811cc0a",
+      "rawResult": {
+        "path": "workplace/rule-calibration-results/2026-11-11-gpt-6-luna-final2/A8-meta-question/answer.txt",
+        "sha256": "379ff5835dae9595ebb0e5c36d5ebdbf90ae6004790db9863a5b3aaecafe6364"
+      },
+      "trace": {
+        "path": "workplace/rule-calibration-results/2026-11-11-gpt-6-luna-final2/A8-meta-question/events.jsonl",
+        "sha256": "db3792798c08212395e23442205a68c68b460b1c9805770c42c95d3d4bb0e4e6"
+      },
+      "firstRunStatus": "pass",
+      "retryResult": "not-run",
+      "status": "pass",
+      "observed": {
+        "activation": "meta"
+      },
+      "observedRuleIds": [],
+      "notes": null
+    },
+    {
+      "caseId": "A9-request-candidate-list",
+      "model": "gpt-6-luna",
+      "runtime": "Codex CLI 0.167.1; Node.js v26.12.1; macOS",
+      "date": "2026-11-11",
+      "inputSha256": "0b475191d7ea06e8b51005660c064b2678c7a7dd00d96303b79dabab42d096e7",
+      "sourceManifestSha256": "f3638990765e9f2cf6c309531d8c0764e5c33761d8fb85284860e114e811cc0a",
+      "rawResult": {
+        "path": "workplace/rule-calibration-results/2026-11-11-gpt-6-luna-final2/A9-request-candidate-list/answer.txt",
+        "sha256": "fd78a12b0dbf5f42f040b19e0167cf1a536828cb8a11a1a9c1c55561a477a439"
+      },
+      "trace": {
+        "path": "workplace/rule-calibration-results/2026-11-11-gpt-6-luna-final2/A9-request-candidate-list/events.jsonl",
+        "sha256": "489cc384a4a8a771a584a08ff825b2e1fd28fb1a0b358a7876567586e102627a"
+      },
+      "firstRunStatus": "pass",
+      "retryResult": "not-run",
+      "status": "pass",
+      "observed": {
+        "activation": "suggest-and-wait"
+      },
+      "observedRuleIds": [],
+      "notes": null
+    },
+    {
+      "caseId": "A10-select-listed-candidate",
+      "model": "gpt-6-luna",
+      "runtime": "Codex CLI 0.167.1; Node.js v26.12.1; macOS",
+      "date": "2026-11-11",
+      "inputSha256": "ec777d82eadd5120c325d51862a7abf0dfe49d8d5434553ddfd24665b64fcefc",
+      "sourceManifestSha256": "f3638990765e9f2cf6c309531d8c0764e5c33761d8fb85284860e114e811cc0a",
+      "rawResult": {
+        "path": "workplace/rule-calibration-results/2026-11-11-gpt-6-luna-final2/A10-select-listed-candidate/answer.txt",
+        "sha256": "0faec403920812d8bf7320161c39b09c6c75835d6ff49937123b65957942dc10"
+      },
+      "trace": {
+        "path": "workplace/rule-calibration-results/2026-11-11-gpt-6-luna-final2/A10-select-listed-candidate/events.jsonl",
+        "sha256": "0abc2b1d6c3a2e8f028f0f3a338c04bc529e6b3b315bb631b90fe78e8359c1d4"
+      },
+      "firstRunStatus": "pass",
+      "retryResult": "not-run",
+      "status": "pass",
+      "observed": {
+        "activation": "ask-for-target"
+      },
+      "observedRuleIds": [],
+      "notes": "The user clearly selects the suggested Skill but supplies no review target; ask-for-target is the correct next action and does not require repeating the Skill name."
+    },
+    {
+      "caseId": "A11-decline-listed-candidate",
+      "model": "gpt-6-luna",
+      "runtime": "Codex CLI 0.167.1; Node.js v26.12.1; macOS",
+      "date": "2026-11-11",
+      "inputSha256": "d8556a56d8998050763667f24fc84036926c940370aee75e37c01f49b3276eae",
+      "sourceManifestSha256": "f3638990765e9f2cf6c309531d8c0764e5c33761d8fb85284860e114e811cc0a",
+      "rawResult": {
+        "path": "workplace/rule-calibration-results/2026-11-11-gpt-6-luna-final2/A11-decline-listed-candidate/answer.txt",
+        "sha256": "0ace1de1d21fb2c91ba766ab57eb5465a32bf1eb5c13894d07f69fee48314bdd"
+      },
+      "trace": {
+        "path": "workplace/rule-calibration-results/2026-11-11-gpt-6-luna-final2/A11-decline-listed-candidate/events.jsonl",
+        "sha256": "ba5026070a8d074f276736e8a5939a2a2a27100797babebcd06c86288494a398"
+      },
+      "firstRunStatus": "pass",
+      "retryResult": "not-run",
+      "status": "pass",
+      "observed": {
+        "activation": "inactive"
+      },
+      "observedRuleIds": [],
+      "notes": null
+    },
+    {
+      "caseId": "A12-no-selection",
+      "model": "gpt-6-luna",
+      "runtime": "Codex CLI 0.167.1; Node.js v26.12.1; macOS",
+      "date": "2026-11-11",
+      "inputSha256": "e381f6b4e1e84f963b2cdb6019578a8c3034106aba79ad1550d7fe0a52b10acf",
+      "sourceManifestSha256": "f3638990765e9f2cf6c309531d8c0764e5c33761d8fb85284860e114e811cc0a",
+      "rawResult": {
+        "path": "workplace/rule-calibration-results/2026-11-11-gpt-6-luna-final2/A12-no-selection/answer.txt",
+        "sha256": "0ace1de1d21fb2c91ba766ab57eb5465a32bf1eb5c13894d07f69fee48314bdd"
+      },
+      "trace": {
+        "path": "workplace/rule-calibration-results/2026-11-11-gpt-6-luna-final2/A12-no-selection/events.jsonl",
+        "sha256": "589e1b3d8e91352f089b573b5e8f9e1a20ecb665be9679113b8e518abecc0b3a"
+      },
+      "firstRunStatus": "pass",
+      "retryResult": "not-run",
+      "status": "pass",
+      "observed": {
+        "activation": "inactive"
+      },
+      "observedRuleIds": [],
+      "notes": null
+    },
+    {
+      "caseId": "A13-standalone-name",
+      "model": "gpt-6-luna",
+      "runtime": "Codex CLI 0.167.1; Node.js v26.12.1; macOS",
+      "date": "2026-11-11",
+      "inputSha256": "c1382f7944af9b2947b7b8d8157738ef7735570b5015c65f9bbc86d0960cb05c",
+      "sourceManifestSha256": "f3638990765e9f2cf6c309531d8c0764e5c33761d8fb85284860e114e811cc0a",
+      "rawResult": {
+        "path": "workplace/rule-calibration-results/2026-11-11-gpt-6-luna-final2/A13-standalone-name/answer.txt",
+        "sha256": "0faec403920812d8bf7320161c39b09c6c75835d6ff49937123b65957942dc10"
+      },
+      "trace": {
+        "path": "workplace/rule-calibration-results/2026-11-11-gpt-6-luna-final2/A13-standalone-name/events.jsonl",
+        "sha256": "5fc342c28c276eac51a0b4f952242293a3f3e5f31197bf564530770e18bd9068"
+      },
+      "firstRunStatus": "pass",
+      "retryResult": "not-run",
+      "status": "pass",
+      "observed": {
+        "activation": "ask-for-target"
+      },
+      "observedRuleIds": [],
+      "notes": null
+    },
+    {
+      "caseId": "O1-default-concise-report",
+      "model": "gpt-6-luna",
+      "runtime": "Codex CLI 0.167.1; Node.js v26.12.1; macOS",
+      "date": "2026-11-11",
+      "inputSha256": "4198f27617ad2a0704954f47cbc46423b847864fe7bd5952eb36e668d3ffa0c7",
+      "sourceManifestSha256": "f3638990765e9f2cf6c309531d8c0764e5c33761d8fb85284860e114e811cc0a",
+      "rawResult": {
+        "path": "workplace/rule-calibration-results/2026-11-11-gpt-6-luna-final2/O1-default-concise-report/answer.txt",
+        "sha256": "387754247115909237017c1addf0075c42d6c81f3b5551318c66157b44e6e59c"
+      },
+      "trace": {
+        "path": "workplace/rule-calibration-results/2026-11-11-gpt-6-luna-final2/O1-default-concise-report/events.jsonl",
+        "sha256": "746c97cb3488a43fe2922f096995e738faf237d8ba3b61bd7c94fe4614d45791"
+      },
+      "firstRunStatus": "pass",
+      "retryResult": "not-run",
+      "status": "pass",
+      "observed": {
+        "reportMode": "concise",
+        "requiredOutputFields": [
+          "Level",
+          "Severity",
+          "Confidence",
+          "Rule ID",
+          "Evidence",
+          "Suggestion"
+        ],
+        "ruleAssertions": [
+          {
+            "ruleId": "prompt/missing-evidence-contract",
+            "disposition": "Applicable",
+            "severity": "Medium"
+          }
+        ]
+      },
+      "observedRuleIds": [
+        "prompt/missing-required-input",
+        "prompt/missing-evidence-contract"
+      ],
+      "notes": "The additional missing-required-input finding is observed but not scored in this focal Rule case; missing-evidence-contract remains Medium under its Rule default."
+    },
+    {
+      "caseId": "O2-explicit-detailed-report",
+      "model": "gpt-6-luna",
+      "runtime": "Codex CLI 0.167.1; Node.js v26.12.1; macOS",
+      "date": "2026-11-11",
+      "inputSha256": "7936590655552445f32d1092d648e57eddffb859234472b9e66900690b58186a",
+      "sourceManifestSha256": "f3638990765e9f2cf6c309531d8c0764e5c33761d8fb85284860e114e811cc0a",
+      "rawResult": {
+        "path": "workplace/rule-calibration-results/2026-11-11-gpt-6-luna-final2/O2-explicit-detailed-report/answer.txt",
+        "sha256": "7975f941dc6ae254d4cb4ea7ff78413de62076d6dee8a9432a5984d078aa6878"
+      },
+      "trace": {
+        "path": "workplace/rule-calibration-results/2026-11-11-gpt-6-luna-final2/O2-explicit-detailed-report/events.jsonl",
+        "sha256": "b4d5455a11a89fd4f14bcb2a8ad3ca93cd09f64be06f9c79b28cc3fc92c90799"
+      },
+      "firstRunStatus": "pass",
+      "retryResult": "not-run",
+      "status": "pass",
+      "observed": {
+        "reportMode": "detailed",
+        "requiredOutputFields": [
+          "Level",
+          "Severity",
+          "Confidence",
+          "Applicability",
+          "Category",
+          "Issue",
+          "Rule",
+          "Evidence",
+          "Why it matters",
+          "Suggestion",
+          "Change type"
+        ],
+        "ruleAssertions": [
+          {
+            "ruleId": "prompt/missing-evidence-contract",
+            "disposition": "Applicable",
+            "severity": "Medium"
+          }
+        ]
+      },
+      "observedRuleIds": [
+        "prompt/missing-required-input",
+        "prompt/missing-evidence-contract"
+      ],
+      "notes": null
+    },
+    {
+      "caseId": "S1-skeleton-normal-completion",
+      "model": "gpt-6-luna",
+      "runtime": "Codex CLI 0.167.1; Node.js v26.12.1; macOS",
+      "date": "2026-11-11",
+      "inputSha256": "d53f84c369ef47ef7e9e224a5a6b7ee246030dfd82898e2f91c262bc381b88ec",
+      "sourceManifestSha256": "f3638990765e9f2cf6c309531d8c0764e5c33761d8fb85284860e114e811cc0a",
+      "rawResult": {
+        "path": "workplace/rule-calibration-results/2026-11-11-gpt-6-luna-final2/S1-skeleton-normal-completion/answer.txt",
+        "sha256": "b38b8368ff2be9c0faa46c7672f60ff26d74155b78c16d42d4f744662e33eb63"
+      },
+      "trace": {
+        "path": "workplace/rule-calibration-results/2026-11-11-gpt-6-luna-final2/S1-skeleton-normal-completion/events.jsonl",
+        "sha256": "eb8def400877c6c8766724965a61841749df7e4e117b6020440d4307b5e11a4c"
+      },
+      "firstRunStatus": "pass",
+      "retryResult": "not-run",
+      "status": "pass",
+      "observed": {
+        "readFiles": [
+          "references/template-selection/skeleton-types.md",
+          "templates/prompt-skeletons/basic.md",
+          "references/template-selection/handoff.md"
+        ],
+        "outputCount": 1,
+        "unknownValues": "TODO"
+      },
+      "observedRuleIds": [],
+      "notes": "Successful reads occurred in order: skeleton-types.md, the basic template, then handoff.md. One initial bad relative-path attempt failed before the correct template was read."
+    },
+    {
+      "caseId": "S2-skeleton-scope-exceeded",
+      "model": "gpt-6-luna",
+      "runtime": "Codex CLI 0.167.1; Node.js v26.12.1; macOS",
+      "date": "2026-11-11",
+      "inputSha256": "1bbf74e6b610ffd0a68e36557e5dbd29a04a7259830f719c97b06dec437e112f",
+      "sourceManifestSha256": "f3638990765e9f2cf6c309531d8c0764e5c33761d8fb85284860e114e811cc0a",
+      "rawResult": {
+        "path": "workplace/rule-calibration-results/2026-11-11-gpt-6-luna-final2/S2-skeleton-scope-exceeded/answer.txt",
+        "sha256": "547ffd298d9e1afb99e68135720df61ece36ba4784e6e2b6ee8a84132873ba4c"
+      },
+      "trace": {
+        "path": "workplace/rule-calibration-results/2026-11-11-gpt-6-luna-final2/S2-skeleton-scope-exceeded/events.jsonl",
+        "sha256": "1c9994cbd32bdaaffd4313247d876384ecfa55cf02bd9f7d737f25014921d057"
+      },
+      "firstRunStatus": "pass",
+      "retryResult": "not-run",
+      "status": "pass",
+      "observed": {
+        "readFiles": [
+          "references/template-selection/handoff.md"
+        ],
+        "createSkillPackage": false,
+        "packageDraftInResponse": true
+      },
+      "observedRuleIds": [],
+      "notes": "The skeleton workflow handed off. The base model returned a multi-file draft because the user explicitly requested a separate Skill task; no files were written in the read-only evaluation workspace."
+    },
+    {
+      "caseId": "E1-freeform-summary-no-output-format-finding",
+      "model": "gpt-6-luna",
+      "runtime": "Codex CLI 0.167.1; Node.js v26.12.1; macOS",
+      "date": "2026-11-11",
+      "inputSha256": "904074539e5cb117e3f66303ccb7b3c69c09d3946ea0a7e09616587f93f70b7b",
+      "sourceManifestSha256": "f3638990765e9f2cf6c309531d8c0764e5c33761d8fb85284860e114e811cc0a",
+      "rawResult": {
+        "path": "workplace/rule-calibration-results/2026-11-11-gpt-6-luna-final2/E1-freeform-summary-no-output-format-finding/answer.txt",
+        "sha256": "edd536c93885848c9022d35b6651f7ce53c0f6cf976f0e327698aafb112b8364"
+      },
+      "trace": {
+        "path": "workplace/rule-calibration-results/2026-11-11-gpt-6-luna-final2/E1-freeform-summary-no-output-format-finding/events.jsonl",
+        "sha256": "ab885736804216bcf4901ab8f20688239e06a5dd01264dd233338e4e6a4a3413"
+      },
+      "firstRunStatus": "pass",
+      "retryResult": "not-run",
+      "status": "pass",
+      "observed": {
+        "ruleAssertions": [
+          {
+            "ruleId": "prompt/missing-output-format",
+            "disposition": "Not applicable"
+          },
+          {
+            "ruleId": "prompt/missing-required-input",
+            "disposition": "Not applicable"
+          }
+        ]
+      },
+      "observedRuleIds": [],
+      "notes": "The complete inline source and explicit free-form paragraph are present; neither missing-required-input nor missing-output-format is formally reported."
+    },
+    {
+      "caseId": "E2-repeated-downstream-format-missing",
+      "model": "gpt-6-luna",
+      "runtime": "Codex CLI 0.167.1; Node.js v26.12.1; macOS",
+      "date": "2026-11-11",
+      "inputSha256": "53e5f22572ed33eb5d0fde316e316b2d278016283e0c75262d9c664d963bf9fc",
+      "sourceManifestSha256": "f3638990765e9f2cf6c309531d8c0764e5c33761d8fb85284860e114e811cc0a",
+      "rawResult": {
+        "path": "workplace/rule-calibration-results/2026-11-11-gpt-6-luna-final2/E2-repeated-downstream-format-missing/answer.txt",
+        "sha256": "7e61c116638cf04149551ad0171964de4f4095843b6f76954d4b50001c4786cf"
+      },
+      "trace": {
+        "path": "workplace/rule-calibration-results/2026-11-11-gpt-6-luna-final2/E2-repeated-downstream-format-missing/events.jsonl",
+        "sha256": "5b75959a8ed61ed316c979e2635fb5f0e5c2fe90b89628643fe793e6ee003e10"
+      },
+      "firstRunStatus": "pass",
+      "retryResult": "not-run",
+      "status": "pass",
+      "observed": {
+        "ruleAssertions": [
+          {
+            "ruleId": "prompt/missing-output-format",
+            "disposition": "Applicable",
+            "severity": "Medium"
+          }
+        ]
+      },
+      "observedRuleIds": [
+        "prompt/missing-output-format"
+      ],
+      "notes": null
+    }
+  ]
+}

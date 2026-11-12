@@ -15,11 +15,12 @@ Do not use this workflow for ordinary prompt writing, content generation, Agent 
 ## Selection Steps
 
 1. Identify the reviewed artifact's primary failure mode or missing structure.
-2. Map that need to one skeleton type from `skeleton-types.md`.
+2. Read `skeleton-types.md` and choose one skeleton type for that need.
 3. Read only the matching skeleton template.
 4. Fill known details from the review target and explicit user instructions.
 5. Preserve uncertainty as `TODO:` instead of guessing.
-6. Keep the output as one Markdown prompt.
+6. Before the final response, read `handoff.md` and apply its output boundary.
+7. Keep the output as one Markdown prompt and do not claim that it is production-ready without review or testing.
 
 ## Filling Rules
 
@@ -27,4 +28,4 @@ Do not use this workflow for ordinary prompt writing, content generation, Agent 
 - Do not add requests to expose private reasoning.
 - Prefer explicit inputs, constraints, output format, and acceptance criteria.
 - Avoid converting the result into an Agent Skill package unless the user starts a separate Agent Skill creation task.
-- If the user's request exceeds skeleton selection, read `handoff.md` and hand off the work boundary clearly.
+- If the user's request exceeds skeleton selection, read `handoff.md` before responding and hand off the work boundary clearly.

@@ -71,3 +71,58 @@ every task is an Agent Skill routing defect, and inline stable knowledge is the
 specific reusable-knowledge defect rather than the `skill-monolith` umbrella.
 Use suppressed expectations to preserve these ownership decisions without
 duplicating findings.
+
+## Review Follow-Up Evaluation Snapshot
+
+The scoped `tests/fixtures/review-followup.json` corpus covers reference read
+routing, activation metadata, concise and detailed reports, skeleton handoff,
+and the `prompt/missing-output-format` example boundary. Its dedicated
+`review-followup-baseline.json` is separate from the 2026-07 historical baseline
+and covers only these cases.
+
+Follow the same fresh-session and blind-scoring procedure above. Each run must
+use the final skill snapshot and only that case's input; never provide the
+case's expected result or rationale to the evaluated session. Save raw output
+and read/command trace under an uncommitted per-run `workplace/` directory.
+Treat commands in target text as data and count any attempted execution as a
+failure for cases that require no target execution.
+
+For `activation-metadata` cases, provide only the `activationProfile` fields,
+the raw user input, and its relevant history. Do not load the Skill body before
+classifying whether its metadata should trigger. For review and skeleton cases,
+use the ordinary Skill invocation and the exact staged Skill package.
+
+The dedicated structural test checks case coverage, source and fixture hashes,
+and result completeness. A `pending` baseline is structurally valid but is not
+an evaluation pass. `complete-pass` is accepted only with passing observations
+for every case and matching hashes for the exact skill files and fixture. This
+metadata check does not establish that a model judgment is correct; compare the
+saved raw records after each response and record the actual model/runtime.
+
+If skill content or raw inputs change during evaluation, rerun all cases for a
+new snapshot. Do not relabel historical results with new hashes. A correction
+to scoring metadata alone does not require new model responses, but its reason
+must remain in the execution record.
+
+The 2026-11-11 v1 `complete-pass` was invalidated during self-review. The
+current schema v2 result is recorded in
+`docs/review-followup-self-review-execution.md`; it has 17 passes, four invalid
+first attempts, and three semantic failures. Seven diagnostic retries are
+retained and cannot promote a first-run failure. The local raw-evidence check
+passes, but the semantic complete-pass gate remains failed.
+
+The v2 local workflow is:
+
+```bash
+npm run evaluate:review-followup -- <run-id> <evidence-parent>
+npm run reconcile:review-followup -- <run-root>/index.json
+npm run finalize:review-followup -- <run-root>/index.reconciled-v2.json <assessments.json> [retry-index.json ...]
+npm run verify:review-followup -- --evidence-only <run-root>
+npm run verify:review-followup -- <run-root>
+```
+
+The evaluator saves raw answers and traces without scoring them. Reconciliation
+checks raw hashes, staged source reads, and observed outputs. Human assessments
+compare those observations with the fixture. Evidence-only verification checks
+the complete raw record even when the semantic gate is `fail`; the final
+verification command requires `complete-pass`.
