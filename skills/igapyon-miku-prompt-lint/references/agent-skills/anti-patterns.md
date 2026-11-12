@@ -6,12 +6,12 @@ Use [../rule-contract.md](../rule-contract.md).
 
 Default severity: `Medium`
 Applies when: discovery instructions or a runtime route contradict the target's declared activation policy, such as unintended automatic activation, rejection of an intended name or alias, or loading instructions or starting work before required introduction consent.
-Does not apply when: deliberate explicit-only or explicit-first scope is respected, including an optional introduction-and-consent route; unnamed in-domain requests may remain inactive. Shared capabilities with distinct explicit entry points, or automatic discovery intentionally permitted by the target, are not defects by themselves.
+Does not apply when: the target's declared policy is followed, including deliberate explicit-only scope; an unnamed in-domain request may remain inactive. A candidate listed in response to the user's request is not activation when the Skill is not loaded and work does not start. Automatic discovery that follows the target's own policy is not this Rule by itself, but its mismatch with this user's low-activation preference must be stated in the Activation Posture assessment.
 Evidence required: declared policy, concrete should-activate and should-stay-inactive cases, and the conflicting instruction or supplied observation; include an introduction-only case when applicable.
 Target/runtime dependencies: Known Skill platform for host-dependent claims; None for a direct policy/instruction contradiction.
 Overlap/precedence: activation and introduction gating are Agent Skill-owned; report a distinct consequential-action authority gap under unsafe-side-effect-contract.
 Why this is a problem: an unintended workflow captures the request, an unapproved introduction loads instructions, or an intended invocation is blocked.
-Recommended fix: align discovery metadata, supported names and aliases, and any introduction/consent route with the intended policy. Keep introduction-only guidance available before loading the Skill; preserve deliberate opt-in scope instead of broadening triggers merely to increase discovery.
+Recommended fix: align discovery metadata, supported names and aliases with the intended opt-in policy. Allow candidate suggestions only when requested, and wait for clear user selection before loading the Skill or starting its workflow. Preserve deliberate opt-in scope instead of broadening triggers merely to increase discovery.
 
 ## agent-skill/skill-monolith
 

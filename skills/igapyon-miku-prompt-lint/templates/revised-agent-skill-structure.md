@@ -14,8 +14,8 @@ skills/<skill-name>/
 ```
 
 SKILL.md should contain:
-- activation boundary and intended invocation mode, including supported names/aliases
-- any optional candidate-introduction and consent boundary before loading
+- explicit activation boundary and intended invocation mode, including supported exact names/aliases
+- candidate suggestions are allowed only when requested; listing a candidate must not load the Skill or start its workflow, and clear user selection is required
 - required first checks
 - core workflow
 - task-to-resource routes that say when required references must be read or consulted before dependent steps

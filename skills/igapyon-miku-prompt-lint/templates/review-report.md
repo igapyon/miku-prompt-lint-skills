@@ -4,6 +4,12 @@
 
 - Model / reasoning mode / runtime / instruction layer / tools: <known values or Unknown>
 
+## Activation Posture
+
+- User preference: explicit opt-in; candidate suggestions only when requested
+- Target: Matches | Does not match | Not assessed
+- Evidence: <activation surface and concrete should-stay-inactive case, or why not assessed>
+
 ## Findings
 
 - `Level`: Prompt | Context | Agent Skill | Repository/Harness

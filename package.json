@@ -1,18 +1,22 @@
 {
   "name": "miku-prompt-lint-skills",
-  "version": "0.8.0",
+  "version": "0.9.0",
   "private": true,
   "type": "module",
   "engines": {
     "node": ">=24 <25"
   },
   "scripts": {
-    "test": "node --test --test-concurrency=1 tests/skill-structure.test.mjs tests/content-contract.test.mjs tests/rule-migrations.test.mjs tests/rule-calibration-contract.test.mjs",
+    "test": "node --test --test-concurrency=1 tests/skill-structure.test.mjs tests/content-contract.test.mjs tests/rule-migrations.test.mjs tests/rule-calibration-contract.test.mjs tests/review-followup-contract.test.mjs tests/review-followup-runner.test.mjs",
     "verify:bundle": "node --test --test-concurrency=1 tests/isolated-bundle-smoke.test.mjs tests/release-bundle-contents.test.mjs",
     "build": "npm test && npm run build:bundle:zip && npm run verify:bundle",
     "build:bundle": "node scripts/build-skill-bundle.mjs",
     "build:bundle:zip": "node scripts/build-skill-bundle-zip.mjs",
     "checksum:bundle": "node scripts/build-skill-bundle-zip.mjs",
-    "verify:reproducible": "node scripts/check-reproducible-bundle.mjs"
+    "verify:reproducible": "node scripts/check-reproducible-bundle.mjs",
+    "evaluate:review-followup": "node scripts/evaluate-review-followup.mjs",
+    "reconcile:review-followup": "node scripts/reconcile-review-followup.mjs",
+    "finalize:review-followup": "node scripts/finalize-review-followup.mjs",
+    "verify:review-followup": "node scripts/verify-review-followup.mjs"
   }
 }

@@ -19,6 +19,14 @@ runtime behavior. Do not report unobserved behavior as a fact.
 model-dependent Rule. Direct evidence of an instruction or file defect can still
 support high confidence when model/runtime details are unknown.
 
+Use the active Rule's default severity unless that Rule defines an escalation
+or reduction condition and the supplied evidence meets it. Do not change
+severity solely because the concise or detailed report was requested, or solely
+because the domain sounds high stakes. Report mode changes detail, not Rule
+selection, applicability, severity, or confidence for the same evidence. If a
+Rule default is overridden, include a `Severity rationale` in either report
+mode.
+
 ## Concise Finding Contract
 
 Every concise finding retains `Level`, `Severity`, `Confidence`, `Rule`,

@@ -1,5 +1,10 @@
 # Concise Review Report
 
+## Activation Posture
+
+- **<Matches | Does not match | Not assessed>** the user's low-activation
+  preference — <brief evidence or reason not assessed>
+
 ## Findings
 
 - **<Level> | [<Severity> | <Confidence> confidence] | `<Rule ID>`** — <specific issue and material consequence>

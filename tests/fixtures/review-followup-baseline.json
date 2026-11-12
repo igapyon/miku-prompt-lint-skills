@@ -1,0 +1,3782 @@
+{
+  "schemaVersion": 2,
+  "scope": "review-followup",
+  "gateStatus": "fail",
+  "runId": "2026-11-12-gpt-6-luna-review-followup-v2",
+  "retryRunIds": [
+    "2026-11-12-gpt-6-luna-review-followup-retry"
+  ],
+  "supersedes": {
+    "disposition": "invalidated-by-self-review",
+    "sha256": "07a4814c68a7ed0ab6f770d13379a8b3393dd7850850c7384f394abd6e339554"
+  },
+  "fixtureSha256": "45d7c31a1d7f2ab06909b3ffe9e33d1dd651cec3f2fda7f867d70a12cde5e6e1",
+  "subjectSnapshot": {
+    "commit": "5b2099ca5cf0da36266b6d9ab863d6732b60a418",
+    "skillFiles": [
+      {
+        "path": "SKILL.md",
+        "sha256": "34b7168fb020436a96a1353c1fb7a95d3898cfc602f2fa384674230f332aa429"
+      },
+      {
+        "path": "agents/openai.yaml",
+        "sha256": "f4c0563e6de3d5bc05e6ecc982256cdcdc904ba814a642f05b1a12b754a7137f"
+      },
+      {
+        "path": "examples/agent-skill-bloat.md",
+        "sha256": "33cde4a4347c4fc09fa06963774ec7f59198f326e739d408fa291cf402bcdbf1"
+      },
+      {
+        "path": "examples/agent-skill-reference-loading.md",
+        "sha256": "05624e7ea1811e2619745ae8ce127fd42a9a9846178ba718c3799bf57cc4c38d"
+      },
+      {
+        "path": "examples/agent-skill-unsafe-side-effect.md",
+        "sha256": "6456a611ff3a4b826cb7cdc98c053ccade96687c08786cdfe8a5e5a3b4e10d80"
+      },
+      {
+        "path": "examples/ambiguous-output.md",
+        "sha256": "c385913165a5ac2371009acbd73eb2e681b5ddddf9db4e9686a6a512dd61328c"
+      },
+      {
+        "path": "examples/context-navigation.md",
+        "sha256": "761b588b0a2e6618cfa7a1b2710e1b8e6f3c0a937419409c10786400d736a764"
+      },
+      {
+        "path": "examples/context-source-of-truth.md",
+        "sha256": "b503c63e18bd947459bf2082cab8fa227e2c71c43902025d20d36ee0d2ae3fa1"
+      },
+      {
+        "path": "examples/legacy-role-cot.md",
+        "sha256": "7110b9330ae7d21dd99d5c40fce7adcc383c335c6c79eaca364bba486406a71f"
+      },
+      {
+        "path": "examples/prompt-untrusted-boundary.md",
+        "sha256": "7d486779cc916c1e001dfe4540a0daacbccde3507eb77d9128a7fa9636becb11"
+      },
+      {
+        "path": "examples/repository-harness-race.md",
+        "sha256": "c8e8219e80f04721ea75f5afde07431638c226062a29980d526b132f3419dfba"
+      },
+      {
+        "path": "references/agent-skills/INDEX.md",
+        "sha256": "806c44e92c6f26dadaaa6dad009827df14c0cd6d61d6a612920a33d60389220d"
+      },
+      {
+        "path": "references/agent-skills/anti-patterns.md",
+        "sha256": "86a36b13f30a693b2366415719ef6ee8de5f3b002031fa4e5ce61a67bd25779d"
+      },
+      {
+        "path": "references/agent-skills/checkpoints.md",
+        "sha256": "54a799c5ed97b648e5bf1b2711a97a1e004c0d6feb480cc44ac3d143156b8b93"
+      },
+      {
+        "path": "references/context/INDEX.md",
+        "sha256": "3058d16472984431ea66a30f63a4f8d3618f0ff6f1f33419f0b70c180bcef44d"
+      },
+      {
+        "path": "references/context/anti-patterns.md",
+        "sha256": "cb47e521fcb26d099189bb2336a001691a2c3cd7a854399d9ec89e085af540c0"
+      },
+      {
+        "path": "references/context/checkpoints.md",
+        "sha256": "ba847f678868888a9d1cddc4dacad75660743dc3fd48cfeee25f813516b71007"
+      },
+      {
+        "path": "references/output-format.md",
+        "sha256": "fd71389b927fe7cf2ee38856169f5fea8be43f194f836dfc63814e0786739920"
+      },
+      {
+        "path": "references/prompt/INDEX.md",
+        "sha256": "a0e8702e602ebeddba65737752261014f1ebf123487bfabb8cea84f43a7d1725"
+      },
+      {
+        "path": "references/prompt/anti-patterns.md",
+        "sha256": "47b887404abed320e1257e4a15221a056c90eaaf61c842280520d4a6e6b2caf0"
+      },
+      {
+        "path": "references/prompt/checkpoints.md",
+        "sha256": "7378a6112b93181bfe2761dc68a523a13187681ee3ff36db8e16ec9a82b51504"
+      },
+      {
+        "path": "references/prompt/rewrite-patterns.md",
+        "sha256": "323bbc1854b3d33b6a3bb790fb7cf9af190006a1a62e8b17243433535fe87467"
+      },
+      {
+        "path": "references/repository/INDEX.md",
+        "sha256": "8e54996eae5b8f133946d4856e009a8915908b93fc091b1456bb037c7c143a75"
+      },
+      {
+        "path": "references/repository/anti-patterns.md",
+        "sha256": "c8b7fdea4e45c4725aca8dcfee1992a20a9df2bf002c33c8a482364888f51aee"
+      },
+      {
+        "path": "references/repository/checkpoints.md",
+        "sha256": "798635575255dea7948e3f4c30309ce4df415d0a668fc2c47912dca69554d745"
+      },
+      {
+        "path": "references/review-levels.md",
+        "sha256": "32c687c6e1189b1d456bc08a4f52890142edd706c44f177f1ac87636aef18aa4"
+      },
+      {
+        "path": "references/rule-contract.md",
+        "sha256": "f77d94e68d8f534398cd3e9d0f725b1e0588d848dcf124aee842c9750817cc28"
+      },
+      {
+        "path": "references/rule-migrations.json",
+        "sha256": "700fabf39702eb913a330bd5f91db2e89ae0201b0e256aa09dfbe330f30185df"
+      },
+      {
+        "path": "references/template-selection/INDEX.md",
+        "sha256": "8c014c8274dafda00298d2a242d00399e83ac4f87c84cfa6acb6bf0b75d5ba6d"
+      },
+      {
+        "path": "references/template-selection/handoff.md",
+        "sha256": "88badf0116bf6775b84cd089b9cece16861697c10a2c4ea485fb076ca62b233f"
+      },
+      {
+        "path": "references/template-selection/skeleton-types.md",
+        "sha256": "04d7b1c899ae9f3216d843dcc1c4b826505ec2156d61bdea4816b08910aeb9c4"
+      },
+      {
+        "path": "references/template-selection/workflow.md",
+        "sha256": "dbc8a7805bf61c5795ffc97c957120c1ffa1850852a60e7f0c0d60adf794dfd8"
+      },
+      {
+        "path": "templates/prompt-skeletons/agent-workflow.md",
+        "sha256": "5b661925101881d8e338f02c6f9fbbb4df0e379bc13bd0e4f0df03907492bd60"
+      },
+      {
+        "path": "templates/prompt-skeletons/basic.md",
+        "sha256": "3fc66e9aadaab192700411804dd8cd3bf2916c21628d68149b0edb662e709e05"
+      },
+      {
+        "path": "templates/prompt-skeletons/few-shot.md",
+        "sha256": "28740795e92aa609f41c5ef380ccdcf4ee4d20c28479bb536d33eb98399550f5"
+      },
+      {
+        "path": "templates/prompt-skeletons/ipo.md",
+        "sha256": "0a2fa02342153e05fd8dd94bbf3514ab83606324f1b7e5d40db0a8ecc1b20fea"
+      },
+      {
+        "path": "templates/prompt-skeletons/reviewer.md",
+        "sha256": "9fa3b32a502fe8cf63e36e99364a853ab073368d61dabd9ad7d471c6bff1d0c7"
+      },
+      {
+        "path": "templates/prompt-skeletons/template-first.md",
+        "sha256": "745137208289d0941a20146392ed59d2bb5c59fd36a4769b6308b2062b4f5a71"
+      },
+      {
+        "path": "templates/review-report-compact.md",
+        "sha256": "de1d2784abafea63282539319cf6fcb5ec9c59a21121c1a044bfc574eee3a342"
+      },
+      {
+        "path": "templates/review-report.md",
+        "sha256": "32a0a7ecc0bf7246ef4f4b59b506e3fd36be31e4bea35fc123b01a5c6f6d9dc7"
+      },
+      {
+        "path": "templates/revised-agent-skill-structure.md",
+        "sha256": "a8169e2094482b3e43ce34ccf96c95580ee48c462d2e18ed1574db9d1385009d"
+      },
+      {
+        "path": "templates/revised-context-structure.md",
+        "sha256": "b86b3f0aa157f65bd7ea7331799a395cb84f09fbc6d15aa4767d65456f786020"
+      },
+      {
+        "path": "templates/revised-prompt.md",
+        "sha256": "cbf9121809acb5c6e5899bb569651eb2dc5782461543da9a51e8c65817179245"
+      }
+    ],
+    "manifestSha256": "fff3c57f65fd0cb96baae96afa18ef699cc4da66ef3d93c5b5f6aea27926f832"
+  },
+  "protocol": {
+    "version": "review-followup-v2",
+    "wrapperSha256": "a7126ed2bac29b20c6740d273146ea32be6be45fa02194528a777738fb926ab0",
+    "model": "gpt-6-luna",
+    "reasoning": "Codex CLI default; no reasoning override was supplied",
+    "codexArguments": [
+      "exec",
+      "--ephemeral",
+      "--ignore-user-config",
+      "--skip-git-repo-check",
+      "--json",
+      "--sandbox",
+      "read-only",
+      "--model",
+      "gpt-6-luna",
+      "--cd",
+      "<isolated-case-root>",
+      "-"
+    ],
+    "runtime": "Codex CLI codex-cli 0.167.1; Node.js v26.12.1; darwin",
+    "sandbox": "read-only",
+    "ignoreUserConfig": true,
+    "ephemeralSessions": true
+  },
+  "results": [
+    {
+      "caseId": "R1-required-reference-no-read-route",
+      "mode": "review",
+      "status": "pass",
+      "attempts": [
+        {
+          "sequence": 1,
+          "model": "gpt-6-luna",
+          "runtime": "Codex CLI codex-cli 0.167.1; Node.js v26.12.1; darwin",
+          "date": "2026-11-11",
+          "inputSha256": "6be8041a883c62c4a33f0eff281db5474cac8ca0bd1741c8d4cd6d59de569e01",
+          "promptSha256": "787dc4f14798288b160773ff3e68a48e56f397b7e6e3f25e53541fd036fa8fcd",
+          "sourceManifestSha256": "fff3c57f65fd0cb96baae96afa18ef699cc4da66ef3d93c5b5f6aea27926f832",
+          "stagedSourceManifestSha256": "fff3c57f65fd0cb96baae96afa18ef699cc4da66ef3d93c5b5f6aea27926f832",
+          "status": "pass",
+          "artifacts": {
+            "input": {
+              "path": "cases/R1-required-reference-no-read-route/raw-input.json",
+              "sha256": "792b13d869bfee51a6c84bc758d7da6a68b9d1e56670f6bf741c974418ed6beb"
+            },
+            "prompt": {
+              "path": "cases/R1-required-reference-no-read-route/prompt.txt",
+              "sha256": "787dc4f14798288b160773ff3e68a48e56f397b7e6e3f25e53541fd036fa8fcd"
+            },
+            "response": {
+              "path": "cases/R1-required-reference-no-read-route/answer.txt",
+              "sha256": "7edfb76a598277bbec1e3875af521db8dc9794a51f825b5d4eb471cd7a9451bf"
+            },
+            "trace": {
+              "path": "cases/R1-required-reference-no-read-route/stdout.jsonl",
+              "sha256": "41f3ab48eab59ef0fd0f683cf19ac24d890e1e04a43e0b33c889d1405353d0a9"
+            },
+            "stderr": {
+              "path": "cases/R1-required-reference-no-read-route/stderr.log",
+              "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+            },
+            "exit": {
+              "path": "cases/R1-required-reference-no-read-route/exit.json",
+              "sha256": "26e25a55eba38ec02c090926a2669e207433a2ad43758dc5d756c91b05a16375"
+            }
+          },
+          "sourceAudit": {
+            "status": "verified",
+            "reads": [
+              {
+                "path": "SKILL.md",
+                "sha256": "34b7168fb020436a96a1353c1fb7a95d3898cfc602f2fa384674230f332aa429",
+                "eventIds": [
+                  "item_1"
+                ]
+              },
+              {
+                "path": "references/review-levels.md",
+                "sha256": "32c687c6e1189b1d456bc08a4f52890142edd706c44f177f1ac87636aef18aa4",
+                "eventIds": [
+                  "item_2"
+                ]
+              },
+              {
+                "path": "references/agent-skills/INDEX.md",
+                "sha256": "806c44e92c6f26dadaaa6dad009827df14c0cd6d61d6a612920a33d60389220d",
+                "eventIds": [
+                  "item_2"
+                ]
+              },
+              {
+                "path": "references/agent-skills/checkpoints.md",
+                "sha256": "54a799c5ed97b648e5bf1b2711a97a1e004c0d6feb480cc44ac3d143156b8b93",
+                "eventIds": [
+                  "item_2"
+                ]
+              },
+              {
+                "path": "references/agent-skills/anti-patterns.md",
+                "sha256": "86a36b13f30a693b2366415719ef6ee8de5f3b002031fa4e5ce61a67bd25779d",
+                "eventIds": [
+                  "item_2"
+                ]
+              },
+              {
+                "path": "references/rule-contract.md",
+                "sha256": "f77d94e68d8f534398cd3e9d0f725b1e0588d848dcf124aee842c9750817cc28",
+                "eventIds": [
+                  "item_2"
+                ]
+              },
+              {
+                "path": "references/output-format.md",
+                "sha256": "fd71389b927fe7cf2ee38856169f5fea8be43f194f836dfc63814e0786739920",
+                "eventIds": [
+                  "item_2"
+                ]
+              },
+              {
+                "path": "templates/review-report-compact.md",
+                "sha256": "de1d2784abafea63282539319cf6fcb5ec9c59a21121c1a044bfc574eee3a342",
+                "eventIds": [
+                  "item_2"
+                ]
+              }
+            ],
+            "externalSkillReads": [],
+            "issues": [],
+            "manifestSha256": "fff3c57f65fd0cb96baae96afa18ef699cc4da66ef3d93c5b5f6aea27926f832",
+            "stagedSkillPath": "session-evidence/sessions/4d81cb1b-3c73-44fb-973a-c1380851af2f/.agents/skills/igapyon-miku-prompt-lint",
+            "commandAttempts": [
+              {
+                "eventId": "item_1",
+                "command": "/bin/zsh -lc 'cat .agents/skills/igapyon-miku-prompt-lint/SKILL.md && rg --files .agents/skills/igapyon-miku-prompt-lint'",
+                "exitCode": 0,
+                "ranSentinel": false
+              },
+              {
+                "eventId": "item_2",
+                "command": "/bin/zsh -lc 'cat .agents/skills/igapyon-miku-prompt-lint/references/review-levels.md .agents/skills/igapyon-miku-prompt-lint/references/agent-skills/INDEX.md .agents/skills/igapyon-miku-prompt-lint/references/agent-skills/checkpoints.md .agents/skills/igapyon-miku-prompt-lint/references/agent-skills/anti-patterns.md .agents/skills/igapyon-miku-prompt-lint/references/rule-contract.md .agents/skills/igapyon-miku-prompt-lint/references/output-format.md .agents/skills/igapyon-miku-prompt-lint/templates/review-report-compact.md'",
+                "exitCode": 0,
+                "ranSentinel": false
+              }
+            ],
+            "sessionRoot": "4d81cb1b-3c73-44fb-973a-c1380851af2f"
+          },
+          "observed": {
+            "ruleAssertions": [
+              {
+                "ruleId": "agent-skill/resource-routing-missing",
+                "disposition": "Applicable",
+                "severity": "Medium"
+              }
+            ],
+            "outputFields": [
+              "Evidence",
+              "Suggestion",
+              "Level",
+              "Severity",
+              "Confidence",
+              "Issue",
+              "Rule ID"
+            ],
+            "reportMode": "concise",
+            "targetExecution": "none",
+            "readFiles": [
+              "SKILL.md",
+              "references/review-levels.md",
+              "references/agent-skills/INDEX.md",
+              "references/agent-skills/checkpoints.md",
+              "references/agent-skills/anti-patterns.md",
+              "references/rule-contract.md",
+              "references/output-format.md",
+              "templates/review-report-compact.md"
+            ]
+          },
+          "assertions": [
+            {
+              "id": "rule:agent-skill/resource-routing-missing",
+              "expected": "{\"disposition\":\"Applicable\",\"ruleId\":\"agent-skill/resource-routing-missing\",\"severity\":\"Medium\"}",
+              "observed": "{\"disposition\":\"Applicable\",\"ruleId\":\"agent-skill/resource-routing-missing\",\"severity\":\"Medium\"}",
+              "status": "pass",
+              "evidence": "- **Agent Skill | [Medium | High confidence] | `agent-skill/resource-routing-missing`** — The report workflow names `references/policy.md` but does not instruct the agent to read and apply it before preparing a report. Required rounding and disclosure rules could therefore be skipped.\n  Evidence: `SKILL.md`: “The package maps reports to references/policy.md.” The referenced policy says to apply those rules before preparing a report.\n  Suggestion: Direct the agent to read `references/policy.md` and apply its rules before preparing each report.\n\n## Assessment Notes"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "caseId": "R2-required-reference-read-before-use",
+      "mode": "review",
+      "status": "pass",
+      "attempts": [
+        {
+          "sequence": 1,
+          "model": "gpt-6-luna",
+          "runtime": "Codex CLI codex-cli 0.167.1; Node.js v26.12.1; darwin",
+          "date": "2026-11-11",
+          "inputSha256": "085ceea1a67ee8ea6a4165a16802d74901945024d6440020f1e69186198b0926",
+          "promptSha256": "6efdd4f7f9a9b5521e9777207478aebcb03bdd22801b619da1c792e5a8323f62",
+          "sourceManifestSha256": "fff3c57f65fd0cb96baae96afa18ef699cc4da66ef3d93c5b5f6aea27926f832",
+          "stagedSourceManifestSha256": "fff3c57f65fd0cb96baae96afa18ef699cc4da66ef3d93c5b5f6aea27926f832",
+          "status": "pass",
+          "artifacts": {
+            "input": {
+              "path": "cases/R2-required-reference-read-before-use/raw-input.json",
+              "sha256": "75e2f2e08c418b1264880e14e29807aee06b7b141454f224fab15585d35e42a2"
+            },
+            "prompt": {
+              "path": "cases/R2-required-reference-read-before-use/prompt.txt",
+              "sha256": "6efdd4f7f9a9b5521e9777207478aebcb03bdd22801b619da1c792e5a8323f62"
+            },
+            "response": {
+              "path": "cases/R2-required-reference-read-before-use/answer.txt",
+              "sha256": "3c6bec753904090afdd817cbd353fa618dc2ba52720eedabceeb7beb81b8e266"
+            },
+            "trace": {
+              "path": "cases/R2-required-reference-read-before-use/stdout.jsonl",
+              "sha256": "bdd808f8e6b1abe5372913ed9cdecf0822573928868cc1827601903971664714"
+            },
+            "stderr": {
+              "path": "cases/R2-required-reference-read-before-use/stderr.log",
+              "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+            },
+            "exit": {
+              "path": "cases/R2-required-reference-read-before-use/exit.json",
+              "sha256": "efed4e06c8daffa8d81b98aabd27c13d97228bdca983a2945f8c7c9dc1439455"
+            }
+          },
+          "sourceAudit": {
+            "status": "verified",
+            "reads": [
+              {
+                "path": "SKILL.md",
+                "sha256": "34b7168fb020436a96a1353c1fb7a95d3898cfc602f2fa384674230f332aa429",
+                "eventIds": [
+                  "item_1"
+                ]
+              },
+              {
+                "path": "references/review-levels.md",
+                "sha256": "32c687c6e1189b1d456bc08a4f52890142edd706c44f177f1ac87636aef18aa4",
+                "eventIds": [
+                  "item_2"
+                ]
+              },
+              {
+                "path": "references/agent-skills/INDEX.md",
+                "sha256": "806c44e92c6f26dadaaa6dad009827df14c0cd6d61d6a612920a33d60389220d",
+                "eventIds": [
+                  "item_2"
+                ]
+              },
+              {
+                "path": "references/agent-skills/checkpoints.md",
+                "sha256": "54a799c5ed97b648e5bf1b2711a97a1e004c0d6feb480cc44ac3d143156b8b93",
+                "eventIds": [
+                  "item_2"
+                ]
+              },
+              {
+                "path": "references/agent-skills/anti-patterns.md",
+                "sha256": "86a36b13f30a693b2366415719ef6ee8de5f3b002031fa4e5ce61a67bd25779d",
+                "eventIds": [
+                  "item_2"
+                ]
+              },
+              {
+                "path": "references/rule-contract.md",
+                "sha256": "f77d94e68d8f534398cd3e9d0f725b1e0588d848dcf124aee842c9750817cc28",
+                "eventIds": [
+                  "item_2"
+                ]
+              },
+              {
+                "path": "references/output-format.md",
+                "sha256": "fd71389b927fe7cf2ee38856169f5fea8be43f194f836dfc63814e0786739920",
+                "eventIds": [
+                  "item_2"
+                ]
+              },
+              {
+                "path": "templates/review-report-compact.md",
+                "sha256": "de1d2784abafea63282539319cf6fcb5ec9c59a21121c1a044bfc574eee3a342",
+                "eventIds": [
+                  "item_2"
+                ]
+              }
+            ],
+            "externalSkillReads": [],
+            "issues": [],
+            "manifestSha256": "fff3c57f65fd0cb96baae96afa18ef699cc4da66ef3d93c5b5f6aea27926f832",
+            "stagedSkillPath": "session-evidence/sessions/5876b278-4e27-4f3d-b589-5be0fba60c70/.agents/skills/igapyon-miku-prompt-lint",
+            "commandAttempts": [
+              {
+                "eventId": "item_1",
+                "command": "/bin/zsh -lc \"cat .agents/skills/igapyon-miku-prompt-lint/SKILL.md && printf '\\\\n--- workspace files ---\\\\n' && rg --files .agents/skills/igapyon-miku-prompt-lint\"",
+                "exitCode": 0,
+                "ranSentinel": false
+              },
+              {
+                "eventId": "item_2",
+                "command": "/bin/zsh -lc 'cat .agents/skills/igapyon-miku-prompt-lint/references/review-levels.md .agents/skills/igapyon-miku-prompt-lint/references/agent-skills/INDEX.md .agents/skills/igapyon-miku-prompt-lint/references/agent-skills/checkpoints.md .agents/skills/igapyon-miku-prompt-lint/references/agent-skills/anti-patterns.md .agents/skills/igapyon-miku-prompt-lint/references/rule-contract.md .agents/skills/igapyon-miku-prompt-lint/references/output-format.md .agents/skills/igapyon-miku-prompt-lint/templates/review-report-compact.md'",
+                "exitCode": 0,
+                "ranSentinel": false
+              }
+            ],
+            "sessionRoot": "5876b278-4e27-4f3d-b589-5be0fba60c70"
+          },
+          "observed": {
+            "ruleAssertions": [],
+            "outputFields": [],
+            "reportMode": "concise",
+            "targetExecution": "none",
+            "readFiles": [
+              "SKILL.md",
+              "references/review-levels.md",
+              "references/agent-skills/INDEX.md",
+              "references/agent-skills/checkpoints.md",
+              "references/agent-skills/anti-patterns.md",
+              "references/rule-contract.md",
+              "references/output-format.md",
+              "templates/review-report-compact.md"
+            ]
+          },
+          "assertions": [
+            {
+              "id": "rule:agent-skill/resource-routing-missing",
+              "expected": "{\"disposition\":\"Not applicable\",\"ruleId\":\"agent-skill/resource-routing-missing\"}",
+              "observed": "{\"disposition\":\"Not applicable\",\"ruleId\":\"agent-skill/resource-routing-missing\"}",
+              "status": "pass",
+              "evidence": "No applicable findings in the supplied material."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "caseId": "R3-complete-package-required-file-missing",
+      "mode": "review",
+      "status": "invalid",
+      "attempts": [
+        {
+          "sequence": 1,
+          "model": "gpt-6-luna",
+          "runtime": "Codex CLI codex-cli 0.167.1; Node.js v26.12.1; darwin",
+          "date": "2026-11-11",
+          "inputSha256": "217e183f5785fec97c52f513dbd94afbf59ffba5b5e80ae2059e3282a163a116",
+          "promptSha256": "c0e54935345a837c84352f21cb8c3359ae5642383b5d8b56b21a008483fa6fdb",
+          "sourceManifestSha256": "fff3c57f65fd0cb96baae96afa18ef699cc4da66ef3d93c5b5f6aea27926f832",
+          "stagedSourceManifestSha256": "fff3c57f65fd0cb96baae96afa18ef699cc4da66ef3d93c5b5f6aea27926f832",
+          "status": "invalid",
+          "artifacts": {
+            "input": {
+              "path": "cases/R3-complete-package-required-file-missing/raw-input.json",
+              "sha256": "5b70ac512423d21e572f6b4dedfd265bd544d1eb3fafaf43394dcd5ceca0ba9c"
+            },
+            "prompt": {
+              "path": "cases/R3-complete-package-required-file-missing/prompt.txt",
+              "sha256": "c0e54935345a837c84352f21cb8c3359ae5642383b5d8b56b21a008483fa6fdb"
+            },
+            "response": {
+              "path": "cases/R3-complete-package-required-file-missing/answer.txt",
+              "sha256": "8a7351cf50fa5f3f504b4ee9140b7347a7deff7c32bdea1030cad1864908d89d"
+            },
+            "trace": {
+              "path": "cases/R3-complete-package-required-file-missing/stdout.jsonl",
+              "sha256": "2124e170491a3f59ffa5ab5c14838852b764b5791c15796110575eaa463ef896"
+            },
+            "stderr": {
+              "path": "cases/R3-complete-package-required-file-missing/stderr.log",
+              "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+            },
+            "exit": {
+              "path": "cases/R3-complete-package-required-file-missing/exit.json",
+              "sha256": "b3acd378535b12af813335bed52c8e75f035c3e14a5a9604eb4dec3d3f991df0"
+            }
+          },
+          "sourceAudit": {
+            "status": "verified",
+            "reads": [
+              {
+                "path": "SKILL.md",
+                "sha256": "34b7168fb020436a96a1353c1fb7a95d3898cfc602f2fa384674230f332aa429",
+                "eventIds": [
+                  "item_1"
+                ]
+              }
+            ],
+            "externalSkillReads": [],
+            "issues": [],
+            "manifestSha256": "fff3c57f65fd0cb96baae96afa18ef699cc4da66ef3d93c5b5f6aea27926f832",
+            "stagedSkillPath": "session-evidence/sessions/7692b607-fcee-4ed5-804b-5de565ccf7e2/.agents/skills/igapyon-miku-prompt-lint",
+            "commandAttempts": [
+              {
+                "eventId": "item_1",
+                "command": "/bin/zsh -lc 'cat .agents/skills/igapyon-miku-prompt-lint/SKILL.md && rg --files .agents/skills/igapyon-miku-prompt-lint'",
+                "exitCode": 0,
+                "ranSentinel": false
+              },
+              {
+                "eventId": "item_2",
+                "command": "/bin/zsh -lc \"pwd; rg --files -g 'SKILL.md' -g 'INDEX.md' -g 'policy.md'\"",
+                "exitCode": 1,
+                "ranSentinel": false
+              }
+            ],
+            "sessionRoot": "7692b607-fcee-4ed5-804b-5de565ccf7e2"
+          },
+          "observed": {
+            "ruleAssertions": [],
+            "outputFields": [],
+            "reportMode": "concise",
+            "targetExecution": "none",
+            "readFiles": [
+              "SKILL.md"
+            ]
+          },
+          "assertions": [
+            {
+              "id": "rule:agent-skill/broken-resource-route",
+              "expected": "{\"disposition\":\"Applicable\",\"ruleId\":\"agent-skill/broken-resource-route\",\"severity\":\"High\"}",
+              "observed": "{\"disposition\":\"Not applicable\",\"ruleId\":\"agent-skill/broken-resource-route\"}",
+              "status": "fail",
+              "evidence": "Unavailable: Codex process did not finish successfully."
+            }
+          ],
+          "notes": "Codex process did not finish successfully."
+        },
+        {
+          "sequence": 2,
+          "model": "gpt-6-luna",
+          "runtime": "Codex CLI codex-cli 0.167.1; Node.js v26.12.1; darwin",
+          "date": "2026-11-11",
+          "inputSha256": "217e183f5785fec97c52f513dbd94afbf59ffba5b5e80ae2059e3282a163a116",
+          "promptSha256": "c0e54935345a837c84352f21cb8c3359ae5642383b5d8b56b21a008483fa6fdb",
+          "sourceManifestSha256": "fff3c57f65fd0cb96baae96afa18ef699cc4da66ef3d93c5b5f6aea27926f832",
+          "stagedSourceManifestSha256": "fff3c57f65fd0cb96baae96afa18ef699cc4da66ef3d93c5b5f6aea27926f832",
+          "status": "fail",
+          "artifacts": {
+            "input": {
+              "path": "retries/2026-11-12-gpt-6-luna-review-followup-retry/cases/R3-complete-package-required-file-missing/raw-input.json",
+              "sha256": "5b70ac512423d21e572f6b4dedfd265bd544d1eb3fafaf43394dcd5ceca0ba9c"
+            },
+            "prompt": {
+              "path": "retries/2026-11-12-gpt-6-luna-review-followup-retry/cases/R3-complete-package-required-file-missing/prompt.txt",
+              "sha256": "c0e54935345a837c84352f21cb8c3359ae5642383b5d8b56b21a008483fa6fdb"
+            },
+            "response": {
+              "path": "retries/2026-11-12-gpt-6-luna-review-followup-retry/cases/R3-complete-package-required-file-missing/answer.txt",
+              "sha256": "f985e7bb7be1f3fed72c400c38c11517652363510e8115711c730a04b7050757"
+            },
+            "trace": {
+              "path": "retries/2026-11-12-gpt-6-luna-review-followup-retry/cases/R3-complete-package-required-file-missing/stdout.jsonl",
+              "sha256": "4a7c4a8dc582017709c61a486ff1ab52c4e409aca54dd3c314bfb523b6fa3694"
+            },
+            "stderr": {
+              "path": "retries/2026-11-12-gpt-6-luna-review-followup-retry/cases/R3-complete-package-required-file-missing/stderr.log",
+              "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+            },
+            "exit": {
+              "path": "retries/2026-11-12-gpt-6-luna-review-followup-retry/cases/R3-complete-package-required-file-missing/exit.json",
+              "sha256": "74fad66f4a527ed56b4d5268348c17ca08d3ff4eb5286fa1a649af31f87a7728"
+            }
+          },
+          "sourceAudit": {
+            "status": "verified",
+            "reads": [
+              {
+                "path": "SKILL.md",
+                "sha256": "34b7168fb020436a96a1353c1fb7a95d3898cfc602f2fa384674230f332aa429",
+                "eventIds": [
+                  "item_1"
+                ]
+              },
+              {
+                "path": "references/review-levels.md",
+                "sha256": "32c687c6e1189b1d456bc08a4f52890142edd706c44f177f1ac87636aef18aa4",
+                "eventIds": [
+                  "item_4"
+                ]
+              },
+              {
+                "path": "references/agent-skills/checkpoints.md",
+                "sha256": "54a799c5ed97b648e5bf1b2711a97a1e004c0d6feb480cc44ac3d143156b8b93",
+                "eventIds": [
+                  "item_4"
+                ]
+              },
+              {
+                "path": "references/agent-skills/anti-patterns.md",
+                "sha256": "86a36b13f30a693b2366415719ef6ee8de5f3b002031fa4e5ce61a67bd25779d",
+                "eventIds": [
+                  "item_4"
+                ]
+              },
+              {
+                "path": "references/rule-contract.md",
+                "sha256": "f77d94e68d8f534398cd3e9d0f725b1e0588d848dcf124aee842c9750817cc28",
+                "eventIds": [
+                  "item_4"
+                ]
+              },
+              {
+                "path": "references/output-format.md",
+                "sha256": "fd71389b927fe7cf2ee38856169f5fea8be43f194f836dfc63814e0786739920",
+                "eventIds": [
+                  "item_4"
+                ]
+              },
+              {
+                "path": "templates/review-report-compact.md",
+                "sha256": "de1d2784abafea63282539319cf6fcb5ec9c59a21121c1a044bfc574eee3a342",
+                "eventIds": [
+                  "item_4"
+                ]
+              },
+              {
+                "path": "references/agent-skills/INDEX.md",
+                "sha256": "806c44e92c6f26dadaaa6dad009827df14c0cd6d61d6a612920a33d60389220d",
+                "eventIds": [
+                  "item_4"
+                ]
+              }
+            ],
+            "externalSkillReads": [],
+            "issues": [],
+            "manifestSha256": "fff3c57f65fd0cb96baae96afa18ef699cc4da66ef3d93c5b5f6aea27926f832",
+            "stagedSkillPath": "retries/2026-11-12-gpt-6-luna-review-followup-retry/session-evidence/sessions/fe6fd053-eeda-4e72-954b-bf2bd080b480/.agents/skills/igapyon-miku-prompt-lint",
+            "commandAttempts": [
+              {
+                "eventId": "item_1",
+                "command": "/bin/zsh -lc 'cat .agents/skills/igapyon-miku-prompt-lint/SKILL.md && rg --files .agents/skills/igapyon-miku-prompt-lint'",
+                "exitCode": 0,
+                "ranSentinel": false
+              },
+              {
+                "eventId": "item_2",
+                "command": "/bin/zsh -lc \"pwd; rg --files -g 'SKILL.md' -g 'INDEX.md' -g 'policy.md' -g 'AGENTS.md'\"",
+                "exitCode": 1,
+                "ranSentinel": false
+              },
+              {
+                "eventId": "item_4",
+                "command": "/bin/zsh -lc 'cat .agents/skills/igapyon-miku-prompt-lint/references/review-levels.md .agents/skills/igapyon-miku-prompt-lint/references/agent-skills/checkpoints.md .agents/skills/igapyon-miku-prompt-lint/references/agent-skills/anti-patterns.md .agents/skills/igapyon-miku-prompt-lint/references/rule-contract.md .agents/skills/igapyon-miku-prompt-lint/references/output-format.md .agents/skills/igapyon-miku-prompt-lint/templates/review-report-compact.md .agents/skills/igapyon-miku-prompt-lint/references/agent-skills/INDEX.md'",
+                "exitCode": 0,
+                "ranSentinel": false
+              }
+            ],
+            "sessionRoot": "fe6fd053-eeda-4e72-954b-bf2bd080b480"
+          },
+          "observed": {
+            "ruleAssertions": [
+              {
+                "ruleId": "agent-skill/broken-resource-route",
+                "disposition": "Applicable",
+                "severity": "Medium"
+              }
+            ],
+            "outputFields": [
+              "Evidence",
+              "Suggestion",
+              "Level",
+              "Severity",
+              "Confidence",
+              "Issue",
+              "Rule ID"
+            ],
+            "reportMode": "concise",
+            "targetExecution": "none",
+            "readFiles": [
+              "SKILL.md",
+              "references/review-levels.md",
+              "references/agent-skills/checkpoints.md",
+              "references/agent-skills/anti-patterns.md",
+              "references/rule-contract.md",
+              "references/output-format.md",
+              "templates/review-report-compact.md",
+              "references/agent-skills/INDEX.md"
+            ]
+          },
+          "assertions": [
+            {
+              "id": "rule:agent-skill/broken-resource-route",
+              "expected": "{\"disposition\":\"Applicable\",\"ruleId\":\"agent-skill/broken-resource-route\",\"severity\":\"High\"}",
+              "observed": "{\"disposition\":\"Applicable\",\"ruleId\":\"agent-skill/broken-resource-route\",\"severity\":\"Medium\"}",
+              "status": "fail",
+              "evidence": "- **Agent Skill | [Medium | High confidence] | `agent-skill/broken-resource-route`** — The package refers to `references/policy.md` as guidance required before preparing or using reports, but that file is absent from the supplied complete package inventory. The report workflow cannot consult the required policy.\n  Evidence: `SKILL.md` says “Read and apply references/policy.md before preparing the report”; `references/INDEX.md` says “Reports use references/policy.md”; neither file appears in the inventory.\n  Suggestion: Include `references/policy.md` in the package, or update both references to point to guidance that is included.\n\n## Assessment Notes"
+            }
+          ],
+          "notes": "One or more scoped assertions did not pass."
+        }
+      ]
+    },
+    {
+      "caseId": "R4-incomplete-review-package",
+      "mode": "review",
+      "status": "pass",
+      "attempts": [
+        {
+          "sequence": 1,
+          "model": "gpt-6-luna",
+          "runtime": "Codex CLI codex-cli 0.167.1; Node.js v26.12.1; darwin",
+          "date": "2026-11-11",
+          "inputSha256": "a50412e1605570581a767b685775b3d689d8ba5843e4007c6e3a60263c6ac699",
+          "promptSha256": "2b2412456c0de34e8d1ae6f160c2eb2e6554bee47f42d42eab18da0e7099f88d",
+          "sourceManifestSha256": "fff3c57f65fd0cb96baae96afa18ef699cc4da66ef3d93c5b5f6aea27926f832",
+          "stagedSourceManifestSha256": "fff3c57f65fd0cb96baae96afa18ef699cc4da66ef3d93c5b5f6aea27926f832",
+          "status": "pass",
+          "artifacts": {
+            "input": {
+              "path": "cases/R4-incomplete-review-package/raw-input.json",
+              "sha256": "a9548de0eddc707add6c9c2acdc705d30c0118f436ad8d07ed3f91027c8f3501"
+            },
+            "prompt": {
+              "path": "cases/R4-incomplete-review-package/prompt.txt",
+              "sha256": "2b2412456c0de34e8d1ae6f160c2eb2e6554bee47f42d42eab18da0e7099f88d"
+            },
+            "response": {
+              "path": "cases/R4-incomplete-review-package/answer.txt",
+              "sha256": "8187c529cfe34281e078bc081a79a4930d48906d67b813024b6c46efae91c356"
+            },
+            "trace": {
+              "path": "cases/R4-incomplete-review-package/stdout.jsonl",
+              "sha256": "0f5bbca18f3aa6b624eafa95403bda61fedec17a12ecdaa33ef140c8d6a2da6a"
+            },
+            "stderr": {
+              "path": "cases/R4-incomplete-review-package/stderr.log",
+              "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+            },
+            "exit": {
+              "path": "cases/R4-incomplete-review-package/exit.json",
+              "sha256": "48646db4a505511c834b933051c5d11a3cf7b21ee52ef32cdb110eae50d350ac"
+            }
+          },
+          "sourceAudit": {
+            "status": "verified",
+            "reads": [
+              {
+                "path": "SKILL.md",
+                "sha256": "34b7168fb020436a96a1353c1fb7a95d3898cfc602f2fa384674230f332aa429",
+                "eventIds": [
+                  "item_1"
+                ]
+              },
+              {
+                "path": "references/review-levels.md",
+                "sha256": "32c687c6e1189b1d456bc08a4f52890142edd706c44f177f1ac87636aef18aa4",
+                "eventIds": [
+                  "item_2"
+                ]
+              },
+              {
+                "path": "references/agent-skills/INDEX.md",
+                "sha256": "806c44e92c6f26dadaaa6dad009827df14c0cd6d61d6a612920a33d60389220d",
+                "eventIds": [
+                  "item_2"
+                ]
+              },
+              {
+                "path": "references/agent-skills/checkpoints.md",
+                "sha256": "54a799c5ed97b648e5bf1b2711a97a1e004c0d6feb480cc44ac3d143156b8b93",
+                "eventIds": [
+                  "item_2"
+                ]
+              },
+              {
+                "path": "references/agent-skills/anti-patterns.md",
+                "sha256": "86a36b13f30a693b2366415719ef6ee8de5f3b002031fa4e5ce61a67bd25779d",
+                "eventIds": [
+                  "item_2"
+                ]
+              },
+              {
+                "path": "references/rule-contract.md",
+                "sha256": "f77d94e68d8f534398cd3e9d0f725b1e0588d848dcf124aee842c9750817cc28",
+                "eventIds": [
+                  "item_2"
+                ]
+              },
+              {
+                "path": "references/output-format.md",
+                "sha256": "fd71389b927fe7cf2ee38856169f5fea8be43f194f836dfc63814e0786739920",
+                "eventIds": [
+                  "item_2"
+                ]
+              },
+              {
+                "path": "templates/review-report-compact.md",
+                "sha256": "de1d2784abafea63282539319cf6fcb5ec9c59a21121c1a044bfc574eee3a342",
+                "eventIds": [
+                  "item_2"
+                ]
+              }
+            ],
+            "externalSkillReads": [],
+            "issues": [],
+            "manifestSha256": "fff3c57f65fd0cb96baae96afa18ef699cc4da66ef3d93c5b5f6aea27926f832",
+            "stagedSkillPath": "session-evidence/sessions/0c81efde-df0b-4ada-9e85-751540178c9f/.agents/skills/igapyon-miku-prompt-lint",
+            "commandAttempts": [
+              {
+                "eventId": "item_1",
+                "command": "/bin/zsh -lc 'cat .agents/skills/igapyon-miku-prompt-lint/SKILL.md && pwd && rg --files .agents/skills/igapyon-miku-prompt-lint'",
+                "exitCode": 0,
+                "ranSentinel": false
+              },
+              {
+                "eventId": "item_2",
+                "command": "/bin/zsh -lc \"cat .agents/skills/igapyon-miku-prompt-lint/references/review-levels.md .agents/skills/igapyon-miku-prompt-lint/references/agent-skills/INDEX.md .agents/skills/igapyon-miku-prompt-lint/references/agent-skills/checkpoints.md .agents/skills/igapyon-miku-prompt-lint/references/agent-skills/anti-patterns.md .agents/skills/igapyon-miku-prompt-lint/references/rule-contract.md .agents/skills/igapyon-miku-prompt-lint/references/output-format.md .agents/skills/igapyon-miku-prompt-lint/templates/review-report-compact.md; rg --files | rg '(\"'^|/)SKILL'\"\\\\.md\"'$|references/policy'\"\\\\.md\"'$'\"'\"",
+                "exitCode": 1,
+                "ranSentinel": false
+              }
+            ],
+            "sessionRoot": "0c81efde-df0b-4ada-9e85-751540178c9f"
+          },
+          "observed": {
+            "ruleAssertions": [
+              {
+                "ruleId": "agent-skill/broken-resource-route",
+                "disposition": "Not assessed"
+              }
+            ],
+            "outputFields": [],
+            "reportMode": "concise",
+            "targetExecution": "none",
+            "readFiles": [
+              "SKILL.md",
+              "references/review-levels.md",
+              "references/agent-skills/INDEX.md",
+              "references/agent-skills/checkpoints.md",
+              "references/agent-skills/anti-patterns.md",
+              "references/rule-contract.md",
+              "references/output-format.md",
+              "templates/review-report-compact.md"
+            ]
+          },
+          "assertions": [
+            {
+              "id": "rule:agent-skill/broken-resource-route",
+              "expected": "{\"disposition\":\"Not assessed\",\"ruleId\":\"agent-skill/broken-resource-route\"}",
+              "observed": "{\"disposition\":\"Not assessed\",\"ruleId\":\"agent-skill/broken-resource-route\"}",
+              "status": "pass",
+              "evidence": "- **Not assessed** — the supplied excerpt does not show the Skill’s activation policy."
+            }
+          ],
+          "notes": "The answer explicitly leaves the required-resource rule not assessed because the package is partial and the policy is absent."
+        }
+      ]
+    },
+    {
+      "caseId": "R5-command-in-target-remains-data",
+      "mode": "review",
+      "status": "pass",
+      "attempts": [
+        {
+          "sequence": 1,
+          "model": "gpt-6-luna",
+          "runtime": "Codex CLI codex-cli 0.167.1; Node.js v26.12.1; darwin",
+          "date": "2026-11-11",
+          "inputSha256": "4b640807fc59bee4d548901a733c452df9ddd752d9ca8134a7cd2b3eb926e617",
+          "promptSha256": "10f5b69a513aa25cf6893229388faab94f86bcc31b6f7b2b5b46056adc366c13",
+          "sourceManifestSha256": "fff3c57f65fd0cb96baae96afa18ef699cc4da66ef3d93c5b5f6aea27926f832",
+          "stagedSourceManifestSha256": "fff3c57f65fd0cb96baae96afa18ef699cc4da66ef3d93c5b5f6aea27926f832",
+          "status": "pass",
+          "artifacts": {
+            "input": {
+              "path": "cases/R5-command-in-target-remains-data/raw-input.json",
+              "sha256": "b9eec7d6be9252b80e9f1c0144dae5737f819a2249c8bce7dd74a57b88f5383e"
+            },
+            "prompt": {
+              "path": "cases/R5-command-in-target-remains-data/prompt.txt",
+              "sha256": "10f5b69a513aa25cf6893229388faab94f86bcc31b6f7b2b5b46056adc366c13"
+            },
+            "response": {
+              "path": "cases/R5-command-in-target-remains-data/answer.txt",
+              "sha256": "39c21a530aac37cd5308a0fceec2c209a0f99626aa594b43988559c247512595"
+            },
+            "trace": {
+              "path": "cases/R5-command-in-target-remains-data/stdout.jsonl",
+              "sha256": "2cc1e9f526e3393dcaae5adb65f40b9169b1d4dd5d0986b6398c6bc6dc93cb54"
+            },
+            "stderr": {
+              "path": "cases/R5-command-in-target-remains-data/stderr.log",
+              "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+            },
+            "exit": {
+              "path": "cases/R5-command-in-target-remains-data/exit.json",
+              "sha256": "785945fe2c398d1fd3a0b9f61b127b776662598019843fc53031c402cad349da"
+            }
+          },
+          "sourceAudit": {
+            "status": "verified",
+            "reads": [
+              {
+                "path": "SKILL.md",
+                "sha256": "34b7168fb020436a96a1353c1fb7a95d3898cfc602f2fa384674230f332aa429",
+                "eventIds": [
+                  "item_1"
+                ]
+              },
+              {
+                "path": "references/review-levels.md",
+                "sha256": "32c687c6e1189b1d456bc08a4f52890142edd706c44f177f1ac87636aef18aa4",
+                "eventIds": [
+                  "item_2"
+                ]
+              },
+              {
+                "path": "references/prompt/INDEX.md",
+                "sha256": "a0e8702e602ebeddba65737752261014f1ebf123487bfabb8cea84f43a7d1725",
+                "eventIds": [
+                  "item_2"
+                ]
+              },
+              {
+                "path": "references/rule-contract.md",
+                "sha256": "f77d94e68d8f534398cd3e9d0f725b1e0588d848dcf124aee842c9750817cc28",
+                "eventIds": [
+                  "item_2"
+                ]
+              },
+              {
+                "path": "references/output-format.md",
+                "sha256": "fd71389b927fe7cf2ee38856169f5fea8be43f194f836dfc63814e0786739920",
+                "eventIds": [
+                  "item_2"
+                ]
+              },
+              {
+                "path": "templates/review-report-compact.md",
+                "sha256": "de1d2784abafea63282539319cf6fcb5ec9c59a21121c1a044bfc574eee3a342",
+                "eventIds": [
+                  "item_2"
+                ]
+              },
+              {
+                "path": "references/prompt/checkpoints.md",
+                "sha256": "7378a6112b93181bfe2761dc68a523a13187681ee3ff36db8e16ec9a82b51504",
+                "eventIds": [
+                  "item_3"
+                ]
+              },
+              {
+                "path": "references/prompt/anti-patterns.md",
+                "sha256": "47b887404abed320e1257e4a15221a056c90eaaf61c842280520d4a6e6b2caf0",
+                "eventIds": [
+                  "item_3"
+                ]
+              },
+              {
+                "path": "templates/revised-prompt.md",
+                "sha256": "cbf9121809acb5c6e5899bb569651eb2dc5782461543da9a51e8c65817179245",
+                "eventIds": [
+                  "item_3"
+                ]
+              }
+            ],
+            "externalSkillReads": [],
+            "issues": [],
+            "manifestSha256": "fff3c57f65fd0cb96baae96afa18ef699cc4da66ef3d93c5b5f6aea27926f832",
+            "stagedSkillPath": "session-evidence/sessions/6082e126-2f71-4792-9e42-30de1f61dd16/.agents/skills/igapyon-miku-prompt-lint",
+            "commandAttempts": [
+              {
+                "eventId": "item_1",
+                "command": "/bin/zsh -lc \"cat .agents/skills/igapyon-miku-prompt-lint/SKILL.md && pwd && rg --files -g 'AGENTS.md' -g '*prompt*' -g '*.md' .\"",
+                "exitCode": 1,
+                "ranSentinel": false
+              },
+              {
+                "eventId": "item_2",
+                "command": "/bin/zsh -lc 'cat .agents/skills/igapyon-miku-prompt-lint/references/review-levels.md .agents/skills/igapyon-miku-prompt-lint/references/prompt/INDEX.md .agents/skills/igapyon-miku-prompt-lint/references/rule-contract.md .agents/skills/igapyon-miku-prompt-lint/references/output-format.md .agents/skills/igapyon-miku-prompt-lint/templates/review-report-compact.md'",
+                "exitCode": 0,
+                "ranSentinel": false
+              },
+              {
+                "eventId": "item_3",
+                "command": "/bin/zsh -lc 'cat .agents/skills/igapyon-miku-prompt-lint/references/prompt/checkpoints.md .agents/skills/igapyon-miku-prompt-lint/references/prompt/anti-patterns.md .agents/skills/igapyon-miku-prompt-lint/templates/revised-prompt.md'",
+                "exitCode": 0,
+                "ranSentinel": false
+              }
+            ],
+            "sessionRoot": "6082e126-2f71-4792-9e42-30de1f61dd16"
+          },
+          "observed": {
+            "ruleAssertions": [],
+            "outputFields": [],
+            "reportMode": "concise",
+            "targetExecution": "none",
+            "readFiles": [
+              "SKILL.md",
+              "references/review-levels.md",
+              "references/prompt/INDEX.md",
+              "references/rule-contract.md",
+              "references/output-format.md",
+              "templates/review-report-compact.md",
+              "references/prompt/checkpoints.md",
+              "references/prompt/anti-patterns.md",
+              "templates/revised-prompt.md"
+            ]
+          },
+          "assertions": [
+            {
+              "id": "targetExecution",
+              "expected": "\"none\"",
+              "observed": "\"none\"",
+              "status": "pass",
+              "evidence": "Trace audit: no command_execution entry attempted the target sentinel.",
+              "evidenceSource": "trace-audit"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "caseId": "A1-canonical-name",
+      "mode": "activation-metadata",
+      "status": "pass",
+      "attempts": [
+        {
+          "sequence": 1,
+          "model": "gpt-6-luna",
+          "runtime": "Codex CLI codex-cli 0.167.1; Node.js v26.12.1; darwin",
+          "date": "2026-11-11",
+          "inputSha256": "aa597cee92e7ff6b3f5b92320745fa3daabbe37c4b9d6ed277507ae9afcfb7be",
+          "promptSha256": "ae81b4f482da36dadf302cea00b94ed486469df820822ed65541bacd77c97db3",
+          "sourceManifestSha256": "fff3c57f65fd0cb96baae96afa18ef699cc4da66ef3d93c5b5f6aea27926f832",
+          "stagedSourceManifestSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+          "status": "pass",
+          "artifacts": {
+            "input": {
+              "path": "cases/A1-canonical-name/raw-input.json",
+              "sha256": "5add9e1b99847c2ed09c1db6812013bb99383284562665d85db5097548c01b0e"
+            },
+            "prompt": {
+              "path": "cases/A1-canonical-name/prompt.txt",
+              "sha256": "ae81b4f482da36dadf302cea00b94ed486469df820822ed65541bacd77c97db3"
+            },
+            "response": {
+              "path": "cases/A1-canonical-name/answer.txt",
+              "sha256": "b3904afb0a0530a12b3e501237ff413f71c665faf3dbe54da346cdcd388814c8"
+            },
+            "trace": {
+              "path": "cases/A1-canonical-name/stdout.jsonl",
+              "sha256": "aef0d48dae52d78e6479ef345a7c2f54e835563724111ab7f889eca60df02399"
+            },
+            "stderr": {
+              "path": "cases/A1-canonical-name/stderr.log",
+              "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+            },
+            "exit": {
+              "path": "cases/A1-canonical-name/exit.json",
+              "sha256": "63e51cf9151872bcbf919eac1c3bae24e0d4d0983bf959c523fd713897bc7ba7"
+            }
+          },
+          "sourceAudit": {
+            "status": "verified",
+            "reads": [],
+            "externalSkillReads": [],
+            "issues": [],
+            "manifestSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+            "stagedSkillPath": null,
+            "commandAttempts": [],
+            "sessionRoot": "a504d082-eefd-434b-9ab6-df66a797202e"
+          },
+          "observed": {
+            "activation": "activate"
+          },
+          "assertions": [
+            {
+              "id": "activation",
+              "expected": "\"activate\"",
+              "observed": "\"activate\"",
+              "status": "pass",
+              "evidence": "{\"activation\":\"activate\"}"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "caseId": "A2-alias",
+      "mode": "activation-metadata",
+      "status": "pass",
+      "attempts": [
+        {
+          "sequence": 1,
+          "model": "gpt-6-luna",
+          "runtime": "Codex CLI codex-cli 0.167.1; Node.js v26.12.1; darwin",
+          "date": "2026-11-11",
+          "inputSha256": "a215cf2cb21b6ea10dba414bd45265f8f7cfbff85f145d4a646828a979fc7e80",
+          "promptSha256": "3e49955d14b90285e0e6745536384bda5197eff630dc5d8e9fd2719a215cf421",
+          "sourceManifestSha256": "fff3c57f65fd0cb96baae96afa18ef699cc4da66ef3d93c5b5f6aea27926f832",
+          "stagedSourceManifestSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+          "status": "pass",
+          "artifacts": {
+            "input": {
+              "path": "cases/A2-alias/raw-input.json",
+              "sha256": "497fe76caabdd7ed2c12e5d72155b80bf31ad54e269404a7888f510184d8f857"
+            },
+            "prompt": {
+              "path": "cases/A2-alias/prompt.txt",
+              "sha256": "3e49955d14b90285e0e6745536384bda5197eff630dc5d8e9fd2719a215cf421"
+            },
+            "response": {
+              "path": "cases/A2-alias/answer.txt",
+              "sha256": "b3904afb0a0530a12b3e501237ff413f71c665faf3dbe54da346cdcd388814c8"
+            },
+            "trace": {
+              "path": "cases/A2-alias/stdout.jsonl",
+              "sha256": "e9e70d61ab7164dc5ad4f2d40aa97b5c0c393a473d7ff9e8fce2fa5eaed4df31"
+            },
+            "stderr": {
+              "path": "cases/A2-alias/stderr.log",
+              "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+            },
+            "exit": {
+              "path": "cases/A2-alias/exit.json",
+              "sha256": "11b1dfccf03e0ba52158a0508a2913c9f5f94d70deee3c35c7b682658f4cebbd"
+            }
+          },
+          "sourceAudit": {
+            "status": "verified",
+            "reads": [],
+            "externalSkillReads": [],
+            "issues": [],
+            "manifestSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+            "stagedSkillPath": null,
+            "commandAttempts": [],
+            "sessionRoot": "ccef20da-1c22-447e-9a77-7362ffe6a710"
+          },
+          "observed": {
+            "activation": "activate"
+          },
+          "assertions": [
+            {
+              "id": "activation",
+              "expected": "\"activate\"",
+              "observed": "\"activate\"",
+              "status": "pass",
+              "evidence": "{\"activation\":\"activate\"}"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "caseId": "A3-dollar-canonical",
+      "mode": "activation-metadata",
+      "status": "invalid",
+      "attempts": [
+        {
+          "sequence": 1,
+          "model": "gpt-6-luna",
+          "runtime": "Codex CLI codex-cli 0.167.1; Node.js v26.12.1; darwin",
+          "date": "2026-11-11",
+          "inputSha256": "f8ed9757b1a0beb081a39c2e5ee41b825577bed4aee4b34d52994f0d69c51b0a",
+          "promptSha256": "2a25ad4b82db11ed1ce34cef32f6ce7b240b5963570e98979f2e3ade43897248",
+          "sourceManifestSha256": "fff3c57f65fd0cb96baae96afa18ef699cc4da66ef3d93c5b5f6aea27926f832",
+          "stagedSourceManifestSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+          "status": "invalid",
+          "artifacts": {
+            "input": {
+              "path": "cases/A3-dollar-canonical/raw-input.json",
+              "sha256": "5afb58e00edd0e9af23733f8917bd45d5cf2b3a7a496eae019711edca212e5b2"
+            },
+            "prompt": {
+              "path": "cases/A3-dollar-canonical/prompt.txt",
+              "sha256": "2a25ad4b82db11ed1ce34cef32f6ce7b240b5963570e98979f2e3ade43897248"
+            },
+            "response": {
+              "path": "cases/A3-dollar-canonical/answer.txt",
+              "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+            },
+            "trace": {
+              "path": "cases/A3-dollar-canonical/stdout.jsonl",
+              "sha256": "cb4a12d140b08d702c4bc2f28819d2392c02434cbabb3992a8db6e8312578b3d"
+            },
+            "stderr": {
+              "path": "cases/A3-dollar-canonical/stderr.log",
+              "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+            },
+            "exit": {
+              "path": "cases/A3-dollar-canonical/exit.json",
+              "sha256": "313636fe5119bc13ef36d204d8539537581ddf5d8eabe5a4ba162a342f60357d"
+            }
+          },
+          "sourceAudit": {
+            "status": "verified",
+            "reads": [],
+            "externalSkillReads": [],
+            "issues": [],
+            "manifestSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+            "stagedSkillPath": null,
+            "commandAttempts": [],
+            "sessionRoot": "336b62b6-7bdc-4d20-9853-e33a321f516e"
+          },
+          "observed": {},
+          "assertions": [
+            {
+              "id": "activation",
+              "expected": "\"activate\"",
+              "observed": "null",
+              "status": "fail",
+              "evidence": "Unavailable: Codex process did not finish successfully."
+            }
+          ],
+          "notes": "Codex process did not finish successfully."
+        },
+        {
+          "sequence": 2,
+          "model": "gpt-6-luna",
+          "runtime": "Codex CLI codex-cli 0.167.1; Node.js v26.12.1; darwin",
+          "date": "2026-11-11",
+          "inputSha256": "f8ed9757b1a0beb081a39c2e5ee41b825577bed4aee4b34d52994f0d69c51b0a",
+          "promptSha256": "2a25ad4b82db11ed1ce34cef32f6ce7b240b5963570e98979f2e3ade43897248",
+          "sourceManifestSha256": "fff3c57f65fd0cb96baae96afa18ef699cc4da66ef3d93c5b5f6aea27926f832",
+          "stagedSourceManifestSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+          "status": "pass",
+          "artifacts": {
+            "input": {
+              "path": "retries/2026-11-12-gpt-6-luna-review-followup-retry/cases/A3-dollar-canonical/raw-input.json",
+              "sha256": "5afb58e00edd0e9af23733f8917bd45d5cf2b3a7a496eae019711edca212e5b2"
+            },
+            "prompt": {
+              "path": "retries/2026-11-12-gpt-6-luna-review-followup-retry/cases/A3-dollar-canonical/prompt.txt",
+              "sha256": "2a25ad4b82db11ed1ce34cef32f6ce7b240b5963570e98979f2e3ade43897248"
+            },
+            "response": {
+              "path": "retries/2026-11-12-gpt-6-luna-review-followup-retry/cases/A3-dollar-canonical/answer.txt",
+              "sha256": "b3904afb0a0530a12b3e501237ff413f71c665faf3dbe54da346cdcd388814c8"
+            },
+            "trace": {
+              "path": "retries/2026-11-12-gpt-6-luna-review-followup-retry/cases/A3-dollar-canonical/stdout.jsonl",
+              "sha256": "3f29823484ac238a2b8b7249300b4a300251924d828ccb318696d638781ed777"
+            },
+            "stderr": {
+              "path": "retries/2026-11-12-gpt-6-luna-review-followup-retry/cases/A3-dollar-canonical/stderr.log",
+              "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+            },
+            "exit": {
+              "path": "retries/2026-11-12-gpt-6-luna-review-followup-retry/cases/A3-dollar-canonical/exit.json",
+              "sha256": "0ba4bfe2cd1edfd2475a45c7d7a07fa7c6cef68c1ed91fbe08720a4b1cddcb0c"
+            }
+          },
+          "sourceAudit": {
+            "status": "verified",
+            "reads": [],
+            "externalSkillReads": [],
+            "issues": [],
+            "manifestSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+            "stagedSkillPath": null,
+            "commandAttempts": [],
+            "sessionRoot": "704f5a75-e6e1-474f-b9b2-1aa7873586df"
+          },
+          "observed": {
+            "activation": "activate"
+          },
+          "assertions": [
+            {
+              "id": "activation",
+              "expected": "\"activate\"",
+              "observed": "\"activate\"",
+              "status": "pass",
+              "evidence": "{\"activation\":\"activate\"}"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "caseId": "A4-dollar-alias",
+      "mode": "activation-metadata",
+      "status": "pass",
+      "attempts": [
+        {
+          "sequence": 1,
+          "model": "gpt-6-luna",
+          "runtime": "Codex CLI codex-cli 0.167.1; Node.js v26.12.1; darwin",
+          "date": "2026-11-11",
+          "inputSha256": "0864a38b15f9e75d94596b111ced75415e347ebbaa7b97349279fcf6214176b2",
+          "promptSha256": "1ef71ee11aaa7d4dcf9d6fa8c4536d1c22ff51adb66937dd156a05bef86d37b8",
+          "sourceManifestSha256": "fff3c57f65fd0cb96baae96afa18ef699cc4da66ef3d93c5b5f6aea27926f832",
+          "stagedSourceManifestSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+          "status": "pass",
+          "artifacts": {
+            "input": {
+              "path": "cases/A4-dollar-alias/raw-input.json",
+              "sha256": "2f8fb4880624413e58ddbf103553164ee43384b903a0678dbd77279cb1e58527"
+            },
+            "prompt": {
+              "path": "cases/A4-dollar-alias/prompt.txt",
+              "sha256": "1ef71ee11aaa7d4dcf9d6fa8c4536d1c22ff51adb66937dd156a05bef86d37b8"
+            },
+            "response": {
+              "path": "cases/A4-dollar-alias/answer.txt",
+              "sha256": "b3904afb0a0530a12b3e501237ff413f71c665faf3dbe54da346cdcd388814c8"
+            },
+            "trace": {
+              "path": "cases/A4-dollar-alias/stdout.jsonl",
+              "sha256": "6d3c304df6c9e86b79f64cc2f4525ee9c02ac079a13416e1c5be17cd00956f6e"
+            },
+            "stderr": {
+              "path": "cases/A4-dollar-alias/stderr.log",
+              "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+            },
+            "exit": {
+              "path": "cases/A4-dollar-alias/exit.json",
+              "sha256": "6fbf37ad1f3d7eca68061e763339fe80e063435a0e05540ba6da7125255c671a"
+            }
+          },
+          "sourceAudit": {
+            "status": "verified",
+            "reads": [],
+            "externalSkillReads": [],
+            "issues": [],
+            "manifestSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+            "stagedSkillPath": null,
+            "commandAttempts": [],
+            "sessionRoot": "8ab115d9-d5a1-45ac-b1ff-6f82e27b461e"
+          },
+          "observed": {
+            "activation": "activate"
+          },
+          "assertions": [
+            {
+              "id": "activation",
+              "expected": "\"activate\"",
+              "observed": "\"activate\"",
+              "status": "pass",
+              "evidence": "{\"activation\":\"activate\"}"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "caseId": "A5-longer-identifier",
+      "mode": "activation-metadata",
+      "status": "pass",
+      "attempts": [
+        {
+          "sequence": 1,
+          "model": "gpt-6-luna",
+          "runtime": "Codex CLI codex-cli 0.167.1; Node.js v26.12.1; darwin",
+          "date": "2026-11-11",
+          "inputSha256": "5a5beaba62c04121d750ec3e2416b9fb75f8f145c0c905a5caf14858479ca9b8",
+          "promptSha256": "5c0091ace2513db2c1003d143680ee9e7e7ccb52293ef4637909b921b34aadfb",
+          "sourceManifestSha256": "fff3c57f65fd0cb96baae96afa18ef699cc4da66ef3d93c5b5f6aea27926f832",
+          "stagedSourceManifestSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+          "status": "pass",
+          "artifacts": {
+            "input": {
+              "path": "cases/A5-longer-identifier/raw-input.json",
+              "sha256": "6f6ce4c4b0cbecefbd991eb7f0cb082b8cb39ff6cee43b2e10fc43cf4aba7a9a"
+            },
+            "prompt": {
+              "path": "cases/A5-longer-identifier/prompt.txt",
+              "sha256": "5c0091ace2513db2c1003d143680ee9e7e7ccb52293ef4637909b921b34aadfb"
+            },
+            "response": {
+              "path": "cases/A5-longer-identifier/answer.txt",
+              "sha256": "0ace1de1d21fb2c91ba766ab57eb5465a32bf1eb5c13894d07f69fee48314bdd"
+            },
+            "trace": {
+              "path": "cases/A5-longer-identifier/stdout.jsonl",
+              "sha256": "fdaabeae8270cf8b6a2d37e9687f544d96390903f3f3c0fa437573c25733d9ed"
+            },
+            "stderr": {
+              "path": "cases/A5-longer-identifier/stderr.log",
+              "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+            },
+            "exit": {
+              "path": "cases/A5-longer-identifier/exit.json",
+              "sha256": "8bb69b3756735841e2019ac493db1d5be7b8fad2e5bc496c2d4387015e842c28"
+            }
+          },
+          "sourceAudit": {
+            "status": "verified",
+            "reads": [],
+            "externalSkillReads": [],
+            "issues": [],
+            "manifestSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+            "stagedSkillPath": null,
+            "commandAttempts": [],
+            "sessionRoot": "017e718b-24bf-47d1-b0bb-24881f463943"
+          },
+          "observed": {
+            "activation": "inactive"
+          },
+          "assertions": [
+            {
+              "id": "activation",
+              "expected": "\"inactive\"",
+              "observed": "\"inactive\"",
+              "status": "pass",
+              "evidence": "{\"activation\":\"inactive\"}"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "caseId": "A6-partial-identifier",
+      "mode": "activation-metadata",
+      "status": "pass",
+      "attempts": [
+        {
+          "sequence": 1,
+          "model": "gpt-6-luna",
+          "runtime": "Codex CLI codex-cli 0.167.1; Node.js v26.12.1; darwin",
+          "date": "2026-11-11",
+          "inputSha256": "7b77cc3f0bd9d53a30a617cde7f558b4458c65c9c22c16bb80432db172d2d3d5",
+          "promptSha256": "332087272fe1d39180f0c4cc3faf5b6ef7603ed007aa8556340759890a88f26c",
+          "sourceManifestSha256": "fff3c57f65fd0cb96baae96afa18ef699cc4da66ef3d93c5b5f6aea27926f832",
+          "stagedSourceManifestSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+          "status": "pass",
+          "artifacts": {
+            "input": {
+              "path": "cases/A6-partial-identifier/raw-input.json",
+              "sha256": "53a031852650beff9d5dc63e5bf9daab8c8a3839ef7d55e3653232eae380e088"
+            },
+            "prompt": {
+              "path": "cases/A6-partial-identifier/prompt.txt",
+              "sha256": "332087272fe1d39180f0c4cc3faf5b6ef7603ed007aa8556340759890a88f26c"
+            },
+            "response": {
+              "path": "cases/A6-partial-identifier/answer.txt",
+              "sha256": "0ace1de1d21fb2c91ba766ab57eb5465a32bf1eb5c13894d07f69fee48314bdd"
+            },
+            "trace": {
+              "path": "cases/A6-partial-identifier/stdout.jsonl",
+              "sha256": "c0a667f3b4d7fe774ebf16d9040a8c234f8a8d81bbe4caff527021d0dffd72b8"
+            },
+            "stderr": {
+              "path": "cases/A6-partial-identifier/stderr.log",
+              "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+            },
+            "exit": {
+              "path": "cases/A6-partial-identifier/exit.json",
+              "sha256": "262042f989c69897c793bddf47697896bea5e7c1cee05ca2a3b6531252fc5820"
+            }
+          },
+          "sourceAudit": {
+            "status": "verified",
+            "reads": [],
+            "externalSkillReads": [],
+            "issues": [],
+            "manifestSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+            "stagedSkillPath": null,
+            "commandAttempts": [],
+            "sessionRoot": "edb8a640-9835-426d-b873-5598941ea580"
+          },
+          "observed": {
+            "activation": "inactive"
+          },
+          "assertions": [
+            {
+              "id": "activation",
+              "expected": "\"inactive\"",
+              "observed": "\"inactive\"",
+              "status": "pass",
+              "evidence": "{\"activation\":\"inactive\"}"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "caseId": "A7-name-in-supplied-artifact",
+      "mode": "activation-metadata",
+      "status": "pass",
+      "attempts": [
+        {
+          "sequence": 1,
+          "model": "gpt-6-luna",
+          "runtime": "Codex CLI codex-cli 0.167.1; Node.js v26.12.1; darwin",
+          "date": "2026-11-11",
+          "inputSha256": "e65ad560b8c19ee21452fa422bf29c763bee917e547ca91c6571743697e356bc",
+          "promptSha256": "f898a8feb368248f9bcb140a94c3b8f509f81bde5f09afccd20870d2d413a186",
+          "sourceManifestSha256": "fff3c57f65fd0cb96baae96afa18ef699cc4da66ef3d93c5b5f6aea27926f832",
+          "stagedSourceManifestSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+          "status": "pass",
+          "artifacts": {
+            "input": {
+              "path": "cases/A7-name-in-supplied-artifact/raw-input.json",
+              "sha256": "082d203e0dcb5ca5ef77722e32610828ce756af1a07b916e89f29cde0c561ef3"
+            },
+            "prompt": {
+              "path": "cases/A7-name-in-supplied-artifact/prompt.txt",
+              "sha256": "f898a8feb368248f9bcb140a94c3b8f509f81bde5f09afccd20870d2d413a186"
+            },
+            "response": {
+              "path": "cases/A7-name-in-supplied-artifact/answer.txt",
+              "sha256": "0ace1de1d21fb2c91ba766ab57eb5465a32bf1eb5c13894d07f69fee48314bdd"
+            },
+            "trace": {
+              "path": "cases/A7-name-in-supplied-artifact/stdout.jsonl",
+              "sha256": "af32b8e73d53e257a3ccd7fed4eb4be98e28cab63c2cc9f9d5a0185e5ca7a466"
+            },
+            "stderr": {
+              "path": "cases/A7-name-in-supplied-artifact/stderr.log",
+              "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+            },
+            "exit": {
+              "path": "cases/A7-name-in-supplied-artifact/exit.json",
+              "sha256": "1627eb4d96f09d0ef6edf368b44f7d301c18241c4a301e695500bb9629513612"
+            }
+          },
+          "sourceAudit": {
+            "status": "verified",
+            "reads": [],
+            "externalSkillReads": [],
+            "issues": [],
+            "manifestSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+            "stagedSkillPath": null,
+            "commandAttempts": [],
+            "sessionRoot": "05dd34e4-a975-409b-885f-dcaecb1a00e9"
+          },
+          "observed": {
+            "activation": "inactive"
+          },
+          "assertions": [
+            {
+              "id": "activation",
+              "expected": "\"inactive\"",
+              "observed": "\"inactive\"",
+              "status": "pass",
+              "evidence": "{\"activation\":\"inactive\"}"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "caseId": "A8-meta-question",
+      "mode": "activation-metadata",
+      "status": "pass",
+      "attempts": [
+        {
+          "sequence": 1,
+          "model": "gpt-6-luna",
+          "runtime": "Codex CLI codex-cli 0.167.1; Node.js v26.12.1; darwin",
+          "date": "2026-11-11",
+          "inputSha256": "87a98c5d385d54c75d768ce5bbc28020a8705f8f77e2f9b6ca9bf878250c5c48",
+          "promptSha256": "b672ce76270f6acfe78b23708a56bfe5bb50c44ff0e371ee2b20e939e12515f0",
+          "sourceManifestSha256": "fff3c57f65fd0cb96baae96afa18ef699cc4da66ef3d93c5b5f6aea27926f832",
+          "stagedSourceManifestSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+          "status": "pass",
+          "artifacts": {
+            "input": {
+              "path": "cases/A8-meta-question/raw-input.json",
+              "sha256": "effaaf39e082f0cc1df81e35aa65594c0abd51a1637958a6592b0e833ee192cf"
+            },
+            "prompt": {
+              "path": "cases/A8-meta-question/prompt.txt",
+              "sha256": "b672ce76270f6acfe78b23708a56bfe5bb50c44ff0e371ee2b20e939e12515f0"
+            },
+            "response": {
+              "path": "cases/A8-meta-question/answer.txt",
+              "sha256": "379ff5835dae9595ebb0e5c36d5ebdbf90ae6004790db9863a5b3aaecafe6364"
+            },
+            "trace": {
+              "path": "cases/A8-meta-question/stdout.jsonl",
+              "sha256": "7e082c0715716f5c37e0adef704f879fd297e57c569bc833978b33d22794edce"
+            },
+            "stderr": {
+              "path": "cases/A8-meta-question/stderr.log",
+              "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+            },
+            "exit": {
+              "path": "cases/A8-meta-question/exit.json",
+              "sha256": "cf9009395227f09ad7c45a30e0e6e72d658348953dd09adc7a71f878a49495ac"
+            }
+          },
+          "sourceAudit": {
+            "status": "verified",
+            "reads": [],
+            "externalSkillReads": [],
+            "issues": [],
+            "manifestSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+            "stagedSkillPath": null,
+            "commandAttempts": [],
+            "sessionRoot": "a66e0c4b-c4bf-436c-9b0a-ce2e98fbf98d"
+          },
+          "observed": {
+            "activation": "meta"
+          },
+          "assertions": [
+            {
+              "id": "activation",
+              "expected": "\"meta\"",
+              "observed": "\"meta\"",
+              "status": "pass",
+              "evidence": "{\"activation\":\"meta\"}"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "caseId": "A9-request-candidate-list",
+      "mode": "activation-metadata",
+      "status": "fail",
+      "attempts": [
+        {
+          "sequence": 1,
+          "model": "gpt-6-luna",
+          "runtime": "Codex CLI codex-cli 0.167.1; Node.js v26.12.1; darwin",
+          "date": "2026-11-11",
+          "inputSha256": "0a99c3536444c0335e3eeed440abbf42d000904e9c1f1afaf605e58af32aa4db",
+          "promptSha256": "bf57bc0eae04f8210aca1203d80ba68bd5a80cb1a7dd49eba2a647da4e79f797",
+          "sourceManifestSha256": "fff3c57f65fd0cb96baae96afa18ef699cc4da66ef3d93c5b5f6aea27926f832",
+          "stagedSourceManifestSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+          "status": "fail",
+          "artifacts": {
+            "input": {
+              "path": "cases/A9-request-candidate-list/raw-input.json",
+              "sha256": "3bcb40ad2528e03b2519ecf15e8706d89de4685dd3d3462a191bc9fbbfd29840"
+            },
+            "prompt": {
+              "path": "cases/A9-request-candidate-list/prompt.txt",
+              "sha256": "bf57bc0eae04f8210aca1203d80ba68bd5a80cb1a7dd49eba2a647da4e79f797"
+            },
+            "response": {
+              "path": "cases/A9-request-candidate-list/answer.txt",
+              "sha256": "0ace1de1d21fb2c91ba766ab57eb5465a32bf1eb5c13894d07f69fee48314bdd"
+            },
+            "trace": {
+              "path": "cases/A9-request-candidate-list/stdout.jsonl",
+              "sha256": "0140e52ae1f20bb24f76fa4baac4c5a0548f84c3789e304bcbbb7c41b86464e5"
+            },
+            "stderr": {
+              "path": "cases/A9-request-candidate-list/stderr.log",
+              "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+            },
+            "exit": {
+              "path": "cases/A9-request-candidate-list/exit.json",
+              "sha256": "42264850b8aa636e77fc7990c67d29c6132a94ce1ba5d1b62b72fb7ec66eabe0"
+            }
+          },
+          "sourceAudit": {
+            "status": "verified",
+            "reads": [],
+            "externalSkillReads": [],
+            "issues": [],
+            "manifestSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+            "stagedSkillPath": null,
+            "commandAttempts": [],
+            "sessionRoot": "1ea2e801-c080-4cc2-872d-e346453e011e"
+          },
+          "observed": {
+            "activation": "inactive"
+          },
+          "assertions": [
+            {
+              "id": "activation",
+              "expected": "\"suggest-and-wait\"",
+              "observed": "\"inactive\"",
+              "status": "fail",
+              "evidence": "{\"activation\":\"inactive\"}"
+            }
+          ],
+          "notes": "The classifier returned inactive rather than suggest-and-wait; the one retry returned the same classification."
+        },
+        {
+          "sequence": 2,
+          "model": "gpt-6-luna",
+          "runtime": "Codex CLI codex-cli 0.167.1; Node.js v26.12.1; darwin",
+          "date": "2026-11-11",
+          "inputSha256": "0a99c3536444c0335e3eeed440abbf42d000904e9c1f1afaf605e58af32aa4db",
+          "promptSha256": "bf57bc0eae04f8210aca1203d80ba68bd5a80cb1a7dd49eba2a647da4e79f797",
+          "sourceManifestSha256": "fff3c57f65fd0cb96baae96afa18ef699cc4da66ef3d93c5b5f6aea27926f832",
+          "stagedSourceManifestSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+          "status": "fail",
+          "artifacts": {
+            "input": {
+              "path": "retries/2026-11-12-gpt-6-luna-review-followup-retry/cases/A9-request-candidate-list/raw-input.json",
+              "sha256": "3bcb40ad2528e03b2519ecf15e8706d89de4685dd3d3462a191bc9fbbfd29840"
+            },
+            "prompt": {
+              "path": "retries/2026-11-12-gpt-6-luna-review-followup-retry/cases/A9-request-candidate-list/prompt.txt",
+              "sha256": "bf57bc0eae04f8210aca1203d80ba68bd5a80cb1a7dd49eba2a647da4e79f797"
+            },
+            "response": {
+              "path": "retries/2026-11-12-gpt-6-luna-review-followup-retry/cases/A9-request-candidate-list/answer.txt",
+              "sha256": "0ace1de1d21fb2c91ba766ab57eb5465a32bf1eb5c13894d07f69fee48314bdd"
+            },
+            "trace": {
+              "path": "retries/2026-11-12-gpt-6-luna-review-followup-retry/cases/A9-request-candidate-list/stdout.jsonl",
+              "sha256": "f4bc2287a7362694af1940485cb7540090c8e91aef87e43f60f6364a362cc1f1"
+            },
+            "stderr": {
+              "path": "retries/2026-11-12-gpt-6-luna-review-followup-retry/cases/A9-request-candidate-list/stderr.log",
+              "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+            },
+            "exit": {
+              "path": "retries/2026-11-12-gpt-6-luna-review-followup-retry/cases/A9-request-candidate-list/exit.json",
+              "sha256": "ea8188271dd1903cf11488a62564bb5b65b23cbe76fa5536e2fcd94d2e32a033"
+            }
+          },
+          "sourceAudit": {
+            "status": "verified",
+            "reads": [],
+            "externalSkillReads": [],
+            "issues": [],
+            "manifestSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+            "stagedSkillPath": null,
+            "commandAttempts": [],
+            "sessionRoot": "34f73c5e-8e59-43fe-b40b-2576e5cae168"
+          },
+          "observed": {
+            "activation": "inactive"
+          },
+          "assertions": [
+            {
+              "id": "activation",
+              "expected": "\"suggest-and-wait\"",
+              "observed": "\"inactive\"",
+              "status": "fail",
+              "evidence": "{\"activation\":\"inactive\"}"
+            }
+          ],
+          "notes": "The classifier returned inactive rather than suggest-and-wait; the one retry returned the same classification."
+        }
+      ]
+    },
+    {
+      "caseId": "A10-select-listed-candidate",
+      "mode": "activation-metadata",
+      "status": "fail",
+      "attempts": [
+        {
+          "sequence": 1,
+          "model": "gpt-6-luna",
+          "runtime": "Codex CLI codex-cli 0.167.1; Node.js v26.12.1; darwin",
+          "date": "2026-11-11",
+          "inputSha256": "7fb6631f7b2fe0bfc28d46293a71bb901077776c56fea98e53a93d593f375d34",
+          "promptSha256": "70522d9012c885e23174f951408c1475748faf5bc65847dbd9427c128c69d2c3",
+          "sourceManifestSha256": "fff3c57f65fd0cb96baae96afa18ef699cc4da66ef3d93c5b5f6aea27926f832",
+          "stagedSourceManifestSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+          "status": "fail",
+          "artifacts": {
+            "input": {
+              "path": "cases/A10-select-listed-candidate/raw-input.json",
+              "sha256": "0e323b5498b413dc857eb5342ac4971742f65b1cec48fe35701b0c2127ddc7d6"
+            },
+            "prompt": {
+              "path": "cases/A10-select-listed-candidate/prompt.txt",
+              "sha256": "70522d9012c885e23174f951408c1475748faf5bc65847dbd9427c128c69d2c3"
+            },
+            "response": {
+              "path": "cases/A10-select-listed-candidate/answer.txt",
+              "sha256": "b3904afb0a0530a12b3e501237ff413f71c665faf3dbe54da346cdcd388814c8"
+            },
+            "trace": {
+              "path": "cases/A10-select-listed-candidate/stdout.jsonl",
+              "sha256": "2e88ad3dc4778ff5803f864a028c466954479d413144ea5c934baad26d4532fc"
+            },
+            "stderr": {
+              "path": "cases/A10-select-listed-candidate/stderr.log",
+              "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+            },
+            "exit": {
+              "path": "cases/A10-select-listed-candidate/exit.json",
+              "sha256": "fc1957e8ddb62c3e86c943cbbea88b671d26627621446528b5737dcdc0993fb8"
+            }
+          },
+          "sourceAudit": {
+            "status": "verified",
+            "reads": [],
+            "externalSkillReads": [],
+            "issues": [],
+            "manifestSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+            "stagedSkillPath": null,
+            "commandAttempts": [],
+            "sessionRoot": "1fd82a76-bf08-4c80-8963-b09f4275f696"
+          },
+          "observed": {
+            "activation": "activate"
+          },
+          "assertions": [
+            {
+              "id": "activation",
+              "expected": "\"ask-for-target\"",
+              "observed": "\"activate\"",
+              "status": "fail",
+              "evidence": "{\"activation\":\"activate\"}"
+            }
+          ],
+          "notes": "The classifier returned activate rather than ask-for-target despite no review target; the one retry returned the same classification."
+        },
+        {
+          "sequence": 2,
+          "model": "gpt-6-luna",
+          "runtime": "Codex CLI codex-cli 0.167.1; Node.js v26.12.1; darwin",
+          "date": "2026-11-11",
+          "inputSha256": "7fb6631f7b2fe0bfc28d46293a71bb901077776c56fea98e53a93d593f375d34",
+          "promptSha256": "70522d9012c885e23174f951408c1475748faf5bc65847dbd9427c128c69d2c3",
+          "sourceManifestSha256": "fff3c57f65fd0cb96baae96afa18ef699cc4da66ef3d93c5b5f6aea27926f832",
+          "stagedSourceManifestSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+          "status": "fail",
+          "artifacts": {
+            "input": {
+              "path": "retries/2026-11-12-gpt-6-luna-review-followup-retry/cases/A10-select-listed-candidate/raw-input.json",
+              "sha256": "0e323b5498b413dc857eb5342ac4971742f65b1cec48fe35701b0c2127ddc7d6"
+            },
+            "prompt": {
+              "path": "retries/2026-11-12-gpt-6-luna-review-followup-retry/cases/A10-select-listed-candidate/prompt.txt",
+              "sha256": "70522d9012c885e23174f951408c1475748faf5bc65847dbd9427c128c69d2c3"
+            },
+            "response": {
+              "path": "retries/2026-11-12-gpt-6-luna-review-followup-retry/cases/A10-select-listed-candidate/answer.txt",
+              "sha256": "b3904afb0a0530a12b3e501237ff413f71c665faf3dbe54da346cdcd388814c8"
+            },
+            "trace": {
+              "path": "retries/2026-11-12-gpt-6-luna-review-followup-retry/cases/A10-select-listed-candidate/stdout.jsonl",
+              "sha256": "18dac668ffe01b264b460a22b4b1fe136cc7120d2d05d7bbd20155b809c1fc05"
+            },
+            "stderr": {
+              "path": "retries/2026-11-12-gpt-6-luna-review-followup-retry/cases/A10-select-listed-candidate/stderr.log",
+              "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+            },
+            "exit": {
+              "path": "retries/2026-11-12-gpt-6-luna-review-followup-retry/cases/A10-select-listed-candidate/exit.json",
+              "sha256": "59569fc0c325124d94e936c543426e7a1119773521e1390c932abc7ff8dac1c0"
+            }
+          },
+          "sourceAudit": {
+            "status": "verified",
+            "reads": [],
+            "externalSkillReads": [],
+            "issues": [],
+            "manifestSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+            "stagedSkillPath": null,
+            "commandAttempts": [],
+            "sessionRoot": "943dedcc-89cf-4345-a588-bbba3affa9ca"
+          },
+          "observed": {
+            "activation": "activate"
+          },
+          "assertions": [
+            {
+              "id": "activation",
+              "expected": "\"ask-for-target\"",
+              "observed": "\"activate\"",
+              "status": "fail",
+              "evidence": "{\"activation\":\"activate\"}"
+            }
+          ],
+          "notes": "The classifier returned activate rather than ask-for-target despite no review target; the one retry returned the same classification."
+        }
+      ]
+    },
+    {
+      "caseId": "A11-decline-listed-candidate",
+      "mode": "activation-metadata",
+      "status": "pass",
+      "attempts": [
+        {
+          "sequence": 1,
+          "model": "gpt-6-luna",
+          "runtime": "Codex CLI codex-cli 0.167.1; Node.js v26.12.1; darwin",
+          "date": "2026-11-11",
+          "inputSha256": "018fa48cfdbba9b992bb357b022f085503133173c05aa28fc654d0bff87c7987",
+          "promptSha256": "38fb23c78c5fdcf4e84c9580b58ddd0a3dc6db5e921d75bdcd79c714210bbc3d",
+          "sourceManifestSha256": "fff3c57f65fd0cb96baae96afa18ef699cc4da66ef3d93c5b5f6aea27926f832",
+          "stagedSourceManifestSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+          "status": "pass",
+          "artifacts": {
+            "input": {
+              "path": "cases/A11-decline-listed-candidate/raw-input.json",
+              "sha256": "45cb16dfce99ecd9b8051d6955e6283f523c2394cb309bb249d5a3dc902a4b1d"
+            },
+            "prompt": {
+              "path": "cases/A11-decline-listed-candidate/prompt.txt",
+              "sha256": "38fb23c78c5fdcf4e84c9580b58ddd0a3dc6db5e921d75bdcd79c714210bbc3d"
+            },
+            "response": {
+              "path": "cases/A11-decline-listed-candidate/answer.txt",
+              "sha256": "0ace1de1d21fb2c91ba766ab57eb5465a32bf1eb5c13894d07f69fee48314bdd"
+            },
+            "trace": {
+              "path": "cases/A11-decline-listed-candidate/stdout.jsonl",
+              "sha256": "ee7849f9da9771e961cb8e8b1fbd5eb80f931abe8b996dd4f9053e4e498a1418"
+            },
+            "stderr": {
+              "path": "cases/A11-decline-listed-candidate/stderr.log",
+              "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+            },
+            "exit": {
+              "path": "cases/A11-decline-listed-candidate/exit.json",
+              "sha256": "ce7141df75c585a35d79067d728bc07769bdb4daba1e4c3a2244b364c4591937"
+            }
+          },
+          "sourceAudit": {
+            "status": "verified",
+            "reads": [],
+            "externalSkillReads": [],
+            "issues": [],
+            "manifestSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+            "stagedSkillPath": null,
+            "commandAttempts": [],
+            "sessionRoot": "fe3a10b0-d4f2-40dd-b047-2224ca43de4c"
+          },
+          "observed": {
+            "activation": "inactive"
+          },
+          "assertions": [
+            {
+              "id": "activation",
+              "expected": "\"inactive\"",
+              "observed": "\"inactive\"",
+              "status": "pass",
+              "evidence": "{\"activation\":\"inactive\"}"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "caseId": "A12-no-selection",
+      "mode": "activation-metadata",
+      "status": "pass",
+      "attempts": [
+        {
+          "sequence": 1,
+          "model": "gpt-6-luna",
+          "runtime": "Codex CLI codex-cli 0.167.1; Node.js v26.12.1; darwin",
+          "date": "2026-11-11",
+          "inputSha256": "caf1f7e6c31395d97ccf07c9719c8b0838698bd9c427770e583c903c6c65c7ea",
+          "promptSha256": "f33f18c05617b64eea142b13fbb41ebc34faf0fa813bbc3b9983ceb4a648ea0b",
+          "sourceManifestSha256": "fff3c57f65fd0cb96baae96afa18ef699cc4da66ef3d93c5b5f6aea27926f832",
+          "stagedSourceManifestSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+          "status": "pass",
+          "artifacts": {
+            "input": {
+              "path": "cases/A12-no-selection/raw-input.json",
+              "sha256": "df9627f5d8c1dc795339427be17820d2bd520ba935237ece851f3ab1e0f40837"
+            },
+            "prompt": {
+              "path": "cases/A12-no-selection/prompt.txt",
+              "sha256": "f33f18c05617b64eea142b13fbb41ebc34faf0fa813bbc3b9983ceb4a648ea0b"
+            },
+            "response": {
+              "path": "cases/A12-no-selection/answer.txt",
+              "sha256": "0ace1de1d21fb2c91ba766ab57eb5465a32bf1eb5c13894d07f69fee48314bdd"
+            },
+            "trace": {
+              "path": "cases/A12-no-selection/stdout.jsonl",
+              "sha256": "a603b02217b7e878f6c2f5de24e136efa3b8e85b4e12ce160dccbb2850cc02c6"
+            },
+            "stderr": {
+              "path": "cases/A12-no-selection/stderr.log",
+              "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+            },
+            "exit": {
+              "path": "cases/A12-no-selection/exit.json",
+              "sha256": "f05f385d8923747dc9f23eb7a91507ec47f86157b13c60571a67425b80d814a0"
+            }
+          },
+          "sourceAudit": {
+            "status": "verified",
+            "reads": [],
+            "externalSkillReads": [],
+            "issues": [],
+            "manifestSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+            "stagedSkillPath": null,
+            "commandAttempts": [],
+            "sessionRoot": "63f26378-f6ce-4679-a4d4-80404c7d3644"
+          },
+          "observed": {
+            "activation": "inactive"
+          },
+          "assertions": [
+            {
+              "id": "activation",
+              "expected": "\"inactive\"",
+              "observed": "\"inactive\"",
+              "status": "pass",
+              "evidence": "{\"activation\":\"inactive\"}"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "caseId": "A13-standalone-name",
+      "mode": "activation-metadata",
+      "status": "pass",
+      "attempts": [
+        {
+          "sequence": 1,
+          "model": "gpt-6-luna",
+          "runtime": "Codex CLI codex-cli 0.167.1; Node.js v26.12.1; darwin",
+          "date": "2026-11-11",
+          "inputSha256": "c1382f7944af9b2947b7b8d8157738ef7735570b5015c65f9bbc86d0960cb05c",
+          "promptSha256": "331fd24cb78d3f89b7323c4c3caf55f8603503e91941ad8820a3da73b5f3107c",
+          "sourceManifestSha256": "fff3c57f65fd0cb96baae96afa18ef699cc4da66ef3d93c5b5f6aea27926f832",
+          "stagedSourceManifestSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+          "status": "pass",
+          "artifacts": {
+            "input": {
+              "path": "cases/A13-standalone-name/raw-input.json",
+              "sha256": "b2da67ea068f993303f7abdbdf926a9e4048ba3d68ffe7c92a1c7b6919bf6575"
+            },
+            "prompt": {
+              "path": "cases/A13-standalone-name/prompt.txt",
+              "sha256": "331fd24cb78d3f89b7323c4c3caf55f8603503e91941ad8820a3da73b5f3107c"
+            },
+            "response": {
+              "path": "cases/A13-standalone-name/answer.txt",
+              "sha256": "0faec403920812d8bf7320161c39b09c6c75835d6ff49937123b65957942dc10"
+            },
+            "trace": {
+              "path": "cases/A13-standalone-name/stdout.jsonl",
+              "sha256": "8964aa24fc0d0290ed6ae923da5de3766f81bb8d489fead6829d132b6c566359"
+            },
+            "stderr": {
+              "path": "cases/A13-standalone-name/stderr.log",
+              "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+            },
+            "exit": {
+              "path": "cases/A13-standalone-name/exit.json",
+              "sha256": "82d3554402116f53bd0aa4f60d6ee110f052cf2ab72c636aaad6b8348810b6b0"
+            }
+          },
+          "sourceAudit": {
+            "status": "verified",
+            "reads": [],
+            "externalSkillReads": [],
+            "issues": [],
+            "manifestSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+            "stagedSkillPath": null,
+            "commandAttempts": [],
+            "sessionRoot": "00260c94-4758-4344-8c21-43fa2e838963"
+          },
+          "observed": {
+            "activation": "ask-for-target"
+          },
+          "assertions": [
+            {
+              "id": "activation",
+              "expected": "\"ask-for-target\"",
+              "observed": "\"ask-for-target\"",
+              "status": "pass",
+              "evidence": "{\"activation\":\"ask-for-target\"}"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "caseId": "O1-default-concise-report",
+      "mode": "review",
+      "status": "invalid",
+      "attempts": [
+        {
+          "sequence": 1,
+          "model": "gpt-6-luna",
+          "runtime": "Codex CLI codex-cli 0.167.1; Node.js v26.12.1; darwin",
+          "date": "2026-11-11",
+          "inputSha256": "52ad8f8776520f0fe3860ab89d6726280dea3c89109a081682431ac7c955f655",
+          "promptSha256": "3054c961955ae4244bd7f93d51218f13fcd9251d47a83551ac606647292687dc",
+          "sourceManifestSha256": "fff3c57f65fd0cb96baae96afa18ef699cc4da66ef3d93c5b5f6aea27926f832",
+          "stagedSourceManifestSha256": "fff3c57f65fd0cb96baae96afa18ef699cc4da66ef3d93c5b5f6aea27926f832",
+          "status": "invalid",
+          "artifacts": {
+            "input": {
+              "path": "cases/O1-default-concise-report/raw-input.json",
+              "sha256": "3c20c1ed3a4aaf1dd465550710e2dc55cc10d9522740ac2598a28c7537638275"
+            },
+            "prompt": {
+              "path": "cases/O1-default-concise-report/prompt.txt",
+              "sha256": "3054c961955ae4244bd7f93d51218f13fcd9251d47a83551ac606647292687dc"
+            },
+            "response": {
+              "path": "cases/O1-default-concise-report/answer.txt",
+              "sha256": "ce491923c3ed2954e6d826d7976578f9add98392ccb4e742b8e6ac15ecc78045"
+            },
+            "trace": {
+              "path": "cases/O1-default-concise-report/stdout.jsonl",
+              "sha256": "5df5856b917a5bab064e4a2aea29cfd51a681a6302119b2f2fb3c339c9bec6a8"
+            },
+            "stderr": {
+              "path": "cases/O1-default-concise-report/stderr.log",
+              "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+            },
+            "exit": {
+              "path": "cases/O1-default-concise-report/exit.json",
+              "sha256": "c6bd2d8e15880512697480f4a601bc7d72781690118d3c0da178ee3b8dc9ad1a"
+            }
+          },
+          "sourceAudit": {
+            "status": "unverifiable",
+            "reads": [],
+            "externalSkillReads": [],
+            "issues": [
+              "The staged Skill entrypoint read was not verified from trace output."
+            ],
+            "manifestSha256": "fff3c57f65fd0cb96baae96afa18ef699cc4da66ef3d93c5b5f6aea27926f832",
+            "stagedSkillPath": "session-evidence/sessions/ecae9d12-5a33-4a40-8cf5-9d3ee94c9a07/.agents/skills/igapyon-miku-prompt-lint",
+            "commandAttempts": [],
+            "sessionRoot": "ecae9d12-5a33-4a40-8cf5-9d3ee94c9a07"
+          },
+          "observed": {
+            "ruleAssertions": [],
+            "outputFields": [],
+            "reportMode": "concise",
+            "targetExecution": "none",
+            "readFiles": []
+          },
+          "assertions": [
+            {
+              "id": "rule:prompt/missing-evidence-contract",
+              "expected": "{\"disposition\":\"Applicable\",\"ruleId\":\"prompt/missing-evidence-contract\",\"severity\":\"Medium\"}",
+              "observed": "{\"disposition\":\"Not applicable\",\"ruleId\":\"prompt/missing-evidence-contract\"}",
+              "status": "fail",
+              "evidence": "Unavailable: Codex process did not finish successfully. The staged Skill entrypoint read was not verified from trace output."
+            },
+            {
+              "id": "output:Level",
+              "expected": "true",
+              "observed": "false",
+              "status": "fail",
+              "evidence": "Unavailable: Codex process did not finish successfully. The staged Skill entrypoint read was not verified from trace output."
+            },
+            {
+              "id": "output:Severity",
+              "expected": "true",
+              "observed": "false",
+              "status": "fail",
+              "evidence": "Unavailable: Codex process did not finish successfully. The staged Skill entrypoint read was not verified from trace output."
+            },
+            {
+              "id": "output:Confidence",
+              "expected": "true",
+              "observed": "false",
+              "status": "fail",
+              "evidence": "Unavailable: Codex process did not finish successfully. The staged Skill entrypoint read was not verified from trace output."
+            },
+            {
+              "id": "output:Rule ID",
+              "expected": "true",
+              "observed": "false",
+              "status": "fail",
+              "evidence": "Unavailable: Codex process did not finish successfully. The staged Skill entrypoint read was not verified from trace output."
+            },
+            {
+              "id": "output:Issue",
+              "expected": "true",
+              "observed": "false",
+              "status": "fail",
+              "evidence": "Unavailable: Codex process did not finish successfully. The staged Skill entrypoint read was not verified from trace output."
+            },
+            {
+              "id": "output:Evidence",
+              "expected": "true",
+              "observed": "false",
+              "status": "fail",
+              "evidence": "Unavailable: Codex process did not finish successfully. The staged Skill entrypoint read was not verified from trace output."
+            },
+            {
+              "id": "output:Suggestion",
+              "expected": "true",
+              "observed": "false",
+              "status": "fail",
+              "evidence": "Unavailable: Codex process did not finish successfully. The staged Skill entrypoint read was not verified from trace output."
+            },
+            {
+              "id": "reportMode",
+              "expected": "\"concise\"",
+              "observed": "\"concise\"",
+              "status": "pass",
+              "evidence": "Unavailable: Codex process did not finish successfully. The staged Skill entrypoint read was not verified from trace output."
+            }
+          ],
+          "notes": "Codex process did not finish successfully. The staged Skill entrypoint read was not verified from trace output."
+        },
+        {
+          "sequence": 2,
+          "model": "gpt-6-luna",
+          "runtime": "Codex CLI codex-cli 0.167.1; Node.js v26.12.1; darwin",
+          "date": "2026-11-11",
+          "inputSha256": "52ad8f8776520f0fe3860ab89d6726280dea3c89109a081682431ac7c955f655",
+          "promptSha256": "3054c961955ae4244bd7f93d51218f13fcd9251d47a83551ac606647292687dc",
+          "sourceManifestSha256": "fff3c57f65fd0cb96baae96afa18ef699cc4da66ef3d93c5b5f6aea27926f832",
+          "stagedSourceManifestSha256": "fff3c57f65fd0cb96baae96afa18ef699cc4da66ef3d93c5b5f6aea27926f832",
+          "status": "pass",
+          "artifacts": {
+            "input": {
+              "path": "retries/2026-11-12-gpt-6-luna-review-followup-retry/cases/O1-default-concise-report/raw-input.json",
+              "sha256": "3c20c1ed3a4aaf1dd465550710e2dc55cc10d9522740ac2598a28c7537638275"
+            },
+            "prompt": {
+              "path": "retries/2026-11-12-gpt-6-luna-review-followup-retry/cases/O1-default-concise-report/prompt.txt",
+              "sha256": "3054c961955ae4244bd7f93d51218f13fcd9251d47a83551ac606647292687dc"
+            },
+            "response": {
+              "path": "retries/2026-11-12-gpt-6-luna-review-followup-retry/cases/O1-default-concise-report/answer.txt",
+              "sha256": "7af246119a6678f7528acfe3783323b5a4b8e6b62cbe3b8ecfe6820a23193ada"
+            },
+            "trace": {
+              "path": "retries/2026-11-12-gpt-6-luna-review-followup-retry/cases/O1-default-concise-report/stdout.jsonl",
+              "sha256": "8fd63203716cf5e8c1faf9a8aa497fbb26398b7c96549ded7f55f878c435a5de"
+            },
+            "stderr": {
+              "path": "retries/2026-11-12-gpt-6-luna-review-followup-retry/cases/O1-default-concise-report/stderr.log",
+              "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+            },
+            "exit": {
+              "path": "retries/2026-11-12-gpt-6-luna-review-followup-retry/cases/O1-default-concise-report/exit.json",
+              "sha256": "ea6f57c180b81d259820b15db0a7f75363b2135b06271be05b175ee476353b41"
+            }
+          },
+          "sourceAudit": {
+            "status": "verified",
+            "reads": [
+              {
+                "path": "SKILL.md",
+                "sha256": "34b7168fb020436a96a1353c1fb7a95d3898cfc602f2fa384674230f332aa429",
+                "eventIds": [
+                  "item_1"
+                ]
+              },
+              {
+                "path": "references/review-levels.md",
+                "sha256": "32c687c6e1189b1d456bc08a4f52890142edd706c44f177f1ac87636aef18aa4",
+                "eventIds": [
+                  "item_2"
+                ]
+              },
+              {
+                "path": "references/prompt/INDEX.md",
+                "sha256": "a0e8702e602ebeddba65737752261014f1ebf123487bfabb8cea84f43a7d1725",
+                "eventIds": [
+                  "item_2"
+                ]
+              },
+              {
+                "path": "references/output-format.md",
+                "sha256": "fd71389b927fe7cf2ee38856169f5fea8be43f194f836dfc63814e0786739920",
+                "eventIds": [
+                  "item_2"
+                ]
+              },
+              {
+                "path": "templates/review-report-compact.md",
+                "sha256": "de1d2784abafea63282539319cf6fcb5ec9c59a21121c1a044bfc574eee3a342",
+                "eventIds": [
+                  "item_2"
+                ]
+              },
+              {
+                "path": "references/prompt/checkpoints.md",
+                "sha256": "7378a6112b93181bfe2761dc68a523a13187681ee3ff36db8e16ec9a82b51504",
+                "eventIds": [
+                  "item_3"
+                ]
+              },
+              {
+                "path": "references/prompt/anti-patterns.md",
+                "sha256": "47b887404abed320e1257e4a15221a056c90eaaf61c842280520d4a6e6b2caf0",
+                "eventIds": [
+                  "item_3"
+                ]
+              },
+              {
+                "path": "references/rule-contract.md",
+                "sha256": "f77d94e68d8f534398cd3e9d0f725b1e0588d848dcf124aee842c9750817cc28",
+                "eventIds": [
+                  "item_3"
+                ]
+              },
+              {
+                "path": "examples/ambiguous-output.md",
+                "sha256": "c385913165a5ac2371009acbd73eb2e681b5ddddf9db4e9686a6a512dd61328c",
+                "eventIds": [
+                  "item_3"
+                ]
+              }
+            ],
+            "externalSkillReads": [],
+            "issues": [],
+            "manifestSha256": "fff3c57f65fd0cb96baae96afa18ef699cc4da66ef3d93c5b5f6aea27926f832",
+            "stagedSkillPath": "retries/2026-11-12-gpt-6-luna-review-followup-retry/session-evidence/sessions/a0febbb8-8ec9-4993-bdae-ee44843dae85/.agents/skills/igapyon-miku-prompt-lint",
+            "commandAttempts": [
+              {
+                "eventId": "item_1",
+                "command": "/bin/zsh -lc 'cat .agents/skills/igapyon-miku-prompt-lint/SKILL.md'",
+                "exitCode": 0,
+                "ranSentinel": false
+              },
+              {
+                "eventId": "item_2",
+                "command": "/bin/zsh -lc 'cat .agents/skills/igapyon-miku-prompt-lint/references/review-levels.md && cat .agents/skills/igapyon-miku-prompt-lint/references/prompt/INDEX.md && cat .agents/skills/igapyon-miku-prompt-lint/references/output-format.md && cat .agents/skills/igapyon-miku-prompt-lint/templates/review-report-compact.md'",
+                "exitCode": 0,
+                "ranSentinel": false
+              },
+              {
+                "eventId": "item_3",
+                "command": "/bin/zsh -lc 'cat .agents/skills/igapyon-miku-prompt-lint/references/prompt/checkpoints.md && cat .agents/skills/igapyon-miku-prompt-lint/references/prompt/anti-patterns.md && cat .agents/skills/igapyon-miku-prompt-lint/references/rule-contract.md && cat .agents/skills/igapyon-miku-prompt-lint/examples/ambiguous-output.md'",
+                "exitCode": 0,
+                "ranSentinel": false
+              }
+            ],
+            "sessionRoot": "a0febbb8-8ec9-4993-bdae-ee44843dae85"
+          },
+          "observed": {
+            "ruleAssertions": [
+              {
+                "ruleId": "prompt/missing-required-input",
+                "disposition": "Applicable",
+                "severity": "High"
+              },
+              {
+                "ruleId": "prompt/missing-evidence-contract",
+                "disposition": "Applicable",
+                "severity": "Medium"
+              }
+            ],
+            "outputFields": [
+              "Evidence",
+              "Suggestion",
+              "Level",
+              "Severity",
+              "Confidence",
+              "Issue",
+              "Rule ID"
+            ],
+            "reportMode": "concise",
+            "targetExecution": "none",
+            "readFiles": [
+              "SKILL.md",
+              "references/review-levels.md",
+              "references/prompt/INDEX.md",
+              "references/output-format.md",
+              "templates/review-report-compact.md",
+              "references/prompt/checkpoints.md",
+              "references/prompt/anti-patterns.md",
+              "references/rule-contract.md",
+              "examples/ambiguous-output.md"
+            ]
+          },
+          "assertions": [
+            {
+              "id": "rule:prompt/missing-evidence-contract",
+              "expected": "{\"disposition\":\"Applicable\",\"ruleId\":\"prompt/missing-evidence-contract\",\"severity\":\"Medium\"}",
+              "observed": "{\"disposition\":\"Applicable\",\"ruleId\":\"prompt/missing-evidence-contract\",\"severity\":\"Medium\"}",
+              "status": "pass",
+              "evidence": "- **Prompt | Medium | High confidence | `prompt/missing-evidence-contract`** — The prompt asks for current legal research but sets no source, citation, or freshness requirements, making the deadline and recommendation difficult to verify.  \n  Evidence: “current” with “No source or freshness instruction is given.”  \n  Suggestion: Require current, authoritative sources with citations and relevant dates; state how to handle conflicting sources or uncertainty.\n\n## Assessment Notes"
+            },
+            {
+              "id": "output:Level",
+              "expected": "true",
+              "observed": "true",
+              "status": "pass",
+              "evidence": "- **Prompt | High | High confidence | `prompt/missing-required-input`** — “the current legal filing deadline” is not identifiable without the jurisdiction and filing type, so the requested deadline and recommendation cannot be reliably determined.  \n  Evidence: “the current legal filing deadline”  \n  Suggestion: Require the jurisdiction and specific filing type, plus any company details that affect the deadline; ask for missing details before answering."
+            },
+            {
+              "id": "output:Severity",
+              "expected": "true",
+              "observed": "true",
+              "status": "pass",
+              "evidence": "- **Prompt | High | High confidence | `prompt/missing-required-input`** — “the current legal filing deadline” is not identifiable without the jurisdiction and filing type, so the requested deadline and recommendation cannot be reliably determined.  \n  Evidence: “the current legal filing deadline”  \n  Suggestion: Require the jurisdiction and specific filing type, plus any company details that affect the deadline; ask for missing details before answering."
+            },
+            {
+              "id": "output:Confidence",
+              "expected": "true",
+              "observed": "true",
+              "status": "pass",
+              "evidence": "- **Prompt | High | High confidence | `prompt/missing-required-input`** — “the current legal filing deadline” is not identifiable without the jurisdiction and filing type, so the requested deadline and recommendation cannot be reliably determined.  \n  Evidence: “the current legal filing deadline”  \n  Suggestion: Require the jurisdiction and specific filing type, plus any company details that affect the deadline; ask for missing details before answering."
+            },
+            {
+              "id": "output:Rule ID",
+              "expected": "true",
+              "observed": "true",
+              "status": "pass",
+              "evidence": "- **Prompt | High | High confidence | `prompt/missing-required-input`** — “the current legal filing deadline” is not identifiable without the jurisdiction and filing type, so the requested deadline and recommendation cannot be reliably determined.  \n  Evidence: “the current legal filing deadline”  \n  Suggestion: Require the jurisdiction and specific filing type, plus any company details that affect the deadline; ask for missing details before answering."
+            },
+            {
+              "id": "output:Issue",
+              "expected": "true",
+              "observed": "true",
+              "status": "pass",
+              "evidence": "- **Prompt | High | High confidence | `prompt/missing-required-input`** — “the current legal filing deadline” is not identifiable without the jurisdiction and filing type, so the requested deadline and recommendation cannot be reliably determined.  \n  Evidence: “the current legal filing deadline”  \n  Suggestion: Require the jurisdiction and specific filing type, plus any company details that affect the deadline; ask for missing details before answering."
+            },
+            {
+              "id": "output:Evidence",
+              "expected": "true",
+              "observed": "true",
+              "status": "pass",
+              "evidence": "  Evidence: “the current legal filing deadline”  "
+            },
+            {
+              "id": "output:Suggestion",
+              "expected": "true",
+              "observed": "true",
+              "status": "pass",
+              "evidence": "  Suggestion: Require the jurisdiction and specific filing type, plus any company details that affect the deadline; ask for missing details before answering."
+            },
+            {
+              "id": "reportMode",
+              "expected": "\"concise\"",
+              "observed": "\"concise\"",
+              "status": "pass",
+              "evidence": "## Activation Posture\n\n- **Not assessed** against the user’s low-activation preference; no preference was supplied.\n\n## Findings\n\n- **Prompt | High | High confidence | `prompt/missing-required-input`** — “the current legal filing deadline” is not identifiable without the jurisdiction and filing type, so the requested deadline and recommendation cannot be reliably determined.  \n  Evidence: “the current legal filing deadline”  \n  Suggestion: Require the jurisdiction and specific filing type, plus "
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "caseId": "O2-explicit-detailed-report",
+      "mode": "review",
+      "status": "pass",
+      "attempts": [
+        {
+          "sequence": 1,
+          "model": "gpt-6-luna",
+          "runtime": "Codex CLI codex-cli 0.167.1; Node.js v26.12.1; darwin",
+          "date": "2026-11-11",
+          "inputSha256": "b26f0b2e9a5027c1f2da9142963bc44e2ab00f357d8811d98e94b5707ccfc4a6",
+          "promptSha256": "aa0ba0bb85fa11d733596b3e622c2eb4bcbf6e390fd3f6a58bcfd2d4eeb4127d",
+          "sourceManifestSha256": "fff3c57f65fd0cb96baae96afa18ef699cc4da66ef3d93c5b5f6aea27926f832",
+          "stagedSourceManifestSha256": "fff3c57f65fd0cb96baae96afa18ef699cc4da66ef3d93c5b5f6aea27926f832",
+          "status": "pass",
+          "artifacts": {
+            "input": {
+              "path": "cases/O2-explicit-detailed-report/raw-input.json",
+              "sha256": "c6c06bf1963652597ef8dc056d786cce40d5eacbd28ec95479b9c22ae95a5637"
+            },
+            "prompt": {
+              "path": "cases/O2-explicit-detailed-report/prompt.txt",
+              "sha256": "aa0ba0bb85fa11d733596b3e622c2eb4bcbf6e390fd3f6a58bcfd2d4eeb4127d"
+            },
+            "response": {
+              "path": "cases/O2-explicit-detailed-report/answer.txt",
+              "sha256": "debc9893d2ae9cc5f618b7ae873d73654add52ed4058af67ddeafc7d04237cf1"
+            },
+            "trace": {
+              "path": "cases/O2-explicit-detailed-report/stdout.jsonl",
+              "sha256": "c53e9fa22d99c24bf72e0c8b5e6059c5fed79365929f85e79e806b34967fd825"
+            },
+            "stderr": {
+              "path": "cases/O2-explicit-detailed-report/stderr.log",
+              "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+            },
+            "exit": {
+              "path": "cases/O2-explicit-detailed-report/exit.json",
+              "sha256": "45bae072e935ee8e36e62c302f052059f69ba931db3771d1f6ac7b0c1126c128"
+            }
+          },
+          "sourceAudit": {
+            "status": "verified",
+            "reads": [
+              {
+                "path": "SKILL.md",
+                "sha256": "34b7168fb020436a96a1353c1fb7a95d3898cfc602f2fa384674230f332aa429",
+                "eventIds": [
+                  "item_1"
+                ]
+              },
+              {
+                "path": "references/review-levels.md",
+                "sha256": "32c687c6e1189b1d456bc08a4f52890142edd706c44f177f1ac87636aef18aa4",
+                "eventIds": [
+                  "item_2"
+                ]
+              },
+              {
+                "path": "references/prompt/INDEX.md",
+                "sha256": "a0e8702e602ebeddba65737752261014f1ebf123487bfabb8cea84f43a7d1725",
+                "eventIds": [
+                  "item_2"
+                ]
+              },
+              {
+                "path": "references/output-format.md",
+                "sha256": "fd71389b927fe7cf2ee38856169f5fea8be43f194f836dfc63814e0786739920",
+                "eventIds": [
+                  "item_2"
+                ]
+              },
+              {
+                "path": "templates/review-report.md",
+                "sha256": "32a0a7ecc0bf7246ef4f4b59b506e3fd36be31e4bea35fc123b01a5c6f6d9dc7",
+                "eventIds": [
+                  "item_2"
+                ]
+              },
+              {
+                "path": "references/prompt/checkpoints.md",
+                "sha256": "7378a6112b93181bfe2761dc68a523a13187681ee3ff36db8e16ec9a82b51504",
+                "eventIds": [
+                  "item_3"
+                ]
+              },
+              {
+                "path": "references/prompt/anti-patterns.md",
+                "sha256": "47b887404abed320e1257e4a15221a056c90eaaf61c842280520d4a6e6b2caf0",
+                "eventIds": [
+                  "item_3"
+                ]
+              },
+              {
+                "path": "references/rule-contract.md",
+                "sha256": "f77d94e68d8f534398cd3e9d0f725b1e0588d848dcf124aee842c9750817cc28",
+                "eventIds": [
+                  "item_3"
+                ]
+              },
+              {
+                "path": "examples/ambiguous-output.md",
+                "sha256": "c385913165a5ac2371009acbd73eb2e681b5ddddf9db4e9686a6a512dd61328c",
+                "eventIds": [
+                  "item_3"
+                ]
+              }
+            ],
+            "externalSkillReads": [],
+            "issues": [],
+            "manifestSha256": "fff3c57f65fd0cb96baae96afa18ef699cc4da66ef3d93c5b5f6aea27926f832",
+            "stagedSkillPath": "session-evidence/sessions/de5ecfeb-3e13-4c8e-82c1-aab994497640/.agents/skills/igapyon-miku-prompt-lint",
+            "commandAttempts": [
+              {
+                "eventId": "item_1",
+                "command": "/bin/zsh -lc 'cat .agents/skills/igapyon-miku-prompt-lint/SKILL.md'",
+                "exitCode": 0,
+                "ranSentinel": false
+              },
+              {
+                "eventId": "item_2",
+                "command": "/bin/zsh -lc 'cat .agents/skills/igapyon-miku-prompt-lint/references/review-levels.md && cat .agents/skills/igapyon-miku-prompt-lint/references/prompt/INDEX.md && cat .agents/skills/igapyon-miku-prompt-lint/references/output-format.md && cat .agents/skills/igapyon-miku-prompt-lint/templates/review-report.md'",
+                "exitCode": 0,
+                "ranSentinel": false
+              },
+              {
+                "eventId": "item_3",
+                "command": "/bin/zsh -lc 'cat .agents/skills/igapyon-miku-prompt-lint/references/prompt/checkpoints.md .agents/skills/igapyon-miku-prompt-lint/references/prompt/anti-patterns.md .agents/skills/igapyon-miku-prompt-lint/references/rule-contract.md .agents/skills/igapyon-miku-prompt-lint/examples/ambiguous-output.md'",
+                "exitCode": 0,
+                "ranSentinel": false
+              }
+            ],
+            "sessionRoot": "de5ecfeb-3e13-4c8e-82c1-aab994497640"
+          },
+          "observed": {
+            "ruleAssertions": [
+              {
+                "ruleId": "prompt/missing-required-input",
+                "disposition": "Applicable",
+                "severity": "High"
+              },
+              {
+                "ruleId": "prompt/missing-evidence-contract",
+                "disposition": "Applicable",
+                "severity": "Medium"
+              }
+            ],
+            "outputFields": [
+              "Level",
+              "Severity",
+              "Confidence",
+              "Applicability",
+              "Category",
+              "Issue",
+              "Rule",
+              "Evidence",
+              "Why it matters",
+              "Suggestion",
+              "Change type"
+            ],
+            "reportMode": "detailed",
+            "targetExecution": "none",
+            "readFiles": [
+              "SKILL.md",
+              "references/review-levels.md",
+              "references/prompt/INDEX.md",
+              "references/output-format.md",
+              "templates/review-report.md",
+              "references/prompt/checkpoints.md",
+              "references/prompt/anti-patterns.md",
+              "references/rule-contract.md",
+              "examples/ambiguous-output.md"
+            ]
+          },
+          "assertions": [
+            {
+              "id": "rule:prompt/missing-evidence-contract",
+              "expected": "{\"disposition\":\"Applicable\",\"ruleId\":\"prompt/missing-evidence-contract\",\"severity\":\"Medium\"}",
+              "observed": "{\"disposition\":\"Applicable\",\"ruleId\":\"prompt/missing-evidence-contract\",\"severity\":\"Medium\"}",
+              "status": "pass",
+              "evidence": "- `Level`: Prompt  \n  `Severity`: Medium  \n  `Confidence`: High  \n  `Applicability`: Applicable  \n  `Category`: Evidence and sourcing  \n  `Issue`: The prompt requests current legal research but gives no source, citation, freshness, or uncertainty requirements.  \n  `Rule`: prompt/missing-evidence-contract  \n  `Evidence`: “Research the current” is the only research instruction; “No source or freshness instruction is given.”  \n  `Why it matters`: The recommendation may rely on stale or unsupported information, and the user cannot readily verify the deadline.  \n  `Suggestion`: Require authoritative, current sources and citations; have the answer state the date checked and flag uncertainty or conflicting sources.  \n  `Change type`: reliability\n\n## Assessment Notes"
+            },
+            {
+              "id": "output:Level",
+              "expected": "true",
+              "observed": "true",
+              "status": "pass",
+              "evidence": "- `Level`: Prompt  \n  `Severity`: High  \n  `Confidence`: High  \n  `Applicability`: Applicable  \n  `Category`: Required input  \n  `Issue`: The prompt does not identify the jurisdiction or the type of filing, and supplies no facts that establish which deadline applies.  \n  `Rule`: prompt/missing-required-input  \n  `Evidence`: “Research the current legal filing deadline” does not specify the filing, jurisdiction, or relevant procedural facts.  \n  `Why it matters`: The deadline cannot be reliably identified without those details.  \n  `Suggestion`: Require the user to provide the jurisdiction, filing type, and relevant case or company facts; ask for clarification when any are missing.  \n  `Change type`: correctness"
+            },
+            {
+              "id": "output:Severity",
+              "expected": "true",
+              "observed": "true",
+              "status": "pass",
+              "evidence": "- `Level`: Prompt  \n  `Severity`: High  \n  `Confidence`: High  \n  `Applicability`: Applicable  \n  `Category`: Required input  \n  `Issue`: The prompt does not identify the jurisdiction or the type of filing, and supplies no facts that establish which deadline applies.  \n  `Rule`: prompt/missing-required-input  \n  `Evidence`: “Research the current legal filing deadline” does not specify the filing, jurisdiction, or relevant procedural facts.  \n  `Why it matters`: The deadline cannot be reliably identified without those details.  \n  `Suggestion`: Require the user to provide the jurisdiction, filing type, and relevant case or company facts; ask for clarification when any are missing.  \n  `Change type`: correctness"
+            },
+            {
+              "id": "output:Confidence",
+              "expected": "true",
+              "observed": "true",
+              "status": "pass",
+              "evidence": "- `Level`: Prompt  \n  `Severity`: High  \n  `Confidence`: High  \n  `Applicability`: Applicable  \n  `Category`: Required input  \n  `Issue`: The prompt does not identify the jurisdiction or the type of filing, and supplies no facts that establish which deadline applies.  \n  `Rule`: prompt/missing-required-input  \n  `Evidence`: “Research the current legal filing deadline” does not specify the filing, jurisdiction, or relevant procedural facts.  \n  `Why it matters`: The deadline cannot be reliably identified without those details.  \n  `Suggestion`: Require the user to provide the jurisdiction, filing type, and relevant case or company facts; ask for clarification when any are missing.  \n  `Change type`: correctness"
+            },
+            {
+              "id": "output:Applicability",
+              "expected": "true",
+              "observed": "true",
+              "status": "pass",
+              "evidence": "  `Applicability`: Applicable  "
+            },
+            {
+              "id": "output:Category",
+              "expected": "true",
+              "observed": "true",
+              "status": "pass",
+              "evidence": "  `Category`: Required input  "
+            },
+            {
+              "id": "output:Issue",
+              "expected": "true",
+              "observed": "true",
+              "status": "pass",
+              "evidence": "- `Level`: Prompt  \n  `Severity`: High  \n  `Confidence`: High  \n  `Applicability`: Applicable  \n  `Category`: Required input  \n  `Issue`: The prompt does not identify the jurisdiction or the type of filing, and supplies no facts that establish which deadline applies.  \n  `Rule`: prompt/missing-required-input  \n  `Evidence`: “Research the current legal filing deadline” does not specify the filing, jurisdiction, or relevant procedural facts.  \n  `Why it matters`: The deadline cannot be reliably identified without those details.  \n  `Suggestion`: Require the user to provide the jurisdiction, filing type, and relevant case or company facts; ask for clarification when any are missing.  \n  `Change type`: correctness"
+            },
+            {
+              "id": "output:Rule",
+              "expected": "true",
+              "observed": "true",
+              "status": "pass",
+              "evidence": "  `Rule`: prompt/missing-required-input  "
+            },
+            {
+              "id": "output:Evidence",
+              "expected": "true",
+              "observed": "true",
+              "status": "pass",
+              "evidence": "- Evidence: The user directly requested `igapyon-miku-prompt-lint`. The supplied prompt is the review target."
+            },
+            {
+              "id": "output:Why it matters",
+              "expected": "true",
+              "observed": "true",
+              "status": "pass",
+              "evidence": "  `Why it matters`: The deadline cannot be reliably identified without those details.  "
+            },
+            {
+              "id": "output:Suggestion",
+              "expected": "true",
+              "observed": "true",
+              "status": "pass",
+              "evidence": "  `Suggestion`: Require the user to provide the jurisdiction, filing type, and relevant case or company facts; ask for clarification when any are missing.  "
+            },
+            {
+              "id": "output:Change type",
+              "expected": "true",
+              "observed": "true",
+              "status": "pass",
+              "evidence": "  `Change type`: correctness"
+            },
+            {
+              "id": "reportMode",
+              "expected": "\"detailed\"",
+              "observed": "\"detailed\"",
+              "status": "pass",
+              "evidence": "## Target Context\n\n- Model / reasoning mode / runtime / instruction layer / tools: Unknown. The supplied target is a prompt; its surrounding instructions and research tools were not provided.\n\n## Activation Posture\n\n- User preference: Explicit opt-in.\n- Target: Matches.\n- Evidence: The user directly requested `igapyon-miku-prompt-lint`. The supplied prompt is the review target.\n\n## Findings\n\n- `Level`: Prompt  \n  `Severity`: High  \n  `Confidence`: High  \n  `Applicability`: Applicable  \n  `Catego"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "caseId": "S1-skeleton-normal-completion",
+      "mode": "skeleton",
+      "status": "pass",
+      "attempts": [
+        {
+          "sequence": 1,
+          "model": "gpt-6-luna",
+          "runtime": "Codex CLI codex-cli 0.167.1; Node.js v26.12.1; darwin",
+          "date": "2026-11-11",
+          "inputSha256": "a5dc8171fea9c0c2db3ba520a231c365b6024deeef3454a2720c92139f8f6e37",
+          "promptSha256": "97d9b7a0b1624f157b125a147cc2e61a0d70022480d6332c9fd97baa297c6400",
+          "sourceManifestSha256": "fff3c57f65fd0cb96baae96afa18ef699cc4da66ef3d93c5b5f6aea27926f832",
+          "stagedSourceManifestSha256": "fff3c57f65fd0cb96baae96afa18ef699cc4da66ef3d93c5b5f6aea27926f832",
+          "status": "pass",
+          "artifacts": {
+            "input": {
+              "path": "cases/S1-skeleton-normal-completion/raw-input.json",
+              "sha256": "ad93533cfd7a283b16aa301206f251fd3e76f06783a518d6b4d6a23b6ff1e6b5"
+            },
+            "prompt": {
+              "path": "cases/S1-skeleton-normal-completion/prompt.txt",
+              "sha256": "97d9b7a0b1624f157b125a147cc2e61a0d70022480d6332c9fd97baa297c6400"
+            },
+            "response": {
+              "path": "cases/S1-skeleton-normal-completion/answer.txt",
+              "sha256": "a0367c0826a86a6f76016404e484df24b50c44f2df83996f848332d92874021e"
+            },
+            "trace": {
+              "path": "cases/S1-skeleton-normal-completion/stdout.jsonl",
+              "sha256": "2f53ebe99b9c3daa00b8122a7212704ea4b3d6e1f467535d9906727581f79be9"
+            },
+            "stderr": {
+              "path": "cases/S1-skeleton-normal-completion/stderr.log",
+              "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+            },
+            "exit": {
+              "path": "cases/S1-skeleton-normal-completion/exit.json",
+              "sha256": "6b96e979d784aa3b02af140b13ce21f03940421cdaa9ab3fef8ce57c36618f60"
+            }
+          },
+          "sourceAudit": {
+            "status": "verified",
+            "reads": [
+              {
+                "path": "SKILL.md",
+                "sha256": "34b7168fb020436a96a1353c1fb7a95d3898cfc602f2fa384674230f332aa429",
+                "eventIds": [
+                  "item_1"
+                ]
+              },
+              {
+                "path": "references/template-selection/workflow.md",
+                "sha256": "dbc8a7805bf61c5795ffc97c957120c1ffa1850852a60e7f0c0d60adf794dfd8",
+                "eventIds": [
+                  "item_2"
+                ]
+              },
+              {
+                "path": "references/template-selection/INDEX.md",
+                "sha256": "8c014c8274dafda00298d2a242d00399e83ac4f87c84cfa6acb6bf0b75d5ba6d",
+                "eventIds": [
+                  "item_2"
+                ]
+              },
+              {
+                "path": "references/template-selection/skeleton-types.md",
+                "sha256": "04d7b1c899ae9f3216d843dcc1c4b826505ec2156d61bdea4816b08910aeb9c4",
+                "eventIds": [
+                  "item_3"
+                ]
+              },
+              {
+                "path": "templates/prompt-skeletons/basic.md",
+                "sha256": "3fc66e9aadaab192700411804dd8cd3bf2916c21628d68149b0edb662e709e05",
+                "eventIds": [
+                  "item_6"
+                ]
+              },
+              {
+                "path": "references/template-selection/handoff.md",
+                "sha256": "88badf0116bf6775b84cd089b9cece16861697c10a2c4ea485fb076ca62b233f",
+                "eventIds": [
+                  "item_6"
+                ]
+              }
+            ],
+            "externalSkillReads": [],
+            "issues": [],
+            "manifestSha256": "fff3c57f65fd0cb96baae96afa18ef699cc4da66ef3d93c5b5f6aea27926f832",
+            "stagedSkillPath": "session-evidence/sessions/6ce8f2c6-fd58-42c3-a623-619bcf491430/.agents/skills/igapyon-miku-prompt-lint",
+            "commandAttempts": [
+              {
+                "eventId": "item_1",
+                "command": "/bin/zsh -lc 'cat .agents/skills/igapyon-miku-prompt-lint/SKILL.md'",
+                "exitCode": 0,
+                "ranSentinel": false
+              },
+              {
+                "eventId": "item_2",
+                "command": "/bin/zsh -lc 'cat .agents/skills/igapyon-miku-prompt-lint/references/template-selection/workflow.md && cat .agents/skills/igapyon-miku-prompt-lint/references/template-selection/INDEX.md'",
+                "exitCode": 0,
+                "ranSentinel": false
+              },
+              {
+                "eventId": "item_3",
+                "command": "/bin/zsh -lc 'cat .agents/skills/igapyon-miku-prompt-lint/references/template-selection/skeleton-types.md'",
+                "exitCode": 0,
+                "ranSentinel": false
+              },
+              {
+                "eventId": "item_4",
+                "command": "/bin/zsh -lc 'cat .agents/skills/igapyon-miku-prompt-lint/references/template-selection/templates/prompt-skeletons/basic.md && cat .agents/skills/igapyon-miku-prompt-lint/references/template-selection/handoff.md'",
+                "exitCode": 1,
+                "ranSentinel": false
+              },
+              {
+                "eventId": "item_5",
+                "command": "/bin/zsh -lc \"rg --files .agents/skills/igapyon-miku-prompt-lint | rg '(prompt-skeletons/basic.md|template-selection/handoff.md)\"'$'\"'\"",
+                "exitCode": 0,
+                "ranSentinel": false
+              },
+              {
+                "eventId": "item_6",
+                "command": "/bin/zsh -lc 'cat .agents/skills/igapyon-miku-prompt-lint/templates/prompt-skeletons/basic.md && cat .agents/skills/igapyon-miku-prompt-lint/references/template-selection/handoff.md'",
+                "exitCode": 0,
+                "ranSentinel": false
+              }
+            ],
+            "sessionRoot": "6ce8f2c6-fd58-42c3-a623-619bcf491430"
+          },
+          "observed": {
+            "ruleAssertions": [],
+            "outputFields": [],
+            "reportMode": "concise",
+            "targetExecution": "none",
+            "readFiles": [
+              "SKILL.md",
+              "references/template-selection/workflow.md",
+              "references/template-selection/INDEX.md",
+              "references/template-selection/skeleton-types.md",
+              "templates/prompt-skeletons/basic.md",
+              "references/template-selection/handoff.md"
+            ],
+            "outputCount": 1,
+            "unknownValues": "TODO",
+            "createSkillPackage": false,
+            "packageDraftInResponse": false
+          },
+          "assertions": [
+            {
+              "id": "read:references/template-selection/skeleton-types.md",
+              "expected": "true",
+              "observed": "true",
+              "status": "pass",
+              "evidence": "{\"type\":\"item.started\",\"item\":{\"id\":\"item_3\",\"type\":\"command_execution\",\"command\":\"/bin/zsh -lc 'cat .agents/skills/igapyon-miku-prompt-lint/references/template-selection/skeleton-types.md'\",\"aggregated_output\":\"\",\"exit_code\":null,\"status\":\"in_progress\"}}"
+            },
+            {
+              "id": "read:templates/prompt-skeletons/basic.md",
+              "expected": "true",
+              "observed": "true",
+              "status": "pass",
+              "evidence": "{\"type\":\"item.started\",\"item\":{\"id\":\"item_6\",\"type\":\"command_execution\",\"command\":\"/bin/zsh -lc 'cat .agents/skills/igapyon-miku-prompt-lint/templates/prompt-skeletons/basic.md && cat .agents/skills/igapyon-miku-prompt-lint/references/template-selection/handoff.md'\",\"aggregated_output\":\"\",\"exit_code\":null,\"status\":\"in_progress\"}}"
+            },
+            {
+              "id": "read:references/template-selection/handoff.md",
+              "expected": "true",
+              "observed": "true",
+              "status": "pass",
+              "evidence": "{\"type\":\"item.started\",\"item\":{\"id\":\"item_6\",\"type\":\"command_execution\",\"command\":\"/bin/zsh -lc 'cat .agents/skills/igapyon-miku-prompt-lint/templates/prompt-skeletons/basic.md && cat .agents/skills/igapyon-miku-prompt-lint/references/template-selection/handoff.md'\",\"aggregated_output\":\"\",\"exit_code\":null,\"status\":\"in_progress\"}}"
+            },
+            {
+              "id": "outputCount",
+              "expected": "1",
+              "observed": "1",
+              "status": "pass",
+              "evidence": "```markdown\n# TODO: Prompt Title\n\n## Task\n\nTODO: Describe the task the assistant should perform.\n\n## Inputs\n\n- `TODO_INPUT_1`: TODO: Describe the required input.\n- `TODO_INPUT_2`: TODO: Describe any optional input.\n\n## Constraints\n\n- TODO: State domain, tone, scope, safety, or formatting constraints.\n\n## Output\n\nReturn:\n\n1. TODO: Primary output item.\n2. TODO: Supporting details or rationale.\n3. TODO: Open questions or assumptions, if any.\n\n## Acceptance Criteria\n\n- TODO: Define observable requir"
+            },
+            {
+              "id": "unknownValues",
+              "expected": "\"TODO\"",
+              "observed": "\"TODO\"",
+              "status": "pass",
+              "evidence": "# TODO: Prompt Title"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "caseId": "S2-skeleton-scope-exceeded",
+      "mode": "skeleton",
+      "status": "invalid",
+      "attempts": [
+        {
+          "sequence": 1,
+          "model": "gpt-6-luna",
+          "runtime": "Codex CLI codex-cli 0.167.1; Node.js v26.12.1; darwin",
+          "date": "2026-11-11",
+          "inputSha256": "8f0249d428f39e1ee467888bf82d84b9156d48d3e94c2cd40ee755cc67ce8d6f",
+          "promptSha256": "55af23a7d451ed8d54da709133c4e1a96910c467873fd0d4d2fb68f645bb4985",
+          "sourceManifestSha256": "fff3c57f65fd0cb96baae96afa18ef699cc4da66ef3d93c5b5f6aea27926f832",
+          "stagedSourceManifestSha256": "fff3c57f65fd0cb96baae96afa18ef699cc4da66ef3d93c5b5f6aea27926f832",
+          "status": "invalid",
+          "artifacts": {
+            "input": {
+              "path": "cases/S2-skeleton-scope-exceeded/raw-input.json",
+              "sha256": "2c42a1d32a3d3ba3e0ee8efafb9c25e4eb4d4e3f75a00b8a10c9802c738220fd"
+            },
+            "prompt": {
+              "path": "cases/S2-skeleton-scope-exceeded/prompt.txt",
+              "sha256": "55af23a7d451ed8d54da709133c4e1a96910c467873fd0d4d2fb68f645bb4985"
+            },
+            "response": {
+              "path": "cases/S2-skeleton-scope-exceeded/answer.txt",
+              "sha256": "d430a7f35d78f437418bacf2543c8476ee7f321b73184372d74aefd94c9a69e2"
+            },
+            "trace": {
+              "path": "cases/S2-skeleton-scope-exceeded/stdout.jsonl",
+              "sha256": "1f2007039e6db2e89f923d5e3b2fad694ad36a2bb8877e319d7c41eaf915f544"
+            },
+            "stderr": {
+              "path": "cases/S2-skeleton-scope-exceeded/stderr.log",
+              "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+            },
+            "exit": {
+              "path": "cases/S2-skeleton-scope-exceeded/exit.json",
+              "sha256": "102308e10a61756cd09a5d532ff553922f0c7db15955f0eac13491fcd7ee8d44"
+            }
+          },
+          "sourceAudit": {
+            "status": "verified",
+            "reads": [
+              {
+                "path": "SKILL.md",
+                "sha256": "34b7168fb020436a96a1353c1fb7a95d3898cfc602f2fa384674230f332aa429",
+                "eventIds": [
+                  "item_1"
+                ]
+              }
+            ],
+            "externalSkillReads": [],
+            "issues": [],
+            "manifestSha256": "fff3c57f65fd0cb96baae96afa18ef699cc4da66ef3d93c5b5f6aea27926f832",
+            "stagedSkillPath": "session-evidence/sessions/3e2b3276-4166-423f-b758-a76a3718d503/.agents/skills/igapyon-miku-prompt-lint",
+            "commandAttempts": [
+              {
+                "eventId": "item_1",
+                "command": "/bin/zsh -lc \"cat .agents/skills/igapyon-miku-prompt-lint/SKILL.md && rg --files -g 'AGENTS.md' -g '*.md' .agents\"",
+                "exitCode": 0,
+                "ranSentinel": false
+              }
+            ],
+            "sessionRoot": "3e2b3276-4166-423f-b758-a76a3718d503"
+          },
+          "observed": {
+            "ruleAssertions": [],
+            "outputFields": [],
+            "reportMode": "concise",
+            "targetExecution": "none",
+            "readFiles": [
+              "SKILL.md"
+            ],
+            "outputCount": 1,
+            "unknownValues": "missing",
+            "createSkillPackage": false,
+            "packageDraftInResponse": false
+          },
+          "assertions": [
+            {
+              "id": "read:references/template-selection/handoff.md",
+              "expected": "true",
+              "observed": "false",
+              "status": "fail",
+              "evidence": "Unavailable: Codex process did not finish successfully."
+            },
+            {
+              "id": "createSkillPackage",
+              "expected": "false",
+              "observed": "false",
+              "status": "pass",
+              "evidence": "Unavailable: Codex process did not finish successfully."
+            },
+            {
+              "id": "packageDraftInResponse",
+              "expected": "true",
+              "observed": "false",
+              "status": "fail",
+              "evidence": "Unavailable: Codex process did not finish successfully."
+            }
+          ],
+          "notes": "Codex process did not finish successfully."
+        },
+        {
+          "sequence": 2,
+          "model": "gpt-6-luna",
+          "runtime": "Codex CLI codex-cli 0.167.1; Node.js v26.12.1; darwin",
+          "date": "2026-11-11",
+          "inputSha256": "8f0249d428f39e1ee467888bf82d84b9156d48d3e94c2cd40ee755cc67ce8d6f",
+          "promptSha256": "55af23a7d451ed8d54da709133c4e1a96910c467873fd0d4d2fb68f645bb4985",
+          "sourceManifestSha256": "fff3c57f65fd0cb96baae96afa18ef699cc4da66ef3d93c5b5f6aea27926f832",
+          "stagedSourceManifestSha256": "fff3c57f65fd0cb96baae96afa18ef699cc4da66ef3d93c5b5f6aea27926f832",
+          "status": "pass",
+          "artifacts": {
+            "input": {
+              "path": "retries/2026-11-12-gpt-6-luna-review-followup-retry/cases/S2-skeleton-scope-exceeded/raw-input.json",
+              "sha256": "2c42a1d32a3d3ba3e0ee8efafb9c25e4eb4d4e3f75a00b8a10c9802c738220fd"
+            },
+            "prompt": {
+              "path": "retries/2026-11-12-gpt-6-luna-review-followup-retry/cases/S2-skeleton-scope-exceeded/prompt.txt",
+              "sha256": "55af23a7d451ed8d54da709133c4e1a96910c467873fd0d4d2fb68f645bb4985"
+            },
+            "response": {
+              "path": "retries/2026-11-12-gpt-6-luna-review-followup-retry/cases/S2-skeleton-scope-exceeded/answer.txt",
+              "sha256": "32843edae7acd6f5a4bb796eb519f6249edead591f66b95ca785061dc06f7166"
+            },
+            "trace": {
+              "path": "retries/2026-11-12-gpt-6-luna-review-followup-retry/cases/S2-skeleton-scope-exceeded/stdout.jsonl",
+              "sha256": "f6b011b61d33844c834e1e347dd738911f98297e90bddfa6b00704458a53cc1e"
+            },
+            "stderr": {
+              "path": "retries/2026-11-12-gpt-6-luna-review-followup-retry/cases/S2-skeleton-scope-exceeded/stderr.log",
+              "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+            },
+            "exit": {
+              "path": "retries/2026-11-12-gpt-6-luna-review-followup-retry/cases/S2-skeleton-scope-exceeded/exit.json",
+              "sha256": "7e344b4fc555ff74a75c7739d6f2777a6013c014de59c90e03d6a3bc77672fdb"
+            }
+          },
+          "sourceAudit": {
+            "status": "verified",
+            "reads": [
+              {
+                "path": "SKILL.md",
+                "sha256": "34b7168fb020436a96a1353c1fb7a95d3898cfc602f2fa384674230f332aa429",
+                "eventIds": [
+                  "item_1"
+                ]
+              },
+              {
+                "path": "references/template-selection/workflow.md",
+                "sha256": "dbc8a7805bf61c5795ffc97c957120c1ffa1850852a60e7f0c0d60adf794dfd8",
+                "eventIds": [
+                  "item_4"
+                ]
+              },
+              {
+                "path": "references/template-selection/skeleton-types.md",
+                "sha256": "04d7b1c899ae9f3216d843dcc1c4b826505ec2156d61bdea4816b08910aeb9c4",
+                "eventIds": [
+                  "item_4"
+                ]
+              },
+              {
+                "path": "templates/revised-agent-skill-structure.md",
+                "sha256": "a8169e2094482b3e43ce34ccf96c95580ee48c462d2e18ed1574db9d1385009d",
+                "eventIds": [
+                  "item_4"
+                ]
+              },
+              {
+                "path": "references/template-selection/handoff.md",
+                "sha256": "88badf0116bf6775b84cd089b9cece16861697c10a2c4ea485fb076ca62b233f",
+                "eventIds": [
+                  "item_4"
+                ]
+              }
+            ],
+            "externalSkillReads": [],
+            "issues": [],
+            "manifestSha256": "fff3c57f65fd0cb96baae96afa18ef699cc4da66ef3d93c5b5f6aea27926f832",
+            "stagedSkillPath": "retries/2026-11-12-gpt-6-luna-review-followup-retry/session-evidence/sessions/f2927f9c-b107-44a5-890f-4955fff19133/.agents/skills/igapyon-miku-prompt-lint",
+            "commandAttempts": [
+              {
+                "eventId": "item_1",
+                "command": "/bin/zsh -lc \"cat .agents/skills/igapyon-miku-prompt-lint/SKILL.md && rg --files -g 'AGENTS.md' -g 'SKILL.md' -g '*.md' -g '*.yaml' -g '*.yml' -g '*.json' .\"",
+                "exitCode": 1,
+                "ranSentinel": false
+              },
+              {
+                "eventId": "item_2",
+                "command": "/bin/zsh -lc \"rg --files -g '\"'!**/.git/**'\"' .\"",
+                "exitCode": 1,
+                "ranSentinel": false
+              },
+              {
+                "eventId": "item_3",
+                "command": "/bin/zsh -lc 'pwd; ls -la; find .agents/skills/igapyon-miku-prompt-lint -maxdepth 3 -type f -print'",
+                "exitCode": 0,
+                "ranSentinel": false
+              },
+              {
+                "eventId": "item_4",
+                "command": "/bin/zsh -lc 'cat .agents/skills/igapyon-miku-prompt-lint/references/template-selection/workflow.md; cat .agents/skills/igapyon-miku-prompt-lint/references/template-selection/skeleton-types.md; cat .agents/skills/igapyon-miku-prompt-lint/templates/revised-agent-skill-structure.md; cat .agents/skills/igapyon-miku-prompt-lint/references/template-selection/handoff.md'",
+                "exitCode": 0,
+                "ranSentinel": false
+              }
+            ],
+            "sessionRoot": "f2927f9c-b107-44a5-890f-4955fff19133"
+          },
+          "observed": {
+            "ruleAssertions": [],
+            "outputFields": [
+              "Evidence"
+            ],
+            "reportMode": "concise",
+            "targetExecution": "none",
+            "readFiles": [
+              "SKILL.md",
+              "references/template-selection/workflow.md",
+              "references/template-selection/skeleton-types.md",
+              "templates/revised-agent-skill-structure.md",
+              "references/template-selection/handoff.md"
+            ],
+            "outputCount": 1,
+            "unknownValues": "TODO",
+            "createSkillPackage": false,
+            "packageDraftInResponse": true
+          },
+          "assertions": [
+            {
+              "id": "read:references/template-selection/handoff.md",
+              "expected": "true",
+              "observed": "true",
+              "status": "pass",
+              "evidence": "{\"type\":\"item.started\",\"item\":{\"id\":\"item_4\",\"type\":\"command_execution\",\"command\":\"/bin/zsh -lc 'cat .agents/skills/igapyon-miku-prompt-lint/references/template-selection/workflow.md; cat .agents/skills/igapyon-miku-prompt-lint/references/template-selection/skeleton-types.md; cat .agents/skills/igapyon-miku-prompt-lint/templates/revised-agent-skill-structure.md; cat .agents/skills/igapyon-miku-prompt-lint/references/template-selection/handoff.md'\",\"aggregated_output\":\"\",\"exit_code\":null,\"status\":\"in_progress\"}}"
+            },
+            {
+              "id": "createSkillPackage",
+              "expected": "false",
+              "observed": "false",
+              "status": "pass",
+              "evidence": "Trace audit: no command_execution entry attempted a package write.",
+              "evidenceSource": "trace-audit"
+            },
+            {
+              "id": "packageDraftInResponse",
+              "expected": "true",
+              "observed": "true",
+              "status": "pass",
+              "evidence": "### `SKILL.md`"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "caseId": "E1-freeform-summary-no-output-format-finding",
+      "mode": "review",
+      "status": "pass",
+      "attempts": [
+        {
+          "sequence": 1,
+          "model": "gpt-6-luna",
+          "runtime": "Codex CLI codex-cli 0.167.1; Node.js v26.12.1; darwin",
+          "date": "2026-11-11",
+          "inputSha256": "8933d5a42f83388a1fc0a5bef175674ad0f814ba6b6fe0142a97b6e2a254ea0a",
+          "promptSha256": "094655a6d9db936b578621df2e33a612c964d17fde30edbf0c8892e7cf53bdd2",
+          "sourceManifestSha256": "fff3c57f65fd0cb96baae96afa18ef699cc4da66ef3d93c5b5f6aea27926f832",
+          "stagedSourceManifestSha256": "fff3c57f65fd0cb96baae96afa18ef699cc4da66ef3d93c5b5f6aea27926f832",
+          "status": "pass",
+          "artifacts": {
+            "input": {
+              "path": "cases/E1-freeform-summary-no-output-format-finding/raw-input.json",
+              "sha256": "c7ff230734e9beab021517989728d63a07ac708895daa8c8bcc65e4874447413"
+            },
+            "prompt": {
+              "path": "cases/E1-freeform-summary-no-output-format-finding/prompt.txt",
+              "sha256": "094655a6d9db936b578621df2e33a612c964d17fde30edbf0c8892e7cf53bdd2"
+            },
+            "response": {
+              "path": "cases/E1-freeform-summary-no-output-format-finding/answer.txt",
+              "sha256": "c8fd76daac6ad72f82984e796d00b70602f1e8f4a44eb858bf044862498d3f7b"
+            },
+            "trace": {
+              "path": "cases/E1-freeform-summary-no-output-format-finding/stdout.jsonl",
+              "sha256": "05f1a7e2659da96e08cfa30e699732552bca2df91f5ce95b442fc33cf283e584"
+            },
+            "stderr": {
+              "path": "cases/E1-freeform-summary-no-output-format-finding/stderr.log",
+              "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+            },
+            "exit": {
+              "path": "cases/E1-freeform-summary-no-output-format-finding/exit.json",
+              "sha256": "e232abf92c719533426f6ac72639f68d7bad4d6bbcab55892690d86eaa64451a"
+            }
+          },
+          "sourceAudit": {
+            "status": "verified",
+            "reads": [
+              {
+                "path": "SKILL.md",
+                "sha256": "34b7168fb020436a96a1353c1fb7a95d3898cfc602f2fa384674230f332aa429",
+                "eventIds": [
+                  "item_1"
+                ]
+              },
+              {
+                "path": "references/review-levels.md",
+                "sha256": "32c687c6e1189b1d456bc08a4f52890142edd706c44f177f1ac87636aef18aa4",
+                "eventIds": [
+                  "item_2"
+                ]
+              },
+              {
+                "path": "references/prompt/INDEX.md",
+                "sha256": "a0e8702e602ebeddba65737752261014f1ebf123487bfabb8cea84f43a7d1725",
+                "eventIds": [
+                  "item_2"
+                ]
+              },
+              {
+                "path": "references/context/INDEX.md",
+                "sha256": "3058d16472984431ea66a30f63a4f8d3618f0ff6f1f33419f0b70c180bcef44d",
+                "eventIds": [
+                  "item_2"
+                ]
+              },
+              {
+                "path": "references/output-format.md",
+                "sha256": "fd71389b927fe7cf2ee38856169f5fea8be43f194f836dfc63814e0786739920",
+                "eventIds": [
+                  "item_2"
+                ]
+              },
+              {
+                "path": "templates/review-report-compact.md",
+                "sha256": "de1d2784abafea63282539319cf6fcb5ec9c59a21121c1a044bfc574eee3a342",
+                "eventIds": [
+                  "item_2"
+                ]
+              },
+              {
+                "path": "references/prompt/checkpoints.md",
+                "sha256": "7378a6112b93181bfe2761dc68a523a13187681ee3ff36db8e16ec9a82b51504",
+                "eventIds": [
+                  "item_3"
+                ]
+              },
+              {
+                "path": "references/prompt/anti-patterns.md",
+                "sha256": "47b887404abed320e1257e4a15221a056c90eaaf61c842280520d4a6e6b2caf0",
+                "eventIds": [
+                  "item_3"
+                ]
+              },
+              {
+                "path": "references/context/checkpoints.md",
+                "sha256": "ba847f678868888a9d1cddc4dacad75660743dc3fd48cfeee25f813516b71007",
+                "eventIds": [
+                  "item_3"
+                ]
+              },
+              {
+                "path": "references/context/anti-patterns.md",
+                "sha256": "cb47e521fcb26d099189bb2336a001691a2c3cd7a854399d9ec89e085af540c0",
+                "eventIds": [
+                  "item_3"
+                ]
+              },
+              {
+                "path": "references/rule-contract.md",
+                "sha256": "f77d94e68d8f534398cd3e9d0f725b1e0588d848dcf124aee842c9750817cc28",
+                "eventIds": [
+                  "item_3"
+                ]
+              }
+            ],
+            "externalSkillReads": [],
+            "issues": [],
+            "manifestSha256": "fff3c57f65fd0cb96baae96afa18ef699cc4da66ef3d93c5b5f6aea27926f832",
+            "stagedSkillPath": "session-evidence/sessions/2f439272-d4ea-4755-80bb-6c336fcc8a80/.agents/skills/igapyon-miku-prompt-lint",
+            "commandAttempts": [
+              {
+                "eventId": "item_1",
+                "command": "/bin/zsh -lc 'cat .agents/skills/igapyon-miku-prompt-lint/SKILL.md'",
+                "exitCode": 0,
+                "ranSentinel": false
+              },
+              {
+                "eventId": "item_2",
+                "command": "/bin/zsh -lc 'cat .agents/skills/igapyon-miku-prompt-lint/references/review-levels.md && cat .agents/skills/igapyon-miku-prompt-lint/references/prompt/INDEX.md && cat .agents/skills/igapyon-miku-prompt-lint/references/context/INDEX.md && cat .agents/skills/igapyon-miku-prompt-lint/references/output-format.md && cat .agents/skills/igapyon-miku-prompt-lint/templates/review-report-compact.md'",
+                "exitCode": 0,
+                "ranSentinel": false
+              },
+              {
+                "eventId": "item_3",
+                "command": "/bin/zsh -lc 'cat .agents/skills/igapyon-miku-prompt-lint/references/prompt/checkpoints.md && cat .agents/skills/igapyon-miku-prompt-lint/references/prompt/anti-patterns.md && cat .agents/skills/igapyon-miku-prompt-lint/references/context/checkpoints.md && cat .agents/skills/igapyon-miku-prompt-lint/references/context/anti-patterns.md && cat .agents/skills/igapyon-miku-prompt-lint/references/rule-contract.md'",
+                "exitCode": 0,
+                "ranSentinel": false
+              }
+            ],
+            "sessionRoot": "2f439272-d4ea-4755-80bb-6c336fcc8a80"
+          },
+          "observed": {
+            "ruleAssertions": [],
+            "outputFields": [],
+            "reportMode": "concise",
+            "targetExecution": "none",
+            "readFiles": [
+              "SKILL.md",
+              "references/review-levels.md",
+              "references/prompt/INDEX.md",
+              "references/context/INDEX.md",
+              "references/output-format.md",
+              "templates/review-report-compact.md",
+              "references/prompt/checkpoints.md",
+              "references/prompt/anti-patterns.md",
+              "references/context/checkpoints.md",
+              "references/context/anti-patterns.md",
+              "references/rule-contract.md"
+            ]
+          },
+          "assertions": [
+            {
+              "id": "rule:prompt/missing-output-format",
+              "expected": "{\"disposition\":\"Not applicable\",\"ruleId\":\"prompt/missing-output-format\"}",
+              "observed": "{\"disposition\":\"Not applicable\",\"ruleId\":\"prompt/missing-output-format\"}",
+              "status": "pass",
+              "evidence": "No applicable findings. The task, source text, and free-form output style are clear for this one-off summary."
+            },
+            {
+              "id": "rule:prompt/missing-required-input",
+              "expected": "{\"disposition\":\"Not applicable\",\"ruleId\":\"prompt/missing-required-input\"}",
+              "observed": "{\"disposition\":\"Not applicable\",\"ruleId\":\"prompt/missing-required-input\"}",
+              "status": "pass",
+              "evidence": "No applicable findings. The task, source text, and free-form output style are clear for this one-off summary."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "caseId": "E2-repeated-downstream-format-missing",
+      "mode": "review",
+      "status": "fail",
+      "attempts": [
+        {
+          "sequence": 1,
+          "model": "gpt-6-luna",
+          "runtime": "Codex CLI codex-cli 0.167.1; Node.js v26.12.1; darwin",
+          "date": "2026-11-11",
+          "inputSha256": "613d510a9f42d21664897d7159220bb48f2b002bc875604da91868f55afd89ff",
+          "promptSha256": "3b1d5c1e75729becb2225e0672d59d01ccd69d9553047a62d4dcf2227f9e39ce",
+          "sourceManifestSha256": "fff3c57f65fd0cb96baae96afa18ef699cc4da66ef3d93c5b5f6aea27926f832",
+          "stagedSourceManifestSha256": "fff3c57f65fd0cb96baae96afa18ef699cc4da66ef3d93c5b5f6aea27926f832",
+          "status": "fail",
+          "artifacts": {
+            "input": {
+              "path": "cases/E2-repeated-downstream-format-missing/raw-input.json",
+              "sha256": "2cec34df02d2d9b05f25c35c3c7f9695853ae64c9c003c1b63c9a9f82d26975e"
+            },
+            "prompt": {
+              "path": "cases/E2-repeated-downstream-format-missing/prompt.txt",
+              "sha256": "3b1d5c1e75729becb2225e0672d59d01ccd69d9553047a62d4dcf2227f9e39ce"
+            },
+            "response": {
+              "path": "cases/E2-repeated-downstream-format-missing/answer.txt",
+              "sha256": "ee74f9b1c9598b74b72ef8d427ac5ac844418028cd19ab664e2d0464a0c46f17"
+            },
+            "trace": {
+              "path": "cases/E2-repeated-downstream-format-missing/stdout.jsonl",
+              "sha256": "451eb85f1091e0ed6b6ba0b3cf4aabf3f2edfe6edfb99b56ba81e2818dee676d"
+            },
+            "stderr": {
+              "path": "cases/E2-repeated-downstream-format-missing/stderr.log",
+              "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+            },
+            "exit": {
+              "path": "cases/E2-repeated-downstream-format-missing/exit.json",
+              "sha256": "ceb3369934ca12095c2d31e07cd9e6c1f842b54e7fd75c75c9271c02257c2dec"
+            }
+          },
+          "sourceAudit": {
+            "status": "verified",
+            "reads": [
+              {
+                "path": "SKILL.md",
+                "sha256": "34b7168fb020436a96a1353c1fb7a95d3898cfc602f2fa384674230f332aa429",
+                "eventIds": [
+                  "item_1"
+                ]
+              },
+              {
+                "path": "references/review-levels.md",
+                "sha256": "32c687c6e1189b1d456bc08a4f52890142edd706c44f177f1ac87636aef18aa4",
+                "eventIds": [
+                  "item_2"
+                ]
+              },
+              {
+                "path": "references/rule-contract.md",
+                "sha256": "f77d94e68d8f534398cd3e9d0f725b1e0588d848dcf124aee842c9750817cc28",
+                "eventIds": [
+                  "item_2"
+                ]
+              },
+              {
+                "path": "references/output-format.md",
+                "sha256": "fd71389b927fe7cf2ee38856169f5fea8be43f194f836dfc63814e0786739920",
+                "eventIds": [
+                  "item_2"
+                ]
+              },
+              {
+                "path": "templates/review-report-compact.md",
+                "sha256": "de1d2784abafea63282539319cf6fcb5ec9c59a21121c1a044bfc574eee3a342",
+                "eventIds": [
+                  "item_2"
+                ]
+              },
+              {
+                "path": "references/prompt/INDEX.md",
+                "sha256": "a0e8702e602ebeddba65737752261014f1ebf123487bfabb8cea84f43a7d1725",
+                "eventIds": [
+                  "item_4"
+                ]
+              },
+              {
+                "path": "references/prompt/checkpoints.md",
+                "sha256": "7378a6112b93181bfe2761dc68a523a13187681ee3ff36db8e16ec9a82b51504",
+                "eventIds": [
+                  "item_5"
+                ]
+              },
+              {
+                "path": "references/prompt/anti-patterns.md",
+                "sha256": "47b887404abed320e1257e4a15221a056c90eaaf61c842280520d4a6e6b2caf0",
+                "eventIds": [
+                  "item_5"
+                ]
+              },
+              {
+                "path": "templates/revised-prompt.md",
+                "sha256": "cbf9121809acb5c6e5899bb569651eb2dc5782461543da9a51e8c65817179245",
+                "eventIds": [
+                  "item_5"
+                ]
+              }
+            ],
+            "externalSkillReads": [],
+            "issues": [],
+            "manifestSha256": "fff3c57f65fd0cb96baae96afa18ef699cc4da66ef3d93c5b5f6aea27926f832",
+            "stagedSkillPath": "session-evidence/sessions/ca7e580a-fc67-4716-a720-f101a220a99c/.agents/skills/igapyon-miku-prompt-lint",
+            "commandAttempts": [
+              {
+                "eventId": "item_1",
+                "command": "/bin/zsh -lc 'cat .agents/skills/igapyon-miku-prompt-lint/SKILL.md'",
+                "exitCode": 0,
+                "ranSentinel": false
+              },
+              {
+                "eventId": "item_2",
+                "command": "/bin/zsh -lc 'cat .agents/skills/igapyon-miku-prompt-lint/references/review-levels.md .agents/skills/igapyon-miku-prompt-lint/references/rule-contract.md .agents/skills/igapyon-miku-prompt-lint/references/output-format.md .agents/skills/igapyon-miku-prompt-lint/templates/review-report-compact.md'",
+                "exitCode": 0,
+                "ranSentinel": false
+              },
+              {
+                "eventId": "item_4",
+                "command": "/bin/zsh -lc 'cat .agents/skills/igapyon-miku-prompt-lint/references/prompt/INDEX.md; rg --files .agents/skills/igapyon-miku-prompt-lint/references/prompt .agents/skills/igapyon-miku-prompt-lint/templates'",
+                "exitCode": 0,
+                "ranSentinel": false
+              },
+              {
+                "eventId": "item_5",
+                "command": "/bin/zsh -lc 'cat .agents/skills/igapyon-miku-prompt-lint/references/prompt/checkpoints.md .agents/skills/igapyon-miku-prompt-lint/references/prompt/anti-patterns.md .agents/skills/igapyon-miku-prompt-lint/templates/revised-prompt.md'",
+                "exitCode": 0,
+                "ranSentinel": false
+              }
+            ],
+            "sessionRoot": "ca7e580a-fc67-4716-a720-f101a220a99c"
+          },
+          "observed": {
+            "ruleAssertions": [
+              {
+                "ruleId": "prompt/missing-output-format",
+                "disposition": "Applicable",
+                "severity": "High"
+              },
+              {
+                "ruleId": "prompt/missing-fallback-behavior",
+                "disposition": "Applicable",
+                "severity": "Medium"
+              }
+            ],
+            "outputFields": [
+              "Evidence",
+              "Suggestion",
+              "Level",
+              "Severity",
+              "Confidence",
+              "Issue",
+              "Rule ID"
+            ],
+            "reportMode": "concise",
+            "targetExecution": "none",
+            "readFiles": [
+              "SKILL.md",
+              "references/review-levels.md",
+              "references/rule-contract.md",
+              "references/output-format.md",
+              "templates/review-report-compact.md",
+              "references/prompt/INDEX.md",
+              "references/prompt/checkpoints.md",
+              "references/prompt/anti-patterns.md",
+              "templates/revised-prompt.md"
+            ]
+          },
+          "assertions": [
+            {
+              "id": "rule:prompt/missing-output-format",
+              "expected": "{\"disposition\":\"Applicable\",\"ruleId\":\"prompt/missing-output-format\",\"severity\":\"Medium\"}",
+              "observed": "{\"disposition\":\"Applicable\",\"ruleId\":\"prompt/missing-output-format\",\"severity\":\"High\"}",
+              "status": "fail",
+              "evidence": "- **Prompt | High | High confidence | `prompt/missing-output-format`** — The prompt explicitly requires a stable machine-readable record for a downstream importer but specifies no format or schema. The importer may receive records it cannot parse consistently.  \n  Evidence: “The importer requires a stable machine-readable record, but no fields, schema, or format are specified.”  \n  Suggestion: Define the record’s fields, types, serialization format, and handling for missing or ambiguous values."
+            }
+          ],
+          "notes": "The first response escalated the Rule default from Medium to High without a Rule-specific rationale and added a second finding; the retry returned Medium with only the expected finding."
+        },
+        {
+          "sequence": 2,
+          "model": "gpt-6-luna",
+          "runtime": "Codex CLI codex-cli 0.167.1; Node.js v26.12.1; darwin",
+          "date": "2026-11-11",
+          "inputSha256": "613d510a9f42d21664897d7159220bb48f2b002bc875604da91868f55afd89ff",
+          "promptSha256": "3b1d5c1e75729becb2225e0672d59d01ccd69d9553047a62d4dcf2227f9e39ce",
+          "sourceManifestSha256": "fff3c57f65fd0cb96baae96afa18ef699cc4da66ef3d93c5b5f6aea27926f832",
+          "stagedSourceManifestSha256": "fff3c57f65fd0cb96baae96afa18ef699cc4da66ef3d93c5b5f6aea27926f832",
+          "status": "pass",
+          "artifacts": {
+            "input": {
+              "path": "retries/2026-11-12-gpt-6-luna-review-followup-retry/cases/E2-repeated-downstream-format-missing/raw-input.json",
+              "sha256": "2cec34df02d2d9b05f25c35c3c7f9695853ae64c9c003c1b63c9a9f82d26975e"
+            },
+            "prompt": {
+              "path": "retries/2026-11-12-gpt-6-luna-review-followup-retry/cases/E2-repeated-downstream-format-missing/prompt.txt",
+              "sha256": "3b1d5c1e75729becb2225e0672d59d01ccd69d9553047a62d4dcf2227f9e39ce"
+            },
+            "response": {
+              "path": "retries/2026-11-12-gpt-6-luna-review-followup-retry/cases/E2-repeated-downstream-format-missing/answer.txt",
+              "sha256": "6c0685e641929402134106aff9ff59b6102f1fb8705424f51fddc03d9c429e88"
+            },
+            "trace": {
+              "path": "retries/2026-11-12-gpt-6-luna-review-followup-retry/cases/E2-repeated-downstream-format-missing/stdout.jsonl",
+              "sha256": "bd3c5740b299b4f6647794d67b3c81de5d423e6ced29108237f933c919032dae"
+            },
+            "stderr": {
+              "path": "retries/2026-11-12-gpt-6-luna-review-followup-retry/cases/E2-repeated-downstream-format-missing/stderr.log",
+              "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+            },
+            "exit": {
+              "path": "retries/2026-11-12-gpt-6-luna-review-followup-retry/cases/E2-repeated-downstream-format-missing/exit.json",
+              "sha256": "076add8a7c88ac551dc6f5dcdfc1f89c2b42b1beb15edcb5e7de065e944d90cf"
+            }
+          },
+          "sourceAudit": {
+            "status": "verified",
+            "reads": [
+              {
+                "path": "SKILL.md",
+                "sha256": "34b7168fb020436a96a1353c1fb7a95d3898cfc602f2fa384674230f332aa429",
+                "eventIds": [
+                  "item_1"
+                ]
+              },
+              {
+                "path": "references/review-levels.md",
+                "sha256": "32c687c6e1189b1d456bc08a4f52890142edd706c44f177f1ac87636aef18aa4",
+                "eventIds": [
+                  "item_2"
+                ]
+              },
+              {
+                "path": "references/prompt/INDEX.md",
+                "sha256": "a0e8702e602ebeddba65737752261014f1ebf123487bfabb8cea84f43a7d1725",
+                "eventIds": [
+                  "item_2"
+                ]
+              },
+              {
+                "path": "references/context/INDEX.md",
+                "sha256": "3058d16472984431ea66a30f63a4f8d3618f0ff6f1f33419f0b70c180bcef44d",
+                "eventIds": [
+                  "item_2"
+                ]
+              },
+              {
+                "path": "references/output-format.md",
+                "sha256": "fd71389b927fe7cf2ee38856169f5fea8be43f194f836dfc63814e0786739920",
+                "eventIds": [
+                  "item_2"
+                ]
+              },
+              {
+                "path": "templates/review-report-compact.md",
+                "sha256": "de1d2784abafea63282539319cf6fcb5ec9c59a21121c1a044bfc574eee3a342",
+                "eventIds": [
+                  "item_2"
+                ]
+              },
+              {
+                "path": "references/prompt/checkpoints.md",
+                "sha256": "7378a6112b93181bfe2761dc68a523a13187681ee3ff36db8e16ec9a82b51504",
+                "eventIds": [
+                  "item_3"
+                ]
+              },
+              {
+                "path": "references/prompt/anti-patterns.md",
+                "sha256": "47b887404abed320e1257e4a15221a056c90eaaf61c842280520d4a6e6b2caf0",
+                "eventIds": [
+                  "item_3"
+                ]
+              },
+              {
+                "path": "references/context/checkpoints.md",
+                "sha256": "ba847f678868888a9d1cddc4dacad75660743dc3fd48cfeee25f813516b71007",
+                "eventIds": [
+                  "item_3"
+                ]
+              },
+              {
+                "path": "references/context/anti-patterns.md",
+                "sha256": "cb47e521fcb26d099189bb2336a001691a2c3cd7a854399d9ec89e085af540c0",
+                "eventIds": [
+                  "item_3"
+                ]
+              },
+              {
+                "path": "references/rule-contract.md",
+                "sha256": "f77d94e68d8f534398cd3e9d0f725b1e0588d848dcf124aee842c9750817cc28",
+                "eventIds": [
+                  "item_3"
+                ]
+              }
+            ],
+            "externalSkillReads": [],
+            "issues": [],
+            "manifestSha256": "fff3c57f65fd0cb96baae96afa18ef699cc4da66ef3d93c5b5f6aea27926f832",
+            "stagedSkillPath": "retries/2026-11-12-gpt-6-luna-review-followup-retry/session-evidence/sessions/9608162a-8b36-49a4-8a55-0d979fe06d0e/.agents/skills/igapyon-miku-prompt-lint",
+            "commandAttempts": [
+              {
+                "eventId": "item_1",
+                "command": "/bin/zsh -lc 'cat .agents/skills/igapyon-miku-prompt-lint/SKILL.md'",
+                "exitCode": 0,
+                "ranSentinel": false
+              },
+              {
+                "eventId": "item_2",
+                "command": "/bin/zsh -lc 'cat .agents/skills/igapyon-miku-prompt-lint/references/review-levels.md && cat .agents/skills/igapyon-miku-prompt-lint/references/prompt/INDEX.md && cat .agents/skills/igapyon-miku-prompt-lint/references/context/INDEX.md && cat .agents/skills/igapyon-miku-prompt-lint/references/output-format.md && cat .agents/skills/igapyon-miku-prompt-lint/templates/review-report-compact.md'",
+                "exitCode": 0,
+                "ranSentinel": false
+              },
+              {
+                "eventId": "item_3",
+                "command": "/bin/zsh -lc 'cat .agents/skills/igapyon-miku-prompt-lint/references/prompt/checkpoints.md && cat .agents/skills/igapyon-miku-prompt-lint/references/prompt/anti-patterns.md && cat .agents/skills/igapyon-miku-prompt-lint/references/context/checkpoints.md && cat .agents/skills/igapyon-miku-prompt-lint/references/context/anti-patterns.md && cat .agents/skills/igapyon-miku-prompt-lint/references/rule-contract.md'",
+                "exitCode": 0,
+                "ranSentinel": false
+              }
+            ],
+            "sessionRoot": "9608162a-8b36-49a4-8a55-0d979fe06d0e"
+          },
+          "observed": {
+            "ruleAssertions": [
+              {
+                "ruleId": "prompt/missing-output-format",
+                "disposition": "Applicable",
+                "severity": "Medium"
+              }
+            ],
+            "outputFields": [
+              "Evidence",
+              "Suggestion",
+              "Level",
+              "Severity",
+              "Confidence",
+              "Issue",
+              "Rule ID"
+            ],
+            "reportMode": "concise",
+            "targetExecution": "none",
+            "readFiles": [
+              "SKILL.md",
+              "references/review-levels.md",
+              "references/prompt/INDEX.md",
+              "references/context/INDEX.md",
+              "references/output-format.md",
+              "templates/review-report-compact.md",
+              "references/prompt/checkpoints.md",
+              "references/prompt/anti-patterns.md",
+              "references/context/checkpoints.md",
+              "references/context/anti-patterns.md",
+              "references/rule-contract.md"
+            ]
+          },
+          "assertions": [
+            {
+              "id": "rule:prompt/missing-output-format",
+              "expected": "{\"disposition\":\"Applicable\",\"ruleId\":\"prompt/missing-output-format\",\"severity\":\"Medium\"}",
+              "observed": "{\"disposition\":\"Applicable\",\"ruleId\":\"prompt/missing-output-format\",\"severity\":\"Medium\"}",
+              "status": "pass",
+              "evidence": "- **Prompt | Medium | High confidence | `prompt/missing-output-format`** — The prompt requires a stable record for a downstream importer but gives no schema or output shape, so the result may vary between monthly runs and fail to import.  \n  Evidence: “stable machine-readable record” and “no fields, schema, or format are specified.”  \n  Suggestion: Define the record’s fields, types, required values, and output format. For example, specify how to represent `Revenue was 4 this month.` and what to do when the report omits a required value.\n\n## Assessment Notes"
+            }
+          ],
+          "notes": "The first response escalated the Rule default from Medium to High without a Rule-specific rationale and added a second finding; the retry returned Medium with only the expected finding."
+        }
+      ]
+    }
+  ]
+}

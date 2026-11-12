@@ -1,23 +1,80 @@
 # TODO
 
-## Pending: Independent Evaluation of Reference Routing and Report Modes
+## Pending: Review Follow-Up Revalidation After Self-Review
 
-Source tests and bundle verification pass for the 2026-10-24 reference-loading,
-activation-name, and concise-report changes. Their model judgments have not yet
-been independently evaluated. Existing baseline results are historical and do
-not cover these changed cases.
+The 2026-11-11 v1 `complete-pass` was invalidated on 2026-11-12. The current
+schema v2 baseline has 17 passes, four invalid first attempts, and three
+semantic failures; seven diagnostic retries are retained. Raw-evidence
+verification passes, but semantic completion remains failed. See
+`docs/review-followup-self-review-execution.md`.
 
-- [ ] Run the affected raw cases in fresh independent sessions using the normal
-      Skill invocation. Do not provide case IDs, expected Rule IDs, rationales,
-      or proposed findings before each response.
-- [ ] Include required references with and without read/use instructions,
-      complete and partial packages, exact canonical and alias `$` names,
-      longer/partial identifiers, supplied-artifact names, default concise and
-      explicit detailed reports, and target commands that must remain review data.
-- [ ] Record the actual model/runtime and results as described in
-      `docs/semantic-evaluation.md`.
-- [ ] Resolve any consistent mismatches and record only observed results; do
-      not reuse historical baseline entries for changed artifacts.
+- [x] Implement the v2 baseline contract, isolated staged-source evaluator,
+      neutral wrapper, A4/A5 direct contrast, raw trace reconciliation, and
+      evidence verification. Preserve the earlier skeleton-routing and
+      missing-source example fixes.
+- [x] Run all 24 cases in fresh sessions and retain one diagnostic retry for
+      each of the seven invalid or failing cases.
+- [ ] Resolve A9/A10 candidate-list and selected-skill activation mismatches.
+- [ ] Resolve R3's `agent-skill/broken-resource-route` severity mismatch and
+      E2's first-run severity variation.
+- [ ] Resolve the invalid first attempts for R3, A3, O1, and S2. A passing
+      retry does not replace an invalid first attempt.
+- [ ] Run a fresh 24-case evaluation after any Skill, fixture, wrapper, or
+      model-input protocol change; require all first attempts to pass.
+- [ ] Pass both `npm test` and the raw-artifact complete gate, then update the
+      active baseline and execution records together.
+
+## Pending: Agent Skill Security Review Contract
+
+Resume when generative-AI token capacity is ample for a deliberate
+specification, implementation, and evaluation pass. Revisit the 2026-11-10
+security discussion before implementation.
+
+- [ ] Decide the shared security-review workflow for self-authored Skills and
+      pre-use assessment of third-party Skills.
+- [ ] Define a capability inventory covering local file reads/writes/deletes,
+      command and process execution (including install/build hooks and
+      dependencies), network/API/MCP transfers, data entering model context,
+      secrets/personal information, persistence, and untrusted-content
+      instruction boundaries. Record trigger, scope, data, destination,
+      disclosure/approval, and reversibility for each operation.
+- [ ] Set evidence and review boundaries: assess the complete supplied package
+      and exact version/provenance/runtime; use static inspection by default;
+      do not execute target commands/scripts during review. Define when isolated
+      dynamic validation is justified and how missing evidence becomes
+      `Not assessed`.
+- [ ] Define severity, safe-use verdicts, and report limits. Distinguish
+      “no significant risk found in the inspected scope” from an absolute safety
+      guarantee; include conditional-use and cannot-assess outcomes.
+- [ ] Decide how these checks relate to
+      `agent-skill/unsafe-side-effect-contract` and whether to add separate Rules
+      for undisclosed local access, unsafe execution, network egress, or
+      supply-chain risks. Add precise applicability, evidence, severity, and
+      overlap contracts.
+- [ ] Implement the settled checks in Agent Skill references, examples, report
+      templates, and user-facing summaries. Evaluate representative benign,
+      risky, and incomplete packages for both self-review and third-party
+      pre-use assessment.
+
+## Historical: Independent Evaluation of Reference Routing and Report Modes (Invalidated)
+
+The following records work completed on 2026-11-11 against a fixed source snapshot;
+the complete-pass claim was invalidated on 2026-11-12. Fresh independent
+`gpt-6-luna` sessions covered all 24 follow-up cases; raw responses and traces
+are retained under the uncommitted `workplace/rule-calibration-results/` tree.
+The historical baseline and implementation record are in
+`tests/fixtures/review-followup-baseline.json` and
+`docs/review-followup-execution.md`.
+
+- [x] Evaluate reference routing, complete/partial package boundaries,
+      activation metadata, concise/detailed reports, skeleton handoff, and
+      output-format applicability without revealing expectations to sessions.
+- [x] Record the model, runtime, source and fixture hashes, raw results, and
+      read/command traces.
+- [x] Resolve observed source and scoring issues, then rerun all cases against
+      the final snapshot. All 24 final first runs pass their scoped assertions.
+- [x] Preserve the historical baseline and unrelated Security Review Contract
+      work below as separate pending work.
 
 ## Active: Rule Validity Overhaul (Accepted 2026-07-16)
 

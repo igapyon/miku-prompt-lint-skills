@@ -1,4 +1,4 @@
-# Example: Ambiguous Output Prompt
+# Example: Missing Source Document
 
 ## Input Prompt
 
@@ -20,14 +20,3 @@ Summarize this document nicely. Make it useful for everyone.
   `Suggestion`: Supply the document or a stable path to it before requesting a summary.
   `Change type`: correctness
 
-- `Level`: Prompt
-  `Severity`: Medium
-  `Confidence`: High
-  `Applicability`: Applicable
-  `Category`: Output contract
-  `Issue`: “nicely” and “useful” do not define a usable output shape.
-  `Rule`: prompt/missing-output-format
-  `Evidence`: The prompt does not state sections, length, format, or how uncertainty should be reported.
-  `Why it matters`: Results can vary in length and purpose on each run.
-  `Suggestion`: Specify the audience, sections, length, and missing-information behavior.
-  `Change type`: reliability
